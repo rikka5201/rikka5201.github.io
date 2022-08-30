@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>Hexo</title>
+    <title>rikka的博客</title>
     
 <link rel="stylesheet" href="/css/style.css">
 
@@ -21,19 +21,19 @@
         <nav class="header-nav">
             
             <a href="/" class="header-nav-link" >
-                Home
+                首页
             </a>
             
 
             
             <a href="/archives" class="header-nav-link">
-                Archives
+                归档
             </a>
             
 
             
             <a href="/tags" class="header-nav-link">
-                Tags
+                标签
             </a>
             
 
@@ -57,19 +57,19 @@
         <ul class="mobile-menu-list">
             <li class="mobile-menu-item">
                 <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/" class="mobile-nav-link">首页</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">Archives</a>
+                <a href="/archives" class="mobile-nav-link">归档</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">Tags</a>
+                <a href="/tags" class="mobile-nav-link">标签</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">About</a>
+                <a href="/about/" class="mobile-nav-link">关于</a>
             </li>
         </ul>
     </nav>
@@ -83,7 +83,7 @@
             <div class="post-meta">
                 <span class="post-time">2022-08-30</span>
                 
-                <span class="post-visit"> visited：<span id="busuanzi_value_page_pv"></span></span>
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
             </div>
         </div>
         <div class="post-toc" id="post-toc">
@@ -94,7 +94,10 @@
     </div>
 </div>
         <div class="post-content">
-            <h1 id="1-SQL注入（SQL-Injection）"><a href="#1-SQL注入（SQL-Injection）" class="headerlink" title="1.SQL注入（SQL Injection）"></a>1.SQL注入（SQL Injection）</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/114325805">SQL注入详解</a><br>结构化查询语言（Structured Query Language，缩写：SQL），是一种特殊的编程语言，用于数据库中的标准数据查询语言。<br>SQL注入（SQL Injection）是一种常见的Web安全漏洞，主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱库、被删除、甚至整个服务器权限陷）。<br>即：注入产生的原因是后台服务器接收相关参数未经过滤直接带入数据库查询</p>
+            <p>DVWA靶场漏洞学习及补充</p>
+<span id="more"></span>
+
+<h1 id="1-SQL注入（SQL-Injection）"><a href="#1-SQL注入（SQL-Injection）" class="headerlink" title="1.SQL注入（SQL Injection）"></a>1.SQL注入（SQL Injection）</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/114325805">SQL注入详解</a><br>结构化查询语言（Structured Query Language，缩写：SQL），是一种特殊的编程语言，用于数据库中的标准数据查询语言。<br>SQL注入（SQL Injection）是一种常见的Web安全漏洞，主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱库、被删除、甚至整个服务器权限陷）。<br>即：注入产生的原因是后台服务器接收相关参数未经过滤直接带入数据库查询</p>
 <blockquote>
 <p>手工注入（非盲注）的步骤。<br>1.判断是否存在注入，注入是字符型还是数字型<br>（字符型注入和数字型注入和的区别在于所查询的数据类型不同）<br>2.猜解SQL查询语句中的字段数<br>3.确定显示的字段顺序<br>4.获取当前数据库<br>5.获取数据库中的表<br>6.获取表中的字段名<br>7.下载数据</p>
 </blockquote>
@@ -466,13 +469,13 @@
             <a class="prev" href="/2022/08/30/Metaspolt/">
                 <i class="iconfont icon-prev"></i>
                 <span class="nav-default">Metaspolt</span>
-                <span class="nav-mobile">Prev</span>
+                <span class="nav-mobile">上一篇</span>
             </a>
         
         
             <a class="next" href="/2022/08/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
                 <span class="nav-default">常用工具</span>
-                <span class="nav-mobile">Next</span>
+                <span class="nav-mobile">下一篇</span>
                 <i class="iconfont icon-next"></i>
             </a>
         

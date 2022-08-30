@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>Hexo</title>
+    <title>rikka的博客</title>
     
 <link rel="stylesheet" href="/css/style.css">
 
@@ -21,19 +21,19 @@
         <nav class="header-nav">
             
             <a href="/" class="header-nav-link" >
-                Home
+                首页
             </a>
             
 
             
             <a href="/archives" class="header-nav-link">
-                Archives
+                归档
             </a>
             
 
             
             <a href="/tags" class="header-nav-link">
-                Tags
+                标签
             </a>
             
 
@@ -57,19 +57,19 @@
         <ul class="mobile-menu-list">
             <li class="mobile-menu-item">
                 <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/" class="mobile-nav-link">首页</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">Archives</a>
+                <a href="/archives" class="mobile-nav-link">归档</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">Tags</a>
+                <a href="/tags" class="mobile-nav-link">标签</a>
             </li>
             <li class="mobile-menu-item">
                 <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">About</a>
+                <a href="/about/" class="mobile-nav-link">关于</a>
             </li>
         </ul>
     </nav>
@@ -83,7 +83,7 @@
             <div class="post-meta">
                 <span class="post-time">2022-08-30</span>
                 
-                <span class="post-visit"> visited：<span id="busuanzi_value_page_pv"></span></span>
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
             </div>
         </div>
         <div class="post-toc" id="post-toc">
@@ -94,7 +94,10 @@
     </div>
 </div>
         <div class="post-content">
-            <h1 id="CAT-x2F-XCTF-4th-WHCTF-2017-4"><a href="#CAT-x2F-XCTF-4th-WHCTF-2017-4" class="headerlink" title="CAT&#x2F;XCTF 4th-WHCTF-2017(4)"></a>CAT&#x2F;XCTF 4th-WHCTF-2017(4)</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-mo-/p/11572267.html">writeup</a><br>最开始看到这熟悉的界面，还以为是简单的命令注入，输入<code>127.0.0.1</code>发现的确是ping命令，但是当输入<code>127.0.0.1 &amp; dir</code>的时候报错，显示Invalid URL。然后就懵逼了，毫无下手之地。<br>查看大佬们的writeup之后发现，可以使用宽字符注入，即<code>url=%df</code>，然后他就会爆出html代码，把代码复制打开，就是报错原因和相关信息。<br>(django报错页面，将输入的参数传到了后端的django服务中进行解析，而django设置了编码为gbk导致错误编码了宽字符（超过了ascii码范围）。)<br><img src="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png" alt="在这里插入图片描述"><br>在这里可以看到pyhton path，第一行就是项目路径。<br><img src="https://img-blog.csdnimg.cn/98e09c135f234a44a70fec8f1db7c094.png" alt="在这里插入图片描述"><br>这里没看懂，不过大概意思是可以使用<code>@</code>读取文件内容<br>这里前面还有一个字典fuzz的操作，@没有被过滤<br><img src="https://img-blog.csdnimg.cn/f203f026631b4bf6b8dbf869970dca7b.png" alt="在这里插入图片描述"></p>
+            <p>攻防世界的Writeup</p>
+<span id="more"></span>
+
+<h1 id="CAT-x2F-XCTF-4th-WHCTF-2017-4"><a href="#CAT-x2F-XCTF-4th-WHCTF-2017-4" class="headerlink" title="CAT&#x2F;XCTF 4th-WHCTF-2017(4)"></a>CAT&#x2F;XCTF 4th-WHCTF-2017(4)</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-mo-/p/11572267.html">writeup</a><br>最开始看到这熟悉的界面，还以为是简单的命令注入，输入<code>127.0.0.1</code>发现的确是ping命令，但是当输入<code>127.0.0.1 &amp; dir</code>的时候报错，显示Invalid URL。然后就懵逼了，毫无下手之地。<br>查看大佬们的writeup之后发现，可以使用宽字符注入，即<code>url=%df</code>，然后他就会爆出html代码，把代码复制打开，就是报错原因和相关信息。<br>(django报错页面，将输入的参数传到了后端的django服务中进行解析，而django设置了编码为gbk导致错误编码了宽字符（超过了ascii码范围）。)<br><img src="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png" alt="在这里插入图片描述"><br>在这里可以看到pyhton path，第一行就是项目路径。<br><img src="https://img-blog.csdnimg.cn/98e09c135f234a44a70fec8f1db7c094.png" alt="在这里插入图片描述"><br>这里没看懂，不过大概意思是可以使用<code>@</code>读取文件内容<br>这里前面还有一个字典fuzz的操作，@没有被过滤<br><img src="https://img-blog.csdnimg.cn/f203f026631b4bf6b8dbf869970dca7b.png" alt="在这里插入图片描述"></p>
 <p>django项目下一般有个settings.py文件是设置网站数据库路径（django默认使用的的是sqlites数据库），如果使用的是其它数据库的话settings.py则设置用户名和密码。除此外settings.py还会对项目整体的设置进行定义。<br>django项目生成时settings.py会存放在以项目目录下再以项目名称命名的文件夹下面。即<code>/opt/api/api/settings.py</code><br>打开<code>url=@/opt/api/api/settings.py</code>也出现了一段html代码，复制打开可以看到<code>Name：/opt/api/database.sqlite3</code><br><img src="https://img-blog.csdnimg.cn/adfc5a5c6e96428dbfa68ce0df702a06.png" alt="在这里插入图片描述"><br>直接打开<code>url=@/opt/api/database.sqlite3</code>，直接搜索flag或ctf<br>搜索ctf获得结果<code>WHCTF&#123;yoooo_Such_A_G00D_@&#125;</code></p>
 <h1 id="Training-WWW-Robots-1"><a href="#Training-WWW-Robots-1" class="headerlink" title="Training-WWW-Robots(1)"></a>Training-WWW-Robots(1)</h1><p>这是一个学习robots文件的题，直接在网址后加<code>/robots.txt</code>或者使用<a target="_blank" rel="noopener" href="http://s.tool.chinaz.com/robots/">站长工具</a>进行robots检测。可以看到</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Disallow: /fl0g.php</span><br><span class="line"></span><br><span class="line">User-agent: Yandex</span><br><span class="line">Disallow: *</span><br></pre></td></tr></table></figure>
@@ -173,7 +176,7 @@
         
             <a class="next" href="/2022/08/30/Metaspolt/">
                 <span class="nav-default">Metaspolt</span>
-                <span class="nav-mobile">Next</span>
+                <span class="nav-mobile">下一篇</span>
                 <i class="iconfont icon-next"></i>
             </a>
         
