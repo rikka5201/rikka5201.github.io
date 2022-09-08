@@ -1,100 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>rikka的博客</title>
-    
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
 
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
-<meta name="generator" content="Hexo 6.2.0"></head>
-<body>
-<header class="header">
-    <div class="header-inner">
-        <div class="header-title">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        </div>
-        <nav class="header-nav">
-            
-            <a href="/" class="header-nav-link" >
-                首页
-            </a>
-            
+<link rel="stylesheet" href="/css/main.css">
 
-            
-            <a href="/archives" class="header-nav-link">
-                归档
-            </a>
-            
 
-            
-            <a href="/tags" class="header-nav-link">
-                标签
-            </a>
-            
 
-            
-        </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"সার্চ করা হচ্ছে...","empty":"আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: ${query}","hits_time":"${hits} টি ফলাফল ${time} মিলিসেকেন্ড এ পাওয়া গেছে","hits":"${hits} টি ফলাফল পাওয়া গেছে"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="攻防世界的Writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WRITEUP">
+<meta property="og:url" content="http://example.com/2022/08/30/WRITEUP/index.html">
+<meta property="og:site_name" content="rikka的博客">
+<meta property="og:description" content="攻防世界的Writeup">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/98e09c135f234a44a70fec8f1db7c094.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f203f026631b4bf6b8dbf869970dca7b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/adfc5a5c6e96428dbfa68ce0df702a06.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c8804b9ef0d3464e93b9004c80c18aaf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9a1916437f544bfbbbb4c06b2e7215bc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/40366e096b32463bba7d09d4d821d9cf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b658f9640764436888232d139902424a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b0028b67a9864f8399566c57fb7118bf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a49504cfeb64446b8b745e3d36a16904.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9cdf3d06a28f4523b413b02591a83b24.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d1f631048fce4688a5c3ae62844a825c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/15a204b429e141ae90e92c9b0d241f36.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/308edda2d480475e9326799a4a93287b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e029a1a201014975b0a3477ee2cc5983.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/efd1e0f22b964a19b02242164c558e1f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/06d915f2ec264647a03b7b702ea168d1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/70400023b924450d9646f23c31af199e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6451989056424d63bbffa2d9341321d3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/52b5cb00ae2347b1bafd9abbcc760dbb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ce4b966849e540499a4a972b1c2ed1a4.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6e8c7c7684be4af4b624c9dadc5244cb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8b7009e5f1ea4d2494dd66836207574f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c56f875e3657446bba4fc07b013f82ac.png">
+<meta property="article:published_time" content="2022-08-30T03:20:57.000Z">
+<meta property="article:modified_time" content="2022-09-08T08:47:16.091Z">
+<meta property="article:author" content="rikka">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/32794d1fbf7a4d5fa3807a4b943b2c89.png">
+
+
+<link rel="canonical" href="http://example.com/2022/08/30/WRITEUP/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"http://example.com/2022/08/30/WRITEUP/","path":"2022/08/30/WRITEUP/","title":"WRITEUP"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>WRITEUP | rikka的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="নেভিগেশন বারের দৃশ্যমানতা টগল করুন" role="button">
     </div>
-</header>
-<header class="mobile-header">
-    <div class="mobile-nav">
-        <div class="mobile-nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-nav-title">
-            <a href="/" class="mobile-nav-title-link">rikka's Blog</a>
-        </div>
+  </div>
 
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">rikka的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
-    <nav class="mobile-menu">
-        <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">首页</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">归档</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">标签</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">关于</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div class="main">
-    <div class="content-inner">
-        <div class="posts">
-    <article class="post-whole">
-        <div class="post-title">
-            <h2 class="title">WRITEUP</h2>
-            <div class="post-meta">
-                <span class="post-time">2022-08-30</span>
-                
-                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
-            </div>
-        </div>
-        <div class="post-toc" id="post-toc">
-    <strong class="post-toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B7%E9%A2%98"><span class="toc-text">刷题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF"><span class="toc-text">CTF</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C"><span class="toc-text">攻防世界</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CAT-x2F-XCTF-4th-WHCTF-2017-4"><span class="toc-text">CAT&#x2F;XCTF 4th-WHCTF-2017(4)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Training-WWW-Robots-1"><span class="toc-text">Training-WWW-Robots(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP2-1"><span class="toc-text">PHP2(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unserialize3-1"><span class="toc-text">unserialize3(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ics-06-x2F-XCTF-4th-CyberEarth-1"><span class="toc-text">ics-06&#x2F;XCTF 4th-CyberEarth(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#view-source-x2F-Cyberpeace-n3k0-1"><span class="toc-text">view_source&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get-post-x2F-Cyberpeace-n3k0-1"><span class="toc-text">get_post&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#robots-x2F-Cyberpeace-n3k0-1"><span class="toc-text">robots&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#backup-x2F-Cyberpeace-n3k0-1"><span class="toc-text">backup&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie-x2F-Cyberpeace-n3k0-1"><span class="toc-text">cookie&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#disabled-button-x2F-Cyberpeace-n3k0-1"><span class="toc-text">disabled_button&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#weak-auth-x2F-Cyberpeace-n3k0-1"><span class="toc-text">weak_auth&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#simple-php-x2F-Cyberpeace-n3k0-1"><span class="toc-text">simple_php&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#baby-web-1"><span class="toc-text">baby_web(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inget-x2F-%E5%AE%9C%E5%85%B4%E7%BD%91%E4%BF%A1%E5%8A%9E-1"><span class="toc-text">inget&#x2F;宜兴网信办(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#easyupload-x2F-CTF-1"><span class="toc-text">easyupload&#x2F;CTF(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fileinclude-x2F-%E5%AE%9C%E5%85%B4%E7%BD%91%E4%BF%A1%E5%8A%9E-1"><span class="toc-text">fileinclude&#x2F;宜兴网信办(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#very-easy-sql-x2F-CTF-1"><span class="toc-text">*very_easy_sql&#x2F;CTF(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fileclude-x2F-CTF-1"><span class="toc-text">fileclude&#x2F;CTF(1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NewsCenter-x2F-XCTF-4th-QCTF-2018-2"><span class="toc-text">NewsCenter&#x2F;XCTF 4th-QCTF-2018(2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#warmup-x2F-HCTF%EF%BC%882%EF%BC%89"><span class="toc-text">warmup&#x2F;HCTF（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#supersqli-x2F-%E5%BC%BA%E7%BD%91%E6%9D%AF%EF%BC%882%EF%BC%89"><span class="toc-text">supersqli&#x2F;强网杯（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-php-include-x2F-CTF%EF%BC%882%EF%BC%89"><span class="toc-text">Web_php_include&#x2F;CTF（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php-rce%EF%BC%882%EF%BC%89"><span class="toc-text">php_rce（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-php-unserialize-x2F-CTF%EF%BC%882%EF%BC%89"><span class="toc-text">Web_php_unserialize&#x2F;CTF（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-python-template-injection-x2F-CTF-2"><span class="toc-text">Web_python_template_injection&#x2F;CTF(2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web2-x2F-CTF%EF%BC%882"><span class="toc-text">web2&#x2F;CTF（2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#command-execution-x2F-Cyberpeace-n3k0-2"><span class="toc-text">command_execution&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webshell-x2F-Cyberpeace-n3k0-2"><span class="toc-text">webshell&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xff-referer-x2F-Cyberpeace-n3k0-2"><span class="toc-text">xff_referer&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upload1-2"><span class="toc-text">upload1(2)</span></a></li></ol></li></ol>
-    <div class="back-to-top" id="back-to-top">
-        <a href="javascript:void(0);">回到顶部</a>
-    </div>
+  </div>
 </div>
-        <div class="post-content">
-            <p>攻防世界的Writeup</p>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          সূচীপত্র
+        </li>
+        <li class="sidebar-nav-overview">
+          সারাংশ
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B7%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">刷题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTF"><span class="nav-number">1.2.</span> <span class="nav-text">CTF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C"><span class="nav-number">2.</span> <span class="nav-text">攻防世界</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAT-x2F-XCTF-4th-WHCTF-2017-4"><span class="nav-number">2.1.</span> <span class="nav-text">CAT&#x2F;XCTF 4th-WHCTF-2017(4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-WWW-Robots-1"><span class="nav-number">2.2.</span> <span class="nav-text">Training-WWW-Robots(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP2-1"><span class="nav-number">2.3.</span> <span class="nav-text">PHP2(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unserialize3-1"><span class="nav-number">2.4.</span> <span class="nav-text">unserialize3(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ics-06-x2F-XCTF-4th-CyberEarth-1"><span class="nav-number">2.5.</span> <span class="nav-text">ics-06&#x2F;XCTF 4th-CyberEarth(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#view-source-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.6.</span> <span class="nav-text">view_source&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-post-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.7.</span> <span class="nav-text">get_post&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robots-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.8.</span> <span class="nav-text">robots&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#backup-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.9.</span> <span class="nav-text">backup&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.10.</span> <span class="nav-text">cookie&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#disabled-button-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.11.</span> <span class="nav-text">disabled_button&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-auth-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.12.</span> <span class="nav-text">weak_auth&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#simple-php-x2F-Cyberpeace-n3k0-1"><span class="nav-number">2.13.</span> <span class="nav-text">simple_php&#x2F;Cyberpeace-n3k0(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#baby-web-1"><span class="nav-number">2.14.</span> <span class="nav-text">baby_web(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inget-x2F-%E5%AE%9C%E5%85%B4%E7%BD%91%E4%BF%A1%E5%8A%9E-1"><span class="nav-number">2.15.</span> <span class="nav-text">inget&#x2F;宜兴网信办(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#easyupload-x2F-CTF-1"><span class="nav-number">2.16.</span> <span class="nav-text">easyupload&#x2F;CTF(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fileinclude-x2F-%E5%AE%9C%E5%85%B4%E7%BD%91%E4%BF%A1%E5%8A%9E-1"><span class="nav-number">2.17.</span> <span class="nav-text">fileinclude&#x2F;宜兴网信办(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#very-easy-sql-x2F-CTF-1"><span class="nav-number">2.18.</span> <span class="nav-text">*very_easy_sql&#x2F;CTF(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fileclude-x2F-CTF-1"><span class="nav-number">2.19.</span> <span class="nav-text">fileclude&#x2F;CTF(1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NewsCenter-x2F-XCTF-4th-QCTF-2018-2"><span class="nav-number">2.20.</span> <span class="nav-text">NewsCenter&#x2F;XCTF 4th-QCTF-2018(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#warmup-x2F-HCTF%EF%BC%882%EF%BC%89"><span class="nav-number">2.21.</span> <span class="nav-text">warmup&#x2F;HCTF（2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#supersqli-x2F-%E5%BC%BA%E7%BD%91%E6%9D%AF%EF%BC%882%EF%BC%89"><span class="nav-number">2.22.</span> <span class="nav-text">supersqli&#x2F;强网杯（2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-php-include-x2F-CTF%EF%BC%882%EF%BC%89"><span class="nav-number">2.23.</span> <span class="nav-text">Web_php_include&#x2F;CTF（2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-rce%EF%BC%882%EF%BC%89"><span class="nav-number">2.24.</span> <span class="nav-text">php_rce（2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-php-unserialize-x2F-CTF%EF%BC%882%EF%BC%89"><span class="nav-number">2.25.</span> <span class="nav-text">Web_php_unserialize&#x2F;CTF（2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-python-template-injection-x2F-CTF-2"><span class="nav-number">2.26.</span> <span class="nav-text">Web_python_template_injection&#x2F;CTF(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web2-x2F-CTF%EF%BC%882"><span class="nav-number">2.27.</span> <span class="nav-text">web2&#x2F;CTF（2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#command-execution-x2F-Cyberpeace-n3k0-2"><span class="nav-number">2.28.</span> <span class="nav-text">command_execution&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webshell-x2F-Cyberpeace-n3k0-2"><span class="nav-number">2.29.</span> <span class="nav-text">webshell&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xff-referer-x2F-Cyberpeace-n3k0-2"><span class="nav-number">2.30.</span> <span class="nav-text">xff_referer&#x2F;Cyberpeace-n3k0(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#upload1-2"><span class="nav-number">2.31.</span> <span class="nav-text">upload1(2)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rikka</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">পোস্ট এর তালিকা</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="উপরে ফিরে যান">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/30/WRITEUP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rikka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rikka的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="WRITEUP | rikka的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WRITEUP
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2022-08-30 11:20:57" itemprop="dateCreated datePublished" datetime="2022-08-30T11:20:57+08:00">2022-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">সম্পাদিত হয়েছে</span>
+      <time title="পরিমার্জন করা হয়েছেঃ 2022-09-08 16:47:16" itemprop="dateModified" datetime="2022-09-08T16:47:16+08:00">2022-09-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>攻防世界的Writeup</p>
 <span id="more"></span>
 
 <h1 id="刷题"><a href="#刷题" class="headerlink" title="刷题"></a>刷题</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/">牛客网 - 互联网求职神器和备考学习平台</a></p>
@@ -355,62 +498,73 @@
 <p>用御剑连接后，在上一级目录下有<code>flag.php</code>，打开就能得到flag</p>
 <p><code>cyberpeace&#123;9d2d0b1dcdaa91db15aa5b668a95e7bd&#125;</code></p>
 
-        </div>
-        
-    </article>
-</div>
-<div class="paginator">
-    
-        
-            <a class="prev" href="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
-                <i class="iconfont icon-prev"></i>
-                <span class="nav-default">如何用HEXO框架搭建博客</span>
-                <span class="nav-mobile">上一篇</span>
-            </a>
-        
-        
-            <a class="next" href="/2022/08/30/Metaspolt/">
-                <span class="nav-default">Metaspolt</span>
-                <span class="nav-mobile">下一篇</span>
-                <i class="iconfont icon-next"></i>
-            </a>
-        
-    
-</div>
-<div id="comment-container"></div>
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/30/Metaspolt/" rel="prev" title="Metaspolt">
+                  <i class="fa fa-chevron-left"></i> Metaspolt
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="如何用HEXO框架搭建博客">
+                  如何用HEXO框架搭建博客 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
-<footer class="footer-social">
-    
 
-    
 
-    
 
-    <div class="footer-copyright">
-        <p class="time-line">
-            &copy;
-            
-            
-            2022
-            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
-            <a target="_blank" href="https://github.com/iJinxin">rikka</a>
-        </p>
-        <p class="theme-info">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
-            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
-        </p>
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rikka</span>
+</div>
+  <div class="powered-by"><a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> এর সাহায্যে চলছে
+  </div>
+
     </div>
-</footer>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    
-
-</script>
 </html>

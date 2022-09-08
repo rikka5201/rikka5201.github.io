@@ -1,100 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>rikka的博客</title>
-    
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
 
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
-<meta name="generator" content="Hexo 6.2.0"></head>
-<body>
-<header class="header">
-    <div class="header-inner">
-        <div class="header-title">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        </div>
-        <nav class="header-nav">
-            
-            <a href="/" class="header-nav-link" >
-                首页
-            </a>
-            
+<link rel="stylesheet" href="/css/main.css">
 
-            
-            <a href="/archives" class="header-nav-link">
-                归档
-            </a>
-            
 
-            
-            <a href="/tags" class="header-nav-link">
-                标签
-            </a>
-            
 
-            
-        </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"সার্চ করা হচ্ছে...","empty":"আমরা উক্ত অনুসন্ধানের জন্য কোন ফলাফল খুঁজে পাইনি: ${query}","hits_time":"${hits} টি ফলাফল ${time} মিলিসেকেন্ড এ পাওয়া গেছে","hits":"${hits} টি ফলাফল পাওয়া গেছে"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="DVWA靶场漏洞学习及补充">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DVWA">
+<meta property="og:url" content="http://example.com/2022/08/30/DVWA/index.html">
+<meta property="og:site_name" content="rikka的博客">
+<meta property="og:description" content="DVWA靶场漏洞学习及补充">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/405b2a4bd9f145b388d89493d5c1a036.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/68560507789d48328ce2dec1efd5f122.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2c8af2f32ecf4fca8f53c5da6035c1ad.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20a683c84db44c0d886d6091d62263b2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bfb2684e31e84fabb14158afa26b01b8.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/731b054cf188438685ea4346c4dcce06.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6d21e9ef26354fecb13fc7d5a49d0e48.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d968197875cc469ab7068f5a014ef579.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c083a6f4d8354d58a63f2f46997a27f9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fb2bccc8c7f547b986d1aca0bb3494de.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fd1474f02ecb47a98d98cb5c9cb5455c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d6b9701ac4004104a0c370ea61aa15a5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/efe8633f8aa44d5280ec3ac9f2a5496d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a92f4e5f4398429ab125d82d7f627a09.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b1d23595f1bb499abecb70dc6dc9f06d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5d5180af9ca34780a597cc70c64ad49b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/079879da23ee4bd7a87a82aff14126bb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/dfbaffcab0b548f981ede3a487d184a7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1c6c0085564f45a9b997121344ea2da9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1b6ef2aad8c54b429e0994430d1b53a2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3f728923b57d42d69d692b3477e1f148.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6d9993e8b9c64e4c8ef62d356909ce41.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2f1fc1bd54a5455bb0d66dfff75d9ac0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e521c99878c9429ba6c3968aad0088f9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0199e72d89274634b346dc336eb1c6e3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7a889e1b421448e190a291e78b25d023.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/edd6f23e582a49e1838bd5360d5b8899.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f8f2f4abb7dd456592786db5dea1e930.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c26cebecbece4e17b07b64f99caf6cb4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3adbf05ab3da4074bc77874573b27897.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/16a09022b9cb4122a8e0cf11b53b7113.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8ce1c002ea274a06ad4d676e7029c1f2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fd3e4e77befc46489084b3804a39947f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a958211184d14d53a52d5ff3f614643a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e8ade18cdbf14964a4dac427f3c4a589.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/704aaaee5b8b4f198ced238474c371ac.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e42f6febe4fb4a88b66fda1e0bf33a6f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/210b0755035341728c6c2242a4c8072b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7edb8074a5a840d78da68e54b116bd08.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/995ba82b4c4b495d876a19c9193da9d4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a9a13fbe8bab4ea48f8cc6d93d2c191a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a7a35e29ac4c46a893fb8f112941b9f6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5f9b460299ff429c87c8cfd12449e634.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9ea2a4fc2eb04aac94f2ba6a6cbe310e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d433a5ea7f5f49518a7adc469c0df61c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e16160146d614e07943c4391125279f2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3be43737c8a746f49487cd2e77525fc1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0f893334aed14dcc987286c914597d3d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/be9e1ae226c3488d8eebfe3f3dc60736.png">
+<meta property="article:published_time" content="2022-08-30T03:19:01.000Z">
+<meta property="article:modified_time" content="2022-09-08T08:07:54.419Z">
+<meta property="article:author" content="rikka">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/405b2a4bd9f145b388d89493d5c1a036.png">
+
+
+<link rel="canonical" href="http://example.com/2022/08/30/DVWA/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"http://example.com/2022/08/30/DVWA/","path":"2022/08/30/DVWA/","title":"DVWA"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DVWA | rikka的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="নেভিগেশন বারের দৃশ্যমানতা টগল করুন" role="button">
     </div>
-</header>
-<header class="mobile-header">
-    <div class="mobile-nav">
-        <div class="mobile-nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-nav-title">
-            <a href="/" class="mobile-nav-title-link">rikka's Blog</a>
-        </div>
+  </div>
 
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">rikka的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
-    <nav class="mobile-menu">
-        <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">首页</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">归档</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">标签</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">关于</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div class="main">
-    <div class="content-inner">
-        <div class="posts">
-    <article class="post-whole">
-        <div class="post-title">
-            <h2 class="title">DVWA</h2>
-            <div class="post-meta">
-                <span class="post-time">2022-08-30</span>
-                
-                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
-            </div>
-        </div>
-        <div class="post-toc" id="post-toc">
-    <strong class="post-toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-SQL%E6%B3%A8%E5%85%A5%EF%BC%88SQL-Injection%EF%BC%89"><span class="toc-text">1.SQL注入（SQL Injection）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E5%BE%A1SQL%E6%B3%A8%E5%85%A5"><span class="toc-text">如何防御SQL注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Low"><span class="toc-text">Low</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E5%90%AB%E6%9C%89SQL%E6%B3%A8%E5%85%A5"><span class="toc-text">1.测试是否含有SQL注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%89%BE%E5%AD%97%E6%AE%B5"><span class="toc-text">2.找字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%BE%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="toc-text">3.找注入点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="toc-text">常见参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%BE%E6%95%B0%E6%8D%AE"><span class="toc-text">4.找数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium"><span class="toc-text">Medium</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#burpsuite"><span class="toc-text">burpsuite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysqli-real-escape-string"><span class="toc-text">mysqli-real-escape-string()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High"><span class="toc-text">High</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impossible"><span class="toc-text">Impossible</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-SQL%E7%9B%B2%E6%B3%A8%EF%BC%88SQL-Injection-Blind-%EF%BC%89"><span class="toc-text">2. SQL盲注（SQL Injection(Blind)）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-1"><span class="toc-text">Low</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E7%9A%84%E7%9B%B2%E6%B3%A8"><span class="toc-text">基于布尔的盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5%EF%BC%8C%E6%B3%A8%E5%85%A5%E6%98%AF%E5%AD%97%E7%AC%A6%E5%9E%8B%E8%BF%98%E6%98%AF%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-text">1.判断是否存在注入，注入是字符型还是数字型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%8C%9C%E8%A7%A3%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="toc-text">2.猜解当前数据库名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%8C%9C%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%90%8D"><span class="toc-text">3.猜解数据库中的表名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="toc-text">4.猜解表中的字段名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">5.猜解表中的数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E7%9B%B2%E6%B3%A8"><span class="toc-text">基于时间的盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5%EF%BC%8C%E6%B3%A8%E5%85%A5%E6%98%AF%E5%AD%97%E7%AC%A6%E5%9E%8B%E8%BF%98%E6%98%AF%E6%95%B0%E5%AD%97%E5%9E%8B-1"><span class="toc-text">1.判断是否存在注入，注入是字符型还是数字型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%8C%9C%E8%A7%A3%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D-1"><span class="toc-text">2.猜解当前数据库名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%8C%9C%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%90%8D-1"><span class="toc-text">3.猜解数据库中的表名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D-1"><span class="toc-text">4.猜解表中的字段名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE-1"><span class="toc-text">5.猜解表中的数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-1"><span class="toc-text">Medium</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E7%9A%84%E7%9B%B2%E6%B3%A8-1"><span class="toc-text">基于布尔的盲注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E7%9B%B2%E6%B3%A8-1"><span class="toc-text">基于时间的盲注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-1"><span class="toc-text">High</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Impossile"><span class="toc-text">Impossile</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-SQL%E6%B3%A8%E5%85%A5%EF%BC%88%E5%B7%A5%E5%85%B7%EF%BC%89"><span class="toc-text">3.SQL注入（工具）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-2"><span class="toc-text">Low</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="toc-text">1.数据库名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A1%A8%E5%90%8D"><span class="toc-text">2.表名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="toc-text">3.字段名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE"><span class="toc-text">4.数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-2"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-2"><span class="toc-text">High</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9F%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="toc-text">1.查数据库名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E8%A1%A8%E5%90%8D"><span class="toc-text">2.查表名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9F%A5%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="toc-text">3.查字段名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9F%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">4.查数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8F%82%E6%95%B0"><span class="toc-text">5.参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%88brute-force%EF%BC%89"><span class="toc-text">4.暴力破解（brute force）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1"><span class="toc-text">防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#burpsuite%E6%94%BB%E5%87%BB%E6%A8%A1%E5%BC%8F"><span class="toc-text">burpsuite攻击模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-3"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-3"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-3"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%EF%BC%88command-injection%EF%BC%89"><span class="toc-text">5.命令注入（command injection）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1-1"><span class="toc-text">防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-4"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-4"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-4"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%EF%BC%88File-Upload%EF%BC%89"><span class="toc-text">6.文件上传（File Upload）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1-2"><span class="toc-text">防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-5"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-5"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-5"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%EF%BC%88File-Inclusion%EF%BC%89"><span class="toc-text">7.文件包含漏洞（File Inclusion）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-6"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-6"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-6"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%EF%BC%88CSRF"><span class="toc-text">8.跨站请求伪造（CSRF)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-7"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-7"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-7"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB%EF%BC%88XSS%EF%BC%89"><span class="toc-text">9.跨站脚本攻击（XSS）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%EF%BC%88Reflected-Cross-Site-Scripting%EF%BC%89"><span class="toc-text">反射型XSS（Reflected Cross Site Scripting）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Low-8"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Medium-8"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#High-8"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8BXSS%EF%BC%88Stored%EF%BC%89"><span class="toc-text">存储型XSS（Stored）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Low-9"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Medium-9"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#High-9"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%B1%E5%BC%8F%E7%BB%95%E8%BF%87"><span class="toc-text">花式绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#preg-replace"><span class="toc-text">preg_replace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strip-tags"><span class="toc-text">strip_tags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#assert"><span class="toc-text">assert</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM%E5%9E%8BXSS"><span class="toc-text">DOM型XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Low-10"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Medium-10"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#High-10"><span class="toc-text">High</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%EF%BC%88Insecure-CAPTCHA%EF%BC%89"><span class="toc-text">10.不安全的验证码（Insecure CAPTCHA）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-11"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-11"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-11"><span class="toc-text">High</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%A1%88"><span class="toc-text">防御方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E5%BC%B1%E4%BC%9A%E8%AF%9DID"><span class="toc-text">11.弱会话ID</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-12"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-12"><span class="toc-text">Medium</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E7%BB%95%E8%BF%87%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%EF%BC%88CSP-Bypass%EF%BC%89"><span class="toc-text">12.绕过内容安全策略（CSP Bypass）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-13"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-13"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-12"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E5%89%8D%E7%AB%AF%E6%94%BB%E5%87%BB%EF%BC%88Javascript-Attacks%EF%BC%89"><span class="toc-text">13.前端攻击（Javascript Attacks）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Low-14"><span class="toc-text">Low</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-14"><span class="toc-text">Medium</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#High-13"><span class="toc-text">High</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-text">补充</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-SSRF"><span class="toc-text">服务器端请求伪造(SSRF)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E6%AD%BB%E9%A9%AC"><span class="toc-text">不死马</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqlmap-%E2%80%93level"><span class="toc-text">sqlmap –level</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqlmap-%E2%80%93purge"><span class="toc-text">sqlmap –purge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E7%AC%A6%E6%B3%A8%E5%85%A5"><span class="toc-text">宽字符注入</span></a></li></ol></li></ol>
-    <div class="back-to-top" id="back-to-top">
-        <a href="javascript:void(0);">回到顶部</a>
-    </div>
+  </div>
 </div>
-        <div class="post-content">
-            <p>DVWA靶场漏洞学习及补充</p>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          সূচীপত্র
+        </li>
+        <li class="sidebar-nav-overview">
+          সারাংশ
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-SQL%E6%B3%A8%E5%85%A5%EF%BC%88SQL-Injection%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1.SQL注入（SQL Injection）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E5%BE%A1SQL%E6%B3%A8%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">如何防御SQL注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low"><span class="nav-number">1.3.</span> <span class="nav-text">Low</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E5%90%AB%E6%9C%89SQL%E6%B3%A8%E5%85%A5"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.测试是否含有SQL注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%BE%E5%AD%97%E6%AE%B5"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.找字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%89%BE%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.找注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="nav-number">1.3.4.</span> <span class="nav-text">常见参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%89%BE%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.5.</span> <span class="nav-text">4.找数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium"><span class="nav-number">1.4.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#burpsuite"><span class="nav-number">1.4.1.</span> <span class="nav-text">burpsuite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysqli-real-escape-string"><span class="nav-number">1.4.2.</span> <span class="nav-text">mysqli-real-escape-string()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High"><span class="nav-number">1.5.</span> <span class="nav-text">High</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impossible"><span class="nav-number">1.6.</span> <span class="nav-text">Impossible</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-SQL%E7%9B%B2%E6%B3%A8%EF%BC%88SQL-Injection-Blind-%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">2. SQL盲注（SQL Injection(Blind)）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-1"><span class="nav-number">2.1.</span> <span class="nav-text">Low</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E7%9A%84%E7%9B%B2%E6%B3%A8"><span class="nav-number">2.1.1.</span> <span class="nav-text">基于布尔的盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5%EF%BC%8C%E6%B3%A8%E5%85%A5%E6%98%AF%E5%AD%97%E7%AC%A6%E5%9E%8B%E8%BF%98%E6%98%AF%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">1.判断是否存在注入，注入是字符型还是数字型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%8C%9C%E8%A7%A3%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">2.猜解当前数据库名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%8C%9C%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%90%8D"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">3.猜解数据库中的表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">4.猜解表中的字段名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">2.1.1.5.</span> <span class="nav-text">5.猜解表中的数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E7%9B%B2%E6%B3%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">基于时间的盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5%EF%BC%8C%E6%B3%A8%E5%85%A5%E6%98%AF%E5%AD%97%E7%AC%A6%E5%9E%8B%E8%BF%98%E6%98%AF%E6%95%B0%E5%AD%97%E5%9E%8B-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">1.判断是否存在注入，注入是字符型还是数字型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%8C%9C%E8%A7%A3%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D-1"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">2.猜解当前数据库名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%8C%9C%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E8%A1%A8%E5%90%8D-1"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">3.猜解数据库中的表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D-1"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">4.猜解表中的字段名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%8C%9C%E8%A7%A3%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE-1"><span class="nav-number">2.1.2.5.</span> <span class="nav-text">5.猜解表中的数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-1"><span class="nav-number">2.2.</span> <span class="nav-text">Medium</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%B8%83%E5%B0%94%E7%9A%84%E7%9B%B2%E6%B3%A8-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">基于布尔的盲注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E7%9B%B2%E6%B3%A8-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">基于时间的盲注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-1"><span class="nav-number">2.3.</span> <span class="nav-text">High</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impossile"><span class="nav-number">2.4.</span> <span class="nav-text">Impossile</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-SQL%E6%B3%A8%E5%85%A5%EF%BC%88%E5%B7%A5%E5%85%B7%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">3.SQL注入（工具）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="nav-number">3.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-2"><span class="nav-number">3.2.</span> <span class="nav-text">Low</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%A1%A8%E5%90%8D"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.表名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.字段名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%95%B0%E6%8D%AE"><span class="nav-number">3.2.4.</span> <span class="nav-text">4.数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-2"><span class="nav-number">3.3.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-2"><span class="nav-number">3.4.</span> <span class="nav-text">High</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="nav-number">3.4.1.</span> <span class="nav-text">1.查数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%A5%E8%A1%A8%E5%90%8D"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.查表名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9F%A5%E5%AD%97%E6%AE%B5%E5%90%8D"><span class="nav-number">3.4.3.</span> <span class="nav-text">3.查字段名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9F%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">3.4.4.</span> <span class="nav-text">4.查数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%8F%82%E6%95%B0"><span class="nav-number">3.4.5.</span> <span class="nav-text">5.参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%88brute-force%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">4.暴力破解（brute force）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-2"><span class="nav-number">4.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1"><span class="nav-number">4.2.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#burpsuite%E6%94%BB%E5%87%BB%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.3.</span> <span class="nav-text">burpsuite攻击模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-3"><span class="nav-number">4.4.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-3"><span class="nav-number">4.5.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-3"><span class="nav-number">4.6.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%EF%BC%88command-injection%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">5.命令注入（command injection）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-3"><span class="nav-number">5.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1-1"><span class="nav-number">5.2.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-4"><span class="nav-number">5.3.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-4"><span class="nav-number">5.4.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-4"><span class="nav-number">5.5.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%EF%BC%88File-Upload%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">6.文件上传（File Upload）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-4"><span class="nav-number">6.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1-2"><span class="nav-number">6.2.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-5"><span class="nav-number">6.3.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-5"><span class="nav-number">6.4.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-5"><span class="nav-number">6.5.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%EF%BC%88File-Inclusion%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">7.文件包含漏洞（File Inclusion）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-6"><span class="nav-number">7.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-6"><span class="nav-number">7.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-6"><span class="nav-number">7.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%EF%BC%88CSRF"><span class="nav-number">8.</span> <span class="nav-text">8.跨站请求伪造（CSRF)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-7"><span class="nav-number">8.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-7"><span class="nav-number">8.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-7"><span class="nav-number">8.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB%EF%BC%88XSS%EF%BC%89"><span class="nav-number">9.</span> <span class="nav-text">9.跨站脚本攻击（XSS）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%EF%BC%88Reflected-Cross-Site-Scripting%EF%BC%89"><span class="nav-number">9.1.</span> <span class="nav-text">反射型XSS（Reflected Cross Site Scripting）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Low-8"><span class="nav-number">9.1.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Medium-8"><span class="nav-number">9.1.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-8"><span class="nav-number">9.1.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8BXSS%EF%BC%88Stored%EF%BC%89"><span class="nav-number">9.2.</span> <span class="nav-text">存储型XSS（Stored）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Low-9"><span class="nav-number">9.2.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Medium-9"><span class="nav-number">9.2.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-9"><span class="nav-number">9.2.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%B1%E5%BC%8F%E7%BB%95%E8%BF%87"><span class="nav-number">9.3.</span> <span class="nav-text">花式绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preg-replace"><span class="nav-number">9.3.1.</span> <span class="nav-text">preg_replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strip-tags"><span class="nav-number">9.3.2.</span> <span class="nav-text">strip_tags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assert"><span class="nav-number">9.3.3.</span> <span class="nav-text">assert</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%9E%8BXSS"><span class="nav-number">9.4.</span> <span class="nav-text">DOM型XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Low-10"><span class="nav-number">9.4.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Medium-10"><span class="nav-number">9.4.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#High-10"><span class="nav-number">9.4.3.</span> <span class="nav-text">High</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%EF%BC%88Insecure-CAPTCHA%EF%BC%89"><span class="nav-number">10.</span> <span class="nav-text">10.不安全的验证码（Insecure CAPTCHA）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-11"><span class="nav-number">10.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-11"><span class="nav-number">10.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-11"><span class="nav-number">10.3.</span> <span class="nav-text">High</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%A1%88"><span class="nav-number">10.4.</span> <span class="nav-text">防御方案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-%E5%BC%B1%E4%BC%9A%E8%AF%9DID"><span class="nav-number">11.</span> <span class="nav-text">11.弱会话ID</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-12"><span class="nav-number">11.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-12"><span class="nav-number">11.2.</span> <span class="nav-text">Medium</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-%E7%BB%95%E8%BF%87%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%EF%BC%88CSP-Bypass%EF%BC%89"><span class="nav-number">12.</span> <span class="nav-text">12.绕过内容安全策略（CSP Bypass）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-13"><span class="nav-number">12.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-13"><span class="nav-number">12.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-12"><span class="nav-number">12.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%E5%89%8D%E7%AB%AF%E6%94%BB%E5%87%BB%EF%BC%88Javascript-Attacks%EF%BC%89"><span class="nav-number">13.</span> <span class="nav-text">13.前端攻击（Javascript Attacks）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-14"><span class="nav-number">13.1.</span> <span class="nav-text">Low</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Medium-14"><span class="nav-number">13.2.</span> <span class="nav-text">Medium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-13"><span class="nav-number">13.3.</span> <span class="nav-text">High</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">14.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-SSRF"><span class="nav-number">14.1.</span> <span class="nav-text">服务器端请求伪造(SSRF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">14.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E6%AD%BB%E9%A9%AC"><span class="nav-number">14.3.</span> <span class="nav-text">不死马</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlmap-%E2%80%93level"><span class="nav-number">14.4.</span> <span class="nav-text">sqlmap –level</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlmap-%E2%80%93purge"><span class="nav-number">14.5.</span> <span class="nav-text">sqlmap –purge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%BD%E5%AD%97%E7%AC%A6%E6%B3%A8%E5%85%A5"><span class="nav-number">14.6.</span> <span class="nav-text">宽字符注入</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">rikka</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">পোস্ট এর তালিকা</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="উপরে ফিরে যান">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/30/DVWA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rikka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="rikka的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DVWA | rikka的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DVWA
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">প্রকাশিত হয়েছে</span>
+
+      <time title="তৈরি করা হয়েছেঃ 2022-08-30 11:19:01" itemprop="dateCreated datePublished" datetime="2022-08-30T11:19:01+08:00">2022-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">সম্পাদিত হয়েছে</span>
+      <time title="পরিমার্জন করা হয়েছেঃ 2022-09-08 16:07:54" itemprop="dateModified" datetime="2022-09-08T16:07:54+08:00">2022-09-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>DVWA靶场漏洞学习及补充</p>
 <span id="more"></span>
 
 <h1 id="1-SQL注入（SQL-Injection）"><a href="#1-SQL注入（SQL-Injection）" class="headerlink" title="1.SQL注入（SQL Injection）"></a>1.SQL注入（SQL Injection）</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/114325805">SQL注入详解</a><br>结构化查询语言（Structured Query Language，SQL），是一种特殊的编程语言，用于数据库中的标准数据查询语言。<br>SQL注入（SQL Injection）是一种常见的Web安全漏洞，主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱库、被删除、甚至整个服务器权限陷）。<br>即：注入产生的原因是后台服务器接收相关参数未经过滤直接带入数据库查询</p>
@@ -458,62 +625,73 @@
 <p>当某字符的大小为一个字节时，称其字符为窄字节.<br>当某字符的大小为两个字节时，称其字符为宽字节.<br>所有英文默认占一个字节，汉字占两个字节<br>常见的宽字节编码：GB2312,GBK,GB18030,BIG5,Shift_JIS等</p>
 <p>如果数据库使用的的是GBK编码而PHP编码为UTF8就可能出现注入问题，原因是程序员为了防止SQL注入，就会调用我们上面所介绍的几种函数，将单引号或双引号进行转义操作，转义无非便是在单或双引号前加上斜杠（\）进行转义 ，但这样并非安全，因为数据库使用的是宽字节编码，两个连在一起的字符会被当做是一个汉字，而在PHP使用的UTF8编码则认为是两个独立的字符，如果我们在单或双引号前添加一个字符，使其和斜杠（\）组合被当作一个汉字，从而保留单或双引号，使其发挥应用的作用。但添加的字符的Ascii要大于128，两个字符才能组合成汉字 ，因为前一个ascii码要大于128，才到汉字的范围 ，这一点需要注意。比如说最经典的<code>%df</code>。</p>
 
-        </div>
-        
-    </article>
-</div>
-<div class="paginator">
-    
-        
-            <a class="prev" href="/2022/08/30/Metaspolt/">
-                <i class="iconfont icon-prev"></i>
-                <span class="nav-default">Metaspolt</span>
-                <span class="nav-mobile">上一篇</span>
-            </a>
-        
-        
-            <a class="next" href="/2022/08/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
-                <span class="nav-default">常用工具</span>
-                <span class="nav-mobile">下一篇</span>
-                <i class="iconfont icon-next"></i>
-            </a>
-        
-    
-</div>
-<div id="comment-container"></div>
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/30/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/" rel="prev" title="常用工具">
+                  <i class="fa fa-chevron-left"></i> 常用工具
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/30/Metaspolt/" rel="next" title="Metaspolt">
+                  Metaspolt <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
-<footer class="footer-social">
-    
 
-    
 
-    
 
-    <div class="footer-copyright">
-        <p class="time-line">
-            &copy;
-            
-            
-            2022
-            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
-            <a target="_blank" href="https://github.com/iJinxin">rikka</a>
-        </p>
-        <p class="theme-info">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
-            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
-        </p>
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rikka</span>
+</div>
+  <div class="powered-by"><a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> এর সাহায্যে চলছে
+  </div>
+
     </div>
-</footer>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    
-
-</script>
 </html>
