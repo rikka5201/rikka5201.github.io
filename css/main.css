@@ -2527,6 +2527,9 @@ ul.breadcrumb li:last-child {
   border-bottom-color: #111;
   color: #111;
 }
+.utterances {
+  max-width: unset;
+}
 .search-active {
   overflow: hidden;
 }
@@ -2799,7 +2802,7 @@ mark.search-keyword {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #9fd5ba;
+  background: #0effa4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2833,7 +2836,4 @@ mark.search-keyword {
   color: #fff;
   font-style: italic;
   margin: 0 1em;
-}
-.utterances {
-  max-width: unset;
 }
