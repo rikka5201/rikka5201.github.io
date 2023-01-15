@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="搭个博客先">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-30T09:20:17.000Z">
-<meta property="article:modified_time" content="2022-10-28T08:28:16.466Z">
+<meta property="article:modified_time" content="2023-01-15T22:45:02.270Z">
 <meta property="article:author" content="rikka">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -50,7 +50,7 @@
 
 
 
-<link rel="dns-prefetch" href="waline-qlk3fbb80-rikka5201.vercel.app">
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -171,6 +171,11 @@
       </div>
   </nav>
 </div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+      Chat
+    </button>
+  </div>
 
 
   <div class="links-of-blogroll site-overview-item animated">
@@ -270,23 +275,9 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-28 16:28:16" itemprop="dateModified" datetime="2022-10-28T16:28:16+08:00">2022-10-28</time>
+      <time title="修改时间：2023-01-16 06:45:02" itemprop="dateModified" datetime="2023-01-16T06:45:02+08:00">2023-01-16</time>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
@@ -366,6 +357,9 @@
 <h2 id="或许可以插入播放器"><a href="#或许可以插入播放器" class="headerlink" title="或许可以插入播放器"></a>或许可以插入播放器</h2><p><a target="_blank" rel="noopener" href="https://myhkw.cn/">🎵明月浩空网-永久免费的HTML5网站音乐播放器</a></p>
 <h2 id="删除没用的图片"><a href="#删除没用的图片" class="headerlink" title="删除没用的图片"></a>删除没用的图片</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_59153970/article/details/126926752">删除Typora中未曾被引用过的多余图片</a></p>
 <h1 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51943976/article/details/123103046">npm install时 node-sass npm ERR command failed问题解决</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhiyikeji/article/details/114364975">npm ERR! code 128</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -401,7 +395,6 @@
 
 
 
-    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -447,6 +440,9 @@
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"28bN5MdkTYMNhARJM"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
 
 
 
@@ -458,18 +454,9 @@
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-qlk3fbb80-rikka5201.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"}</script>
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => 
-    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
-  );
-});
-</script>
-
+<script class="next-config" data-name="exif" type="application/json">"{FocalLength}mm f/{FNumber} {ExposureTime}s"</script>
+<script src="https://fastly.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
+<script src="/lib/exif.js"></script>
   
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"plugRootPath":"live2dw/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/assets/haru02.model.json"},"display":{"position":"left","width":250,"height":500,"hOffset":50,"vOffset":0},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

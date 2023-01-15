@@ -2799,7 +2799,7 @@ mark.search-keyword {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff25a2;
+  background: #8836ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2818,4 +2818,19 @@ mark.search-keyword {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.exif-container {
+  position: relative;
+}
+.exif-container .exif-metabar {
+  background: rgba(0,0,0,0.5);
+  bottom: 0;
+  padding: 0.5em 0;
+  position: absolute;
+  width: 100%;
+}
+.exif-container .exif-metabar span {
+  color: #fff;
+  font-style: italic;
+  margin: 0 1em;
 }
