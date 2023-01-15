@@ -338,6 +338,18 @@
 
 
 
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"bRKe2bOX5rjY6ldi7AoRHDIl-MdYXbMMI","appKey":"PTu1NFB9jLG8kxOkiEHw9BNe","serverURLs":null,"placeholder":"你瞅啥！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":true,"comment_count":false,"recordIP":true,"enableQQ":false,"requiredFields":[],"notify":false,"verify":false}, {
+      el: '#valine-comments',
+      path: "/archives/2022/10/",
+      serverURLs: "https://brke2box.api.lncldglobal.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
   
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"plugRootPath":"live2dw/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/assets/haru02.model.json"},"display":{"position":"left","width":250,"height":500,"hOffset":50,"vOffset":0},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
