@@ -23,6 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/b6dbddb6.js","daovoice")
+ daovoice('init', {
+  app_id: "a1ad8658"
+});
+daovoice('update');
+ </script>
+
+
     <meta name="description" content="DVWA靶场漏洞学习及补充">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DVWA">
@@ -118,7 +127,7 @@
 <meta property="og:image" content="http://example.com/images/DVWA/image-20220915110012762.png">
 <meta property="og:image" content="https://pics5.baidu.com/feed/c75c10385343fbf24af4ab2ac043098864388fa1.jpeg?token=2667063c99dccb430c54db2ed00c381f">
 <meta property="article:published_time" content="2022-08-30T03:19:01.000Z">
-<meta property="article:modified_time" content="2023-01-03T07:21:39.422Z">
+<meta property="article:modified_time" content="2023-01-12T01:44:17.284Z">
 <meta property="article:author" content="rikka">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -359,7 +368,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-01-03 15:21:39" itemprop="dateModified" datetime="2023-01-03T15:21:39+08:00">2023-01-03</time>
+      <time title="修改时间：2023-01-12 09:44:17" itemprop="dateModified" datetime="2023-01-12T09:44:17+08:00">2023-01-12</time>
     </span>
 
   
@@ -1356,6 +1365,8 @@
 <p>寻找网站的历史解析记录多个不同区域ping网站，查看IP解析的结果找网站的二级域名、NS、MX记录等对应的IP订阅网站邮件，查看邮件发送方的IP</p>
 <p><strong>17.注入参数到cookie中</strong></p>
 <p>某些程序员在代码中使用<code>$_REQUEST</code>获取参数，而<code>$_REQUEST</code>会依次从GET&#x2F;POST&#x2F;cookie中获取参数，如果WAF只检测了GET&#x2F;POST而没有检测cookie,则可以将注入语句放入cookie中进行绕过。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python commix.py -u &quot;URL&quot; --cookie=&quot;cookie&quot; --data=&quot;post-data&quot;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -1411,13 +1422,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">151k</span>
+    <span title="站点总字数">152k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:17</span>
+    <span title="站点阅读时长">2:18</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
@@ -1434,9 +1445,6 @@
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
-<script class="next-config" data-name="gitter" type="application/json">{"enable":true,"room":"rikka5201/rikka"}</script>
-<script src="/js/third-party/chat/gitter.js"></script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 
 
