@@ -50,7 +50,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="waline-qlk3fbb80-rikka5201.vercel.app">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -280,10 +280,10 @@
     <span class="post-meta-item-icon">
       <i class="far fa-comment"></i>
     </span>
-    <span class="post-meta-item-text">Valine：</span>
+    <span class="post-meta-item-text">Waline：</span>
   
-    <a title="valine" href="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
+    <a title="waline" href="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -401,7 +401,7 @@
 
 
 
-    <div class="comments" id="valine-comments"></div>
+    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -458,16 +458,15 @@
 
 
 
-
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-qlk3fbb80-rikka5201.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
-NexT.utils.loadComments('#valine-comments', () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js', () => {
-    new Valine(Object.assign({"enable":true,"appId":"bRKe2bOX5rjY6ldi7AoRHDIl-MdYXbMMI","appKey":"PTu1NFB9jLG8kxOkiEHw9BNe","serverURLs":null,"placeholder":"你瞅啥！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":false,"comment_count":false,"recordIP":true,"enableQQ":false,"requiredFields":[],"notify":false,"verify":false}, {
-      el: '#valine-comments',
-      path: "/2022/08/30/%E5%A6%82%E4%BD%95%E7%94%A8HEXO%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/",
-      serverURLs: "https://brke2box.api.lncldglobal.com"
-    }));
-  }, window.Valine);
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
 });
 </script>
 
